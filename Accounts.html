@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, , initial-scale=1, user-scalable=no">
+    <title>Account</title>
+  <!-- Import Framework -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+  <!-- End of importing Framework -->
+  <!-- Import custom style -->
+    <link rel="stylesheet" type="text/css" href="css/styleGlobal.css">
+    <link rel="stylesheet" type="text/css" href="css/account.css">
+  <!-- End of importing custom style -->
+  </head>
+<body>
+<!-- Header -->
+  <div class="header">
+  <nav>
+    <a href="" style="padding-left: 0px;">Đơn hàng</a>
+    <a href="">User1234</a>
+    <a href="">Đăng nhập</a>
+  </nav>
+  </div>
+<!-- End of Header -->
+<!-------------------------------------------------------------------------------->
+<!-- Navigation Bar -->
+  <div class="container-fluid navContainer" role="navigation">
+<nav class="navbar">
+  <div class="container-fluid" style="padding: 0px; margin: 0px;">
+    <a class="navbar-brand py-0 d-none d-lg-block">
+      <img src="images/logo.png" height="65px" width="190px">
+    </a>
+    <div class="d-none d-lg-block me-auto">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Câu hỏi thường gặp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Về BKPee</a>
+        </li>
+      </ul>
+    </div>
+    <div class="d-none d-lg-block ms-auto">
+      <ul class="nav p-0 m-0">
+        <li class="nav-item">
+          <a href="" class="nav-link">
+            <img src="images/tool1.svg" height="25px" width="25px">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link">
+            <img src="images/tool2.svg" height="25px" width="25px">
+          </a>
+        </li>
+      </ul>
+    </div>
+<!-- FOR TABLET & PHONE -->
+  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#naviToggler" aria-control="naviToggler" aria-expand="false" aria-label="Toggle Navigation">
+    <span><img src="images/menu.svg" height="23px" width="34.5px"></span>
+  </button>
+  <a class="navbar-brand py-0 mx-auto d-lg-none">
+    <img src="images/logo.png" height="65px" width="190px">
+  </a>
+  <div class="d-lg-none ms-auto">
+    <a href="" class="nav-link me-2">
+      <img src="images/tool2.svg" height="25px" width="25px">
+    </a>
+  </div>
+  <div class="collapse navbar-collapse d-lg-none" id="naviToggler">
+    <ul class="navbar-nav bg-light me-auto mb-2">
+      <form class="d-flex" role="search">
+        <input type="search" class="form-control my-auto" placeholder="Tìm kiếm..." aria-label="search" aria-describedby="searchBar" style="background-color: #FFFFFF;">
+        <button class="btn btn-light" type="button" id=searchBar>
+          <img src="images/search_black.svg" height="15px" width="15px">
+        </button>
+      </form>
+      <li class="nav-item">
+        <a class="nav-link" href="" style="color: black; margin-left: 10px;">Trang chủ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" style="color: black; margin-left: 10px;">Sản phẩm</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" style="color: black; margin-left: 10px;">Câu hỏi thường gặp</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" style="color: black; margin-left: 10px;">Về BKPee</a>
+      </li>
+    </ul>
+  </div>
+<!-- FOR TABLET & PHONE -->
+</nav>
+  </div>
+<!-- End of Navigation Bar -->
+<!-------------------------------------------------------------------------------->
+<!--Account main-->
+  <div class="container mainContainer">
+  <div class="MyAccount-container">
+    <div class="account-label">
+      <div class="account-label-name">Tài khoản của tôi</div>
+      <div class="change-button-container">
+        <button class="change-button">
+          <div class="change-button-text-container">
+            <div class="change-button-text">Chỉnh sửa</div>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="account-information-container">
+      <div class="account-information-label">Thông tin tài khoản</div>
+      <div class="AccountInfo-container">
+        <div class="AccountInfo-frame1">
+          <div class="AccountInfo-frame2">
+            <div class="Field">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Email</div>
+                </div>
+              </div>
+              <div class="FormText">
+                <input type="text" class="form-control" id="nameSignUp" placeholder="lorem.ipsum@gmail.com">
+              </div>
+            </div>
+            <div class="Field">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Name</div>
+                </div>
+              </div>
+              <div class="FormText">
+                <input type="text" class="form-control" id="nameSignUp" placeholder="Lorem Ipsum">
+              </div>
+            </div>
+            <div class="Dropdown">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Country</div>
+                </div>
+              </div>
+              <div class="Dropdown">
+                <select class="form-select" aria-label="choose-country">
+                  <option selected>Choose a country</option>
+                  <option value="1">Viet Nam</option>
+                  <option value="2">Canada</option>
+                  <option value="3">Korea</option>
+                </select>
+              </div>
+            </div>
+            <div class="Dropdown">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">State/Province</div>
+                </div>
+              </div>
+              <div class="Dropdown">
+                <select class="form-select" aria-label="choose-State/Province">
+                  <option selected>Choose State/Province</option>
+                  <option value="1">Ottawa</option>
+                  <option value="2">Ottawa</option>
+                  <option value="3">Ottawa</option>
+                </select>
+              </div>
+            </div>
+            <div class="Dropdown">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">City</div>
+                </div>
+              </div>
+              <div class="Dropdown">
+                <select class="form-select" aria-label="choose-city">
+                  <option selected>Choose City</option>
+                  <option value="1">Tokyo</option>
+                  <option value="2">Tokyo</option>
+                  <option value="3">Tokyo</option>
+                </select>
+              </div>
+            </div>
+            <div class="Field">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Zip code</div>
+                </div>
+              </div>
+              <div class="FormText">
+                <input type="text" class="form-control" id="nameSignUp" placeholder="00100100">
+              </div>
+            </div>
+            <div class="Field">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Address</div>
+                </div>
+              </div>
+              <div class="FormText">
+                <input type="text" class="form-control" id="nameSignUp" placeholder="10 Hello World, Ottawa">
+              </div>
+            </div>
+            <div class="Field">
+              <div class="LabelIcon">
+                <div class="Label">
+                  <div class="Text">Phone number</div>
+                </div>
+              </div>
+              <div class="FormText">
+                <input type="text" class="form-control" id="nameSignUp" placeholder="+555-2323-2333">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Line6" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+    <div class="Password-container">
+      <div style="width: 200px; color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; word-wrap: break-word">Password</div>
+      <div class="Password-info">
+        <button type="button" class="btn btn-secondary">Lưu thay đổi mật khẩu</button>
+        <div class="Field">
+          <div class="LabelIcon">
+            <div class="Label">
+              <div class="Text">Old password</div>
+            </div>
+          </div>
+          <div class="FormText">
+            <input type="password" class="form-control" id="Password-container">
+          </div>
+        </div>
+        <div class="Field">
+          <div class="LabelIcon">
+            <div class="Label">
+              <div class="Text">New password</div>
+            </div>
+          </div>
+          <div class="FormText">
+            <input type="password" class="form-control" id="Password-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
+      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
+      <button type="button" class="btn btn-secondary">Hủy</button>
+    </div>
+  </div>
+  <div class="Line8" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+  <div class="Product-SellRequest">
+    <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Gửi yêu cầu đăng bán sản phẩm</div>
+    <div class="AccountInfo">
+      <div class="Frame96">
+        <div class="Frame95" style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Tên sản phẩm</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Giá đề xuất </label>
+              <input type="text" class="form-control" placeholder="Price">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Số lượng</label>
+              <input type="number" class="form-control" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Giới thiệu sản phẩm</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Mô tả chi tiết sản phẩm</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Mô tả tình trạng sản phẩm</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">HÌnh ảnh thực tế, URL cách nhau bởi dấu phẩy. Ít nhất 3 ảnh</label>
+              <input type="text" class="form-control" placeholder="Link">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Phân loại</label>
+              <select class="form-control">
+                <option>Vip</option>
+                <option>Siêu cấp pro Vip</option>
+              </select>
+            </div>
+          </form>
+          <button type="button" class="btn btn-primary">Gửi yêu cầu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Line9" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+  <div class="BuyOrder-container">
+    <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn mua</div>
+    <div class="Order-list">
+      <div class="ListingElement">
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png"/>
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Đã nhận hàng</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+      <div class="ListingElement">
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png" />
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Chờ nhận hàng tại kho H6</li>
+                <li class="detail-info">Thời gian nhận hàng: 11/11/2023</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Hủy đơn hàng</button>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+    </div>
+  </div>
+  <div class="Line10" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+  <div class="SellOrder-container">
+    <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn bán</div>
+    <div class="AccountInfo">
+      <div class="ListingElement">
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png" />
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Đang chờ bàn giao, xác nhận</li>
+                <li class="detail-info">Vui lòng bàn giao tại kho trước ngày 11/11/2023</li>
+                <li class="detail-info">Sau ngày 11/11/2023 đơn hàng sẽ bị hủy</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Hủy đơn hàng</button>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+      <div class="ListingElement">
+        <button type="button" class="btn btn-danger btn-sm" style="place-self: start;">Hủy đơn hàng</button>
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png" />
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Đã xác nhận</li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Gửi yêu cầu chỉnh sửa thông tin sản phẩm</button>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+      <div class="ListingElement">
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png" />
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Đã hủy</li>
+                <li class="detail-info">Vui lòng đến nhận sẩn phẩm tại kho trước ngày 11/11/2023</li>
+                <li class="detail-info">Sau ngày 11/11/2023 sản phẩm sẽ được đăng tải cho tặng trên website</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+      <div class="ListingElement">
+        <div class="ListingElement-frame">
+          <img style="width: 99px; height: 130px" src="images/book.png" />
+          <div class="ListingElement-detail">
+            <div class="Element-detail">
+              <div class="Element-header">
+                <div class="header-price">Sách giáo trình Giải tích 2</div>
+                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+              </div>
+              <ul>
+                <li class="detail-info">Tình trạng: Đã bán</li>
+                <li class="detail-info">Đơn hàng sẽ được thanh toán cho bạn sau ngày 11/11/2023 
+                  nếu người mua không có phản hồi khiểu nại/đổi trả
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!--End of Account main-->      
+<!-- Footer -->
+<div class="footer">
+  <div class="container footerContainer">
+    <div class="row justify-content-center">
+      <div class="col-auto d-none d-lg-block">
+        <img src="images/HCMCUT 1.svg" height="142px" width="130px">
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <span class="footerTitleText">Liên hệ</span>
+        <br>
+        <div class="footerText">
+          +84123456789
+          <br>
+          <a href="">Email</a>
+          <br>
+          <a href="">Facebook</a>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3 d-none d-md-block d-lg-none">
+        <span class="footerTitleText">Liên hệ</span>
+        <br>
+        <div class="footerText">
+          +84123456789
+          <br>
+          <a href="">Email</a>
+          <br>
+          <a href="">Facebook</a>
+        </div>
+      </div>
+      <div class="col-sm-12 mb-4 d-sm-block d-md-none">
+        <span class="footerTitleText">Liên hệ</span>
+        <br>
+        <div class="footerText">
+          +84123456789
+          <br>
+          <a href="">Email</a>
+          <br>
+          <a href="">Facebook</a>
+        </div>
+      </div>
+      <div class="col-4 d-none d-lg-block">
+        <span class="footerTitleText">Địa chỉ</span>
+        <br>
+        <div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+      </div>
+      <div class="col-md-6 mb-3 d-none d-md-block d-lg-none">
+        <span class="footerTitleText">Địa chỉ</span>
+        <br>
+        <div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+      </div>
+      <div class="col-sm-12 mb-4 d-sm-block d-md-none">
+        <span class="footerTitleText">Địa chỉ</span>
+        <br>
+        <div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+      </div>
+      <div class="col-4 d-none d-lg-block">
+        <span class="footerTitleText">Đăng ký</span>
+        <br>
+        <div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới.</div>
+        <div class="footerText">Hủy bất cứ lúc nào.</div>
+        <form>
+          <input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+          <button class="btn btn-primary" type="submit">Xác nhận</button>
+        </form>
+      </div>
+      <div class="col-md-6 mx-auto d-none d-md-block d-lg-none">
+        <span class="footerTitleText">Đăng ký</span>
+        <br>
+        <div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới. Hủy bất cứ lúc nào.</div>
+        <form>
+          <input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+          <button class="btn btn-primary" type="submit">Xác nhận</button>
+        </form>
+      </div>
+      <div class="col-sm-12 d-sm-block d-md-none">
+        <span class="footerTitleText">Đăng ký</span>
+        <br>
+        <div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới. Hủy bất cứ lúc nào.</div>
+        <form>
+          <input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+          <button class="btn btn-primary" type="submit">Xác nhận</button>
+        </form>
+      </div>
+    </div>
+    <div class="container policyContainer">
+      <div class="row p-0">
+        <div class="col-auto">
+          <a href="" class="footerText" style="text-decoration: none; font-size: 14px">Chính sách bảo mật</a>
+        </div>|
+        <div class="col-auto">
+          <a href="" class="footerText" style="text-decoration: none; font-size: 14px">Chính sách đổi trả, khiếu nại</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Footer -->
+<!-------------------------------------------------------------------------------->
+<!-- Import Framework -->
+<script type="text/javascript" src="css/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- End of importing Framework -->
+</body>
+</html>
