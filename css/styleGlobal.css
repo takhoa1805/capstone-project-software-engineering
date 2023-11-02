@@ -1,0 +1,157 @@
+/*Header Customize*/
+.header{
+	background-color: #1D5776;
+	height: 30px;
+/*	padding: 0px;*/
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.header nav{
+	background-color: transparent;
+	float: right;
+	padding: 0px;
+	margin: 0px;
+}
+
+.header a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 21px;
+	word-wrap: break-word;
+	padding-left: 100px;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	padding-right: 0px;
+}
+
+/*Header Customize*/
+
+/*Footer Customize*/
+.footer{
+	height: auto;
+	background-color: #0795DF;
+	margin: 0px !important;
+	padding-top: 50px;
+	padding-bottom: 34px;
+	padding-right: 53px;
+	padding-left: 53px;
+}
+
+.footerContainer{
+	padding: 0px;
+	margin: 0px;
+}
+
+.footerTitleText{
+	color: white;
+	font-size: 16px;
+	font-family: Inconsolata;
+	font-weight: 700;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.footerText{
+	color: white;
+	font-size: 16px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.footer a{
+	color: white;
+	font-size: 16px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+	text-decoration: none;
+}
+
+.footerContainer form input::placeholder{
+	color: #999999;
+	font-family: Inconsolata;
+}
+
+.footerContainer form input{
+	margin-bottom: 7px;
+	margin-top: 7px;
+	color: White !important;
+}
+
+.footerContainer form button{
+	background-color: #0F6CBD;
+	color: white;
+	font-size: 14px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 20px;
+	word-wrap: break-word;
+	margin-bottom: 26.5px;
+}
+
+/*Footer Customize*/
+
+/*Navigation Bar Customize*/
+.navContainer{
+	background-color: #0795DF;
+/*	margin: 0px !important;
+	padding: 0px !important;*/
+	height: 65px;
+}
+
+.navContainer nav{
+	background-color: #0795DF;
+	margin: 0px !important;
+	padding: 0px !important;
+	width: 100%;
+}
+
+.nav-link{
+	color: White;
+	font-size: 21px;
+	font-family: Inconsolata;
+	font-weight: 500;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+
+.navContainer form input::placeholder{
+	font-family: Inconsolata;
+}
+
+.navContainer form input{
+	height: 35px;
+	margin-top: 5px;
+}
+/*Navigation Bar Customize*/
+
+@media (min-width: 768px){
+	/*Header Customize*/
+	.header{
+		padding-right: 26px;
+	}
+	.header a{
+		padding-left: 57px;
+	}
+	/*Header Customize*/
+}
+
+@media (min-width: 1280px){
+	/*Header Customize*/
+	.header{
+		padding-right: 46px;
+	}
+	/*Header Customize*/
+
+	/*Footer Customize*/
+
+	/*Footer Customize*/
+}

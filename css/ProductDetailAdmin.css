@@ -1,0 +1,205 @@
+body, html {
+    min-width: 1280px;
+    overflow: auto;
+}
+
+.Maincontainer {
+    width: 1280px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.ApproveCancel {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.Text {
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.Return {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.Product-header-container {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.Product-header {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.Product-Name {
+    align-self: stretch;
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Product-Price {
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+/*  Slide show  */
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+/* End slide show */
+
+.Overview-container,
+.Specs-container,
+.TheBox-container,
+.Reviews-container,
+.Support-container {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.Overview-label,
+.Specs-label,
+.TheBox-label,
+.Reviews-label,
+.Support-label {
+    width: 200px;
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Overview-detail,
+.Specs-detail,
+.TheBox-detail,
+.Reviews-detail,
+.Support-detail {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.detail-1 {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    display: inline-flex;
+}
+
+.detail-label {
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.detail-text {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.detail-2 {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    display: inline-flex;
+}
+
+.detail-3 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+}
+
+@media (min-width: 768px) {
+
+    /*Main Container Customize*/
+    .mainContainer {
+        gap: 30px;
+    }
+
+    /*Main Container Customize*/
+
+}
+
+@media (min-width: 1280px) {}

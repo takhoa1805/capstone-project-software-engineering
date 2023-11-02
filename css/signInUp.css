@@ -1,0 +1,100 @@
+/*Main Container Customize*/
+.mainContainer {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.mainTitle{
+	color: black;
+	font-size: 24px;
+	font-family: Inconsolata;
+	font-weight: 700;
+	line-height: 36px;
+	word-wrap: break-word;
+}
+
+.labelText{
+	color: black;
+	font-size: 14px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+
+.mainContainer button{
+	background-color: #0F6CBD;
+	color: white;
+	font-size: 14px;
+	font-family: Inconsolata;
+	font-weight: 500;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+
+.mainContainer form input::placeholder{
+	color: #707070;
+	font-size: 14px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+
+.noteText{
+	color: black;
+	font-size: 12px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+
+.mainContainer a{
+	color: black;
+	font-size: 12px;
+	font-family: Inconsolata;
+	font-weight: 400;
+	line-height: 20px;
+}
+/*Main Container Customize*/
+
+/*Log in Container Customize*/
+.loginContainer{
+	width: 280px;
+	margin: 0px;
+}
+
+/*Log in Container Customize*/
+
+/*Sign up Container Customize*/
+.signUpContainer{
+	width: 280px;
+	margin-top: 90px;
+	margin-bottom: 90px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+/*Sign up Container Customize*/
+
+/*forgetPassword Container Customize*/
+.forgetPasswordContainer{
+	width: 280px;
+	margin: 0px;
+}
+/*forgetPassword Container Customize*/
+@media (min-width: 768px){
+/*Main Container Customize*/
+.mainContainer {
+	margin-left: 220px;
+	margin-right: 220px;
+}
+/*Main Container Customize*/
+
+}
+
+@media (min-width: 1280px){
+	
+}
