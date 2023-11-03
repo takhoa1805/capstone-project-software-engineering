@@ -1,6 +1,8 @@
 const usersmodel  = require("../models/users");
 const ordermodel  = require("../models/order");
+const productsmodel = require("../models/products");
 const { v4: uuidv4 } = require('uuid'); //generate uniq id
+const productrepository  = require('../functions/product-function');
 const order = require("../models/order");
 
 
@@ -59,6 +61,23 @@ class shoppingrepository {
                 if(cartItems.length > 0){
                     cartItems.map(item => {
                         amount += parseInt(item.product.price) *  parseInt(item.unit);   
+                        //quantity decrement from database
+                        // productrepository.updateproductquantity(item.product._id,item.unit);
+                        let currentProduct = productsmodel.findById(item.product._id)
+                        .exec()
+                        .then((result)=>{
+                            let productLeft = result.quantity - item.unit;
+                            if (productLeft < 0){
+                                throw "Number of product exceeds current quantity";
+                            }   else{
+                                productsmodel.findOneAndUpdate({_id: item.product._id},{$set:{
+                                    "quantity":productLeft
+                                }})
+                            }
+                        });
+
+                        // let productLeft = productmodel.findById(item.product._id)[0]-item.unit;
+
                     });
                     const orderid = uuidv4();
                     let orderdate = new Date(year, month, day, hour, minute);

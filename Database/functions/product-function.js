@@ -94,6 +94,26 @@ class productrepository {
       throw err;
     }
   }
+
+  //Product's quantity update after order is placed
+  async updateproductquantity(productid,decrement){
+    try{
+      const productLeft = await this.findbyid(productid)[0]-decrement;
+      if (productLeft < 0){
+        throw "Number of product exceeds current quantity";
+      } else{
+        const result = productsmodel.findOneAndUpdate({_id : productid}, {$set: {
+          "quantity": productLeft
+        }})
+          .exec();
+        return result;
+      
+    }
+    } catch (err){
+      throw err;
+    }
+  }
+
 }
 
 module.exports = productrepository;
