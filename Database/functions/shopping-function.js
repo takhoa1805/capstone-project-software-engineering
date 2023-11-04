@@ -92,7 +92,7 @@ class shoppingrepository {
                         userid,
                         orderid,
                         orderdate,
-                        status:'processing',
+                        status:'done',
                         amount,
                         items: cartItems
                     })

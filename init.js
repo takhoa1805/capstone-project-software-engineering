@@ -1,6 +1,6 @@
 const express = require('express');
 const cors  = require('cors');
-const{users,products,shopping} = require('./API');
+const{users,products,shopping,sales} = require('./API');
 const morgan = require('morgan');
 module.exports = async (app) => {
 
@@ -12,6 +12,7 @@ module.exports = async (app) => {
     users(app);
     products(app);
     shopping(app);
+    sales(app);
     app.use((req,res,next)=>{
         const error = new Error('Not Found');
         error.status = 404;

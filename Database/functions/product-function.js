@@ -95,6 +95,26 @@ class productrepository {
     }
   }
 
+  async updateproductinformation(newinfo){
+    try{  
+      const result = await productsmodel.findOneAndUpdate({_id : newinfo._id}, {$set: {
+        "name":newinfo.name,
+        "price":newinfo.price,
+        "quantity":newinfo.quantity,
+        "type":newinfo.type,
+        "status":newinfo.status,
+        "specification":newinfo.specification,
+        "reasonforsale":newinfo.reasonforsale
+    }})
+      .exec()
+      .then(result=>{
+        return result;
+      })
+    } catch(err){
+      throw err;
+    }
+  }
+
 }
 
 module.exports = productrepository;

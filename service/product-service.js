@@ -78,6 +78,16 @@ class productservice {
             throw err;
         }
     }
+
+    async updateproduct(newinfo){
+        try{
+            const product = await this.repository.updateproductinformation(newinfo);
+            return formatedata(product);
+        }   catch(err){
+            throw err;
+        }
+    }
+
 }
 
 module.exports = productservice;

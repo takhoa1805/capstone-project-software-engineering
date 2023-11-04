@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
 const productschema= mongoose.Schema({
+    uploaduserid: {type:String, requested: true},
     name: String,
     price : Number,
     quantity: Number,
     type: String,
-    status: String,
-    specification: String,
+    status: String, //upload-requested, <reason to remove>, available
+    specification: String, 
     reasonforsale: String,
 }
 ,{

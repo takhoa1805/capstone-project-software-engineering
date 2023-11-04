@@ -6,7 +6,7 @@ const orderschema = new Schema({
     usersid:String,//unique
     orderid: String,//unique
     orderdate:String,
-    status: String,
+    status: String, //{done,cash-back-requested }
     amount: Number,
     deliveryway: String,
     items: [
