@@ -2,8 +2,6 @@ const usersmodel  = require("../models/users");
 const ordermodel  = require("../models/order");
 const productsmodel = require("../models/products");
 const { v4: uuidv4 } = require('uuid'); //generate uniq id
-const productrepository  = require('../functions/product-function');
-const order = require("../models/order");
 
 
 //Dealing with data base operations
@@ -61,26 +59,35 @@ class shoppingrepository {
                 if(cartItems.length > 0){
                     cartItems.map(item => {
                         amount += parseInt(item.product.price) *  parseInt(item.unit);   
-                        //quantity decrement from database
-                        // productrepository.updateproductquantity(item.product._id,item.unit);
-                        let currentProduct = productsmodel.findById(item.product._id)
-                        .exec()
-                        .then((result)=>{
-                            let productLeft = result.quantity - item.unit;
-                            if (productLeft < 0){
-                                throw "Number of product exceeds current quantity";
-                            }   else{
-                                productsmodel.findOneAndUpdate({_id: item.product._id},{$set:{
-                                    "quantity":productLeft
-                                }})
-                            }
-                        });
+                        //Update product quantity
+                        const productLeft = parseInt(item.product.quantity) - parseInt(item.unit) ;
+                        if(productLeft <0){
+                            console.log(item.product.name);
+                            throw "Number of product " +(item.product.name) +" exceeds product's current quantity";
+                        }  else if(productLeft===0){
+                            productsmodel.deleteOne({_id:item.product._id})
+                            .exec()
+                            .then(result=>{
+                                return result;
+                            })
+                            .catch(err=>{
+                                console.log(err);
+                                throw err;
+                            })
+                        } else{
+                            productsmodel.findOneAndUpdate({_id:item.product._id},{$set :{
+                                "quantity":productLeft
+                            }}).exec()
+                                .catch(err=>{
+                                    throw err;
+                                });
+                        }
 
-                        // let productLeft = productmodel.findById(item.product._id)[0]-item.unit;
 
                     });
                     const orderid = uuidv4();
-                    let orderdate = new Date(year, month, day, hour, minute);
+                    // let orderdate = new Date(year, month, day, hour, minute);
+                    let orderdate=Date.now();
                     const order = new ordermodel({
                         userid,
                         orderid,
@@ -104,7 +111,7 @@ class shoppingrepository {
           return {};
 
         }catch(err){
-            throw err;
+            return err;
         }
         
 
