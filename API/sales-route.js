@@ -7,7 +7,7 @@ module.exports = (app)=>{
     const users_service = new usersservice();
 
     //request to upload new product
-    app.post('/sale/upload-request',userauth,async (req,res,next)=>{
+    app.post('/sales/upload-request',userauth,async (req,res,next)=>{
         try {
             const status = "upload-requested";
             const {_id} = req.body;

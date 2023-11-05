@@ -88,6 +88,24 @@ class productservice {
         }
     }
 
+    async getrequestingproduct(request){
+        try{
+            //get upload request
+            if (request === "upload-requested"){
+                const product = await this.repository.getuploadrequestproduct();
+                return formatedata(product);
+            }   else if (request !== "available" ){ //get delete request
+                const product = await this.repository.getdeleterequestproduct();
+                return formatedata(product);
+            }   else{
+                return {};
+            }
+
+        }   catch (err){
+            throw err;
+        }
+    }
+
 }
 
 module.exports = productservice;

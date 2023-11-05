@@ -131,5 +131,23 @@ module.exports = (app) => {
             next(err)
         }
     });
+
+    app.get('/product/admin/upload-requests',userauth, async(req,res,next)=>{
+        try{
+            //find product that status = upload-requested
+        } catch(err){
+            next(err);
+        }
+
+    })
+
+    app.get('/product/admin/delete-request',userauth, async(req,res,next)=>{
+        try{
+            //find product that status != "upload-requested" && != available
+        }   catch(err){
+            next(err);
+        }
+    })
+
     
 }

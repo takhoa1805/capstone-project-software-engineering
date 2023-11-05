@@ -115,6 +115,22 @@ class productrepository {
     }
   }
 
+  async getuploadrequestproduct(){
+    try{
+      //get product that is requested upload
+    } catch(err){
+      throw err;
+    }
+  }
+
+  async getdeleterequestproduct(){
+    try {
+      //get product that is requested delete
+    } catch (err){
+      throw err;
+    }
+  }
+
 }
 
 module.exports = productrepository;
