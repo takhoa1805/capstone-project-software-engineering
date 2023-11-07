@@ -94,7 +94,7 @@ class productservice {
             if (request === "upload-requested"){
                 const product = await this.repository.getuploadrequestproduct();
                 return formatedata(product);
-            }   else if (request !== "available" ){ //get delete request
+            }   else if (request === "delete" ){ //get delete request
                 const product = await this.repository.getdeleterequestproduct();
                 return formatedata(product);
             }   else{

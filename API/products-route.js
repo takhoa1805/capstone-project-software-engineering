@@ -135,15 +135,19 @@ module.exports = (app) => {
     app.get('/product/admin/upload-requests',userauth, async(req,res,next)=>{
         try{
             //find product that status = upload-requested
+            const {data} = await proservice.getrequestingproduct('upload-requested');
+            return res.status(200).json(data);
         } catch(err){
             next(err);
         }
 
     })
 
-    app.get('/product/admin/delete-request',userauth, async(req,res,next)=>{
+    app.get('/product/admin/delete-requests',userauth, async(req,res,next)=>{
         try{
             //find product that status != "upload-requested" && != available
+            const {data} = await proservice.getrequestingproduct('delete');
+            return res.status(200).json(data);
         }   catch(err){
             next(err);
         }

@@ -1,3 +1,4 @@
+const products = require("../models/products");
 const productsmodel = require("../models/products");
 
 class productrepository {
@@ -118,6 +119,9 @@ class productrepository {
   async getuploadrequestproduct(){
     try{
       //get product that is requested upload
+      const result = await productsmodel.find({status:"upload-requested"});
+      return result;
+
     } catch(err){
       throw err;
     }
@@ -126,6 +130,13 @@ class productrepository {
   async getdeleterequestproduct(){
     try {
       //get product that is requested delete
+      const result = await productsmodel.find({
+        $and:[
+          {status: {$ne:"upload-requested"}},
+          {status: {$ne:"available"}}
+        ]
+      });
+      return result;
     } catch (err){
       throw err;
     }
