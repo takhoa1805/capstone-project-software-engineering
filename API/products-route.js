@@ -1,7 +1,7 @@
 const { isValidObjectId } = require('mongoose');
 const productservice = require('../service/product-service');
 const usersservice = require('../service/users-service');
-const userauth = require('./middlewares/auth')
+const userauth = require('./middlewares/auth');
 
 module.exports = (app) => {
     
@@ -9,9 +9,9 @@ module.exports = (app) => {
     const useservice = new usersservice();
 
     //create product
-    app.post('/product/create', async(req,res,next) => {
+    app.post('/product/admin/create', async(req,res,next) => {
         try {
-            const { name,price,quantity ,type,status,specification,reasonforsale } = req.body; 
+            const { uploaduserid,name,price,quantity ,type,status,specification,reasonforsale } = req.body; 
             // validation
             const { data } =  await proservice.createproduct({ name,price,quantity,type,status,specification,reasonforsale });
             return res.json(data);
@@ -19,7 +19,7 @@ module.exports = (app) => {
             next(err)    
         }  
     });
-    app.delete('/product/delete/:id', async(req,res,next) => {
+    app.delete('/product/admin/delete/:id', async(req,res,next) => {
         try {
             const id = req.params.id;
             if(isValidObjectId(id)){
