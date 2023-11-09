@@ -18,8 +18,9 @@ module.exports = (app)=>{
 
             const {name,price,quantity,type,specification,reasonforsale}=req.body;
             const status = "upload-requested";
-            const {_id} =req.body;
-            const {uploaduserid} = _id;
+            const {_id} =req.user;
+            const uploaduserid = _id;
+            console.log(uploaduserid)
             //validation
             const {data} = await product_service.createproduct({uploaduserid,name,price,quantity,type,status,specification,reasonforsale});
             return res.json(data);
@@ -28,24 +29,29 @@ module.exports = (app)=>{
         }
     })
 
-    app.post('/sales/delete-request/:id',userauth,async (req,res,next)=>{
+    app.post('/sales/product/delete-request/:id',userauth,async (req,res,next)=>{
+        const productid = req.params.id;
         try{
-            const product=product_service.getproductbyid(req.params._id);
-            const {_id} = req.body;
-            const {status} = req.remove_reason;
+            const {data}= await product_service.getproductbyid(productid);
+            const {_id} = req.user;
+            const status = req.body.remove_reason;
+            // console.log(_id);
+            // console.log(data);
 
-            if (product.uploaduserid === _id ) {//remove request is from uploader
+            if (data[0].uploaduserid === _id ) {//remove request is from uploader
                 const newinfo ={
-                    "name":product.name,
-                    "price":product.price,
-                    "quantity":product.quantity,
-                    "type":product.type,
+                    "_id":productid,
+                    "uploaduserid":data[0].uploaduserid,
+                    "name":data[0].name,
+                    "price":data[0].price,
+                    "quantity":data[0].quantity,
+                    "type":data[0].type,
                     "status":"remove-reason: "+status,
-                    "specification":product.specification,
-                    "reasonforsale":product.reasonforsale
+                    "specification":data[0].specification,
+                    "reasonforsale":data[0].reasonforsale
                 }
-                const{data} = await product_service.updateproduct(newinfo);
-                return res.json(data);
+                const result = await product_service.updateproduct(newinfo);
+                return res.json(result);
             }   else{
                 return res.status(405).json({
                     message:"You are not allowed to perform this operation"

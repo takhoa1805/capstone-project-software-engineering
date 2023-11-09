@@ -82,7 +82,7 @@ class productservice {
     async updateproduct(newinfo){
         try{
             const product = await this.repository.updateproductinformation(newinfo);
-            return formatedata(product);
+            return "Product delete request sent";
         }   catch(err){
             throw err;
         }

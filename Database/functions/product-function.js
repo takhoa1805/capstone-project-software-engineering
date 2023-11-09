@@ -3,6 +3,7 @@ const productsmodel = require("../models/products");
 
 class productrepository {
   async createproduct({
+    uploaduserid,
     name,
     price,
     quantity,
@@ -13,6 +14,7 @@ class productrepository {
   }) {
     try {
       const product = new productsmodel({
+        uploaduserid,
         name,
         price,
         quantity,
@@ -98,7 +100,7 @@ class productrepository {
 
   async updateproductinformation(newinfo){
     try{  
-      const result = await productsmodel.findOneAndUpdate({_id : newinfo._id}, {$set: {
+      return await productsmodel.findOneAndUpdate({_id : newinfo._id}, {$set: {
         "name":newinfo.name,
         "price":newinfo.price,
         "quantity":newinfo.quantity,
@@ -106,11 +108,8 @@ class productrepository {
         "status":newinfo.status,
         "specification":newinfo.specification,
         "reasonforsale":newinfo.reasonforsale
-    }})
-      .exec()
-      .then(result=>{
-        return result;
-      })
+    }}).exec();
+
     } catch(err){
       throw err;
     }
