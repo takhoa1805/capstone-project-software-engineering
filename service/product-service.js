@@ -19,14 +19,23 @@ class productservice {
     }
     async deleteproductbyid(productid){
         try{
-            const result = this.repository.deleteproductbyid(productid)
-            return formatedata(result)
+            const result = await this.repository.deleteproductbyid(productid)
+            return formatedata(result);
         }
         catch(err){
             throw err
         } 
     }
     
+    async approveproduct(productid){
+        try{
+            const result = await this.repository.approveproductbyid(productid);
+            // console.log(result);
+            return (result);
+        }   catch(err){
+            throw err;
+        }
+    }
 
     async getproducts(){
         try{
@@ -102,6 +111,15 @@ class productservice {
             }
 
         }   catch (err){
+            throw err;
+        }
+    }
+
+    async getproductbyuploaduser(userid){
+        try{
+            const product = await this.repository.getproductbyuploaduserid(userid);
+            return formatedata(product);
+        }catch(err){
             throw err;
         }
     }

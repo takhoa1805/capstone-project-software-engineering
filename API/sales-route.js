@@ -16,13 +16,12 @@ module.exports = (app)=>{
             // const {name,price,quantity,type,specification,reasonforsale} = req.body;
             // const {data} = await product_service.createproduct({uploaduserid,name,price,quantity,type,status,specification,reasonforsale});
 
-            const {name,price,quantity,type,specification,reasonforsale}=req.body;
+            const {name,price,quantity,type,specification,reasonforsale,image}=req.body;
             const status = "upload-requested";
             const {_id} =req.user;
             const uploaduserid = _id;
-            console.log(uploaduserid)
             //validation
-            const {data} = await product_service.createproduct({uploaduserid,name,price,quantity,type,status,specification,reasonforsale});
+            const {data} = await product_service.createproduct({uploaduserid,name,price,quantity,type,status,specification,reasonforsale,image});
             return res.json(data);
         }   catch (err){
             next(err);
@@ -61,4 +60,16 @@ module.exports = (app)=>{
             next(err);
         }
     })
+
+    // get one's upload product
+    app.get('/sales/products/:id',userauth,async(req,res,next)=>{
+        const userid = req.params.id;
+        try{
+            const {data} = await product_service.getproductbyuploaduser(userid);
+            return res.status(200).json(data);
+        }   catch(err){
+            next(err);
+        }
+    })
+
 }

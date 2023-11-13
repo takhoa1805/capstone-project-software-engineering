@@ -9,12 +9,34 @@ class shoppingrepository {
     //payment
     async getorder(userid){
         try{
-            const orders = await usersmodel.find({userid}).populate('items.product');        
-            return orders;
+            // const orders = await usersmodel.find({userid}).populate('items.product');
+            // const orders = await usersmodel.find({_id:userid});    
+            // console.log(orders.order)    
+            const result = await ordermodel.find({usersid:userid});
+            return result;
         }catch(err){
             throw err;
         }
     }
+
+    async getallorders(){
+        try{
+            const result = await ordermodel.find();
+            return result;
+        }   catch(err){
+            throw err;
+        }
+    }
+
+    async getoneorder(orderid){
+        try{
+            const result = await ordermodel.findById(orderid);
+            return result;
+        }   catch(err){
+            throw err;
+        }
+    }
+
     async deleteorder(userid,orderid){
         try{
             const profile = await usersmodel.findById(userid);
@@ -89,7 +111,7 @@ class shoppingrepository {
                     // let orderdate = new Date(year, month, day, hour, minute);
                     let orderdate=Date.now();
                     const order = new ordermodel({
-                        userid,
+                        usersid:userid,
                         orderid,
                         orderdate,
                         status:'done',
@@ -116,6 +138,8 @@ class shoppingrepository {
         
 
     }
+
+
 }
 
 module.exports = shoppingrepository;

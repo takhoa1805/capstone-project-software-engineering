@@ -11,14 +11,16 @@ module.exports = (app) => {
     //create product
     app.post('/product/admin/create', async(req,res,next) => {
         try {
-            const { uploaduserid,name,price,quantity ,type,status,specification,reasonforsale } = req.body; 
+            const { uploaduserid,name,price,quantity ,type,specification,reasonforsale ,image} = req.body; 
             // validation
-            const { data } =  await proservice.createproduct({ name,price,quantity,type,status,specification,reasonforsale });
+            const status = 'available';
+            const { data } =  await proservice.createproduct({ uploaduserid,name,price,quantity,type,status,specification,reasonforsale ,image});
             return res.json(data);
         } catch (err) {
             next(err)    
         }  
     });
+    //product delete
     app.delete('/product/admin/delete/:id', async(req,res,next) => {
         try {
             const id = req.params.id;
@@ -34,6 +36,17 @@ module.exports = (app) => {
             next(err)    
         }
     });
+
+    app.patch('/product/admin/approve-product/:productid',async(req,res,next)=>{
+        const productid = req.params.productid;
+        try{            
+            const data =await proservice.approveproduct(productid);
+            return res.status(200).json(data);
+        }   catch(err){
+            next(err);
+        }
+    });
+
     // get stuff by type (books,ticket,...)
     app.get('/product/category/:type', async(req,res,next) => {
         const type = req.params.type;
@@ -90,7 +103,7 @@ module.exports = (app) => {
     });
     //delete stuff in cart
     app.delete('/product/cart/delete',userauth, async (req,res,next) => {
-        const { _id } = req.body; 
+        const { _id } = req.body; //product id to remove from cart
         try {
             if(isValidObjectId(_id)){
                 const {data} = await useservice.addtocart(req.user._id,_id, quantity, true);     // true === remove    
@@ -132,6 +145,7 @@ module.exports = (app) => {
         }
     });
 
+    //get all products that being requested to upload
     app.get('/product/admin/upload-requests',userauth, async(req,res,next)=>{
         try{
             //find product that status = upload-requested
@@ -143,6 +157,7 @@ module.exports = (app) => {
 
     })
 
+    //get all products that being requested to delete
     app.get('/product/admin/delete-requests',userauth, async(req,res,next)=>{
         try{
             //find product that status != "upload-requested" && != available

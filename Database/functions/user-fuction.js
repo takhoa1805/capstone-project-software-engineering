@@ -1,5 +1,6 @@
 const  usersmodel  = require("../models/users");
 const  addressmodel  = require("../models/address");
+const productmodel = require("../models/products");
 
 class usersrepository {
   async createusers({ email,password,name,salt,phone }) {
@@ -63,6 +64,16 @@ class usersrepository {
   async addcartitem(usersid, productid, quantity, isRemove) {
     try {
       const profile = await usersmodel.findById(usersid);
+      const product = await productmodel.findById(productid);
+
+      if (product.status !=="available" && !isRemove){
+        return {
+          error:{
+            message: "This product is not available"
+          }
+        }
+      }
+      
 
       if (profile) {
         const cartItem = {

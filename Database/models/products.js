@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const productschema= mongoose.Schema({
-    uploaduserid: {type:String, requested: true},
+    uploaduserid: {type:String, required: true},
     name: String,
     price : Number,
     quantity: Number,
@@ -9,6 +9,7 @@ const productschema= mongoose.Schema({
     status: String, //upload-requested, <reason to remove>, available
     specification: String, 
     reasonforsale: String,
+    image:{type:String}
 }
 ,{
     toJSON: {

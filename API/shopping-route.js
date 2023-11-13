@@ -29,7 +29,7 @@ module.exports = (app) => {
             next(err)
         }
     }) 
-    //get orders info
+    //get self's order info
     app.get('/shopping/orders',userauth, async (req,res,next) => {
         const { _id } = req.user;
         try {
@@ -50,4 +50,38 @@ module.exports = (app) => {
             next(err);
         }
     });
+
+    //get someone's order
+    app.get('/shopping/orders/:id',async(req,res,next)=>{
+        const id = req.params.id;
+        try {
+            const {data} = await shopservice.getorders(id);
+            return res.status(200).json(data);
+        } catch (err) {
+            next(err);
+        };
+    });
+
+    //get all order
+    app.get('/shopping/all/orders',async(req,res,next)=>{
+        try{
+            const {data}= await shopservice.getallorders();
+            return res.status(200).json(data);
+        }   catch(err){
+            next(err);
+        }
+    })
+
+    app.get('/shopping/orders/detail/:id',async(req,res,next)=>{
+        const orderid = req.params.id;
+        try{    
+            const data = await shopservice.getorderbyid(orderid);
+            return res.status(200).json(data);
+
+        }   catch(err){
+            next(err);
+        }
+    })
+
+    
 }

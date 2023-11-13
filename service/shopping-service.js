@@ -33,6 +33,25 @@ class shoppingservice {
       throw err;
     }
   }
+
+  async getallorders(){
+    try {
+      const orders = await this.repository.getallorders();
+      return formatedata(orders);
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getorderbyid(orderid){
+    try{
+      const order = await this.repository.getoneorder(orderid);
+      return formatedata(order);
+    } catch(err){
+      next(err);
+    }
+  }
+
 }
 
 module.exports = shoppingservice;

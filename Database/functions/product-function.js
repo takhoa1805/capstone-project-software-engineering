@@ -1,5 +1,6 @@
 const products = require("../models/products");
 const productsmodel = require("../models/products");
+const { formatedata } = require("../side-function/side1");
 
 class productrepository {
   async createproduct({
@@ -11,6 +12,7 @@ class productrepository {
     status,
     specification,
     reasonforsale,
+    image,
   }) {
     try {
       const product = new productsmodel({
@@ -22,6 +24,7 @@ class productrepository {
         status,
         specification,
         reasonforsale,
+        image,
       });
 
       const productResult = await product.save();
@@ -137,6 +140,24 @@ class productrepository {
       });
       return result;
     } catch (err){
+      throw err;
+    }
+  }
+
+  async getproductbyuploaduserid(userid){
+    try{
+      const result = await productsmodel.find({uploaduserid:userid});
+      return result;
+    } catch(err){
+      throw err;
+    }
+  }
+
+  async approveproductbyid(productid){
+    try{
+      const result = await productsmodel.findOneAndUpdate({_id:productid},{$set:{status:'available'}});
+      return result;
+    } catch(err){
       throw err;
     }
   }
