@@ -8,18 +8,24 @@ class shoppingservice {
   }
 
   async placeorder(userinput) {
-    const { _id} = userinput;
+    const { _id } = userinput;
     try {
       const orderresult = await this.repository.createneworder(_id);
+      if (orderresult == '') {
+        console.log(orderresult);
+        return formatedata({
+          message: 'Nothing in cart',
+        });
+      }
       return formatedata(orderresult);
     } catch (err) {
       throw err;
     }
   }
 
-  async deleteorders(userid,orderid) {
+  async deleteorders(userid, orderid) {
     try {
-      const orders = await this.repository.deleteorder(userid,orderid);
+      const orders = await this.repository.deleteorder(userid, orderid);
       return formatedata(orders);
     } catch (err) {
       throw err;
@@ -34,7 +40,7 @@ class shoppingservice {
     }
   }
 
-  async getallorders(){
+  async getallorders() {
     try {
       const orders = await this.repository.getallorders();
       return formatedata(orders);
@@ -43,15 +49,14 @@ class shoppingservice {
     }
   }
 
-  async getorderbyid(orderid){
-    try{
+  async getorderbyid(orderid) {
+    try {
       const order = await this.repository.getoneorder(orderid);
       return formatedata(order);
-    } catch(err){
+    } catch (err) {
       next(err);
     }
   }
-
 }
 
 module.exports = shoppingservice;

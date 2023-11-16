@@ -4,6 +4,7 @@
   "description": "Node.js RESTFUL api",
   "main": "app.js",
   "scripts": {
+    "beautiful": "prettier --single-quote --trailing-comma all --write './**/*.{js,json,scss}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
@@ -21,6 +22,8 @@
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.2",
     "morgan": "^1.10.0",
+    "prettier": "^3.1.0",
+    "pretty": "^2.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

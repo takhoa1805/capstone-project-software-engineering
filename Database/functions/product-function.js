@@ -1,6 +1,6 @@
-const products = require("../models/products");
-const productsmodel = require("../models/products");
-const { formatedata } = require("../side-function/side1");
+const products = require('../models/products');
+const productsmodel = require('../models/products');
+const { formatedata } = require('../side-function/side1');
 
 class productrepository {
   async createproduct({
@@ -26,11 +26,10 @@ class productrepository {
         reasonforsale,
         image,
       });
-
       const productResult = await product.save();
       return productResult;
     } catch (err) {
-        throw err;
+      throw err;
     }
   }
 
@@ -44,7 +43,7 @@ class productrepository {
 
   async findbyid(productid) {
     try {
-      const result = await productsmodel.find({_id: productid});
+      const result = await productsmodel.find({ _id: productid });
       return result;
     } catch (err) {
       throw err;
@@ -61,107 +60,129 @@ class productrepository {
   }
   async findselectedproducts(selectedIds) {
     try {
-      const products = await productsmodel.find()
-        .where("_id")
+      const products = await productsmodel
+        .find()
+        .where('_id')
         .in(selectedIds.map((_id) => _id))
         .exec();
       return products;
     } catch (err) {
-      throw err
+      throw err;
     }
   }
-  async  findproductsbyprice(sortorder,category) {
+  async findproductsbyprice(sortorder, category) {
     try {
-      if(category==='all')
-      {
-        const products = await productsmodel.find({})
-        .sort({price: sortorder})
-        .exec()
-      return products;
+      if (category === 'all') {
+        const products = await productsmodel
+          .find({})
+          .sort({ price: sortorder })
+          .exec();
+        return products;
+      } else {
+        const products = await productsmodel
+          .find({ type: category })
+          .sort({ price: sortorder })
+          .exec();
+        return products;
       }
-      else{
-        const products = await productsmodel.find({ type: category })
-        .sort({price: sortorder})
-        .exec()
-      return products;
-      }
-        
     } catch (err) {
       throw err;
     }
   }
-  async deleteproductbyid(productid){
-    try{
-        const result = await productsmodel.deleteMany({_id : productid})
-        .exec()
-        return result;
-    }
-    catch(err){
-      throw err;
-    }
-  }
-
-  async updateproductinformation(newinfo){
-    try{  
-      return await productsmodel.findOneAndUpdate({_id : newinfo._id}, {$set: {
-        "name":newinfo.name,
-        "price":newinfo.price,
-        "quantity":newinfo.quantity,
-        "type":newinfo.type,
-        "status":newinfo.status,
-        "specification":newinfo.specification,
-        "reasonforsale":newinfo.reasonforsale
-    }}).exec();
-
-    } catch(err){
-      throw err;
-    }
-  }
-
-  async getuploadrequestproduct(){
-    try{
-      //get product that is requested upload
-      const result = await productsmodel.find({status:"upload-requested"});
+  async deleteproductbyid(productid) {
+    try {
+      const result = await productsmodel.deleteMany({ _id: productid }).exec();
       return result;
-
-    } catch(err){
+    } catch (err) {
       throw err;
     }
   }
 
-  async getdeleterequestproduct(){
+  async updateproductinformation(newinfo) {
+    try {
+      return await productsmodel
+        .findOneAndUpdate(
+          { _id: newinfo._id },
+          {
+            $set: {
+              name: newinfo.name,
+              price: newinfo.price,
+              quantity: newinfo.quantity,
+              type: newinfo.type,
+              status: newinfo.status,
+              specification: newinfo.specification,
+              reasonforsale: newinfo.reasonforsale,
+            },
+          },
+        )
+        .exec();
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getuploadrequestproduct() {
+    try {
+      //get product that is requested upload
+      const result = await productsmodel.find({ status: 'upload-requested' });
+      return result;
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async getdeleterequestproduct() {
     try {
       //get product that is requested delete
       const result = await productsmodel.find({
-        $and:[
-          {status: {$ne:"upload-requested"}},
-          {status: {$ne:"available"}}
-        ]
+        $and: [
+          { status: { $ne: 'upload-requested' } },
+          { status: { $ne: 'available' } },
+        ],
       });
       return result;
-    } catch (err){
+    } catch (err) {
       throw err;
     }
   }
 
-  async getproductbyuploaduserid(userid){
-    try{
-      const result = await productsmodel.find({uploaduserid:userid});
+  async getproductbyuploaduserid(userid) {
+    try {
+      const result = await productsmodel.find({ uploaduserid: userid });
       return result;
-    } catch(err){
+    } catch (err) {
       throw err;
     }
   }
 
-  async approveproductbyid(productid){
-    try{
-      const result = await productsmodel.findOneAndUpdate({_id:productid},{$set:{status:'available'}});
-      return result;
-    } catch(err){
+  async approveproductbyid(productid) {
+    try {
+      const myproduct = await productsmodel.find({ _id: productid });
+      if (myproduct) {
+        if (myproduct[0].status !== 'upload-requested') {
+          return {
+            error: {
+              message: 'This product is not on upload request queue',
+            },
+          };
+        }
+        const result = await productsmodel.findOneAndUpdate(
+          { _id: productid },
+          { $set: { status: 'available' } },
+        );
+
+        return result;
+      }
+
+      return {
+        error: {
+          message: 'Product not found',
+        },
+      };
+    } catch (err) {
       throw err;
     }
   }
-
 }
 
 module.exports = productrepository;

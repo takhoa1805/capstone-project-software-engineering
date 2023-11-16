@@ -1,9 +1,9 @@
-const  usersmodel  = require("../models/users");
-const  addressmodel  = require("../models/address");
-const productmodel = require("../models/products");
+const usersmodel = require('../models/users');
+const addressmodel = require('../models/address');
+const productmodel = require('../models/products');
 
 class usersrepository {
-  async createusers({ email,password,name,salt,phone }) {
+  async createusers({ email, password, name, salt, phone }) {
     try {
       const users = new usersmodel({
         email,
@@ -19,7 +19,7 @@ class usersrepository {
       throw err;
     }
   }
-  async createaddress({ _id,country, province, city, street }) {
+  async createaddress({ _id, country, province, city, street }) {
     try {
       const profile = await usersmodel.findById(_id);
 
@@ -51,29 +51,29 @@ class usersrepository {
 
   async findusersbyid({ id }) {
     try {
-      const existingusers = await usersmodel.findById(id)
-        .populate("address")
-        .populate("orders")
-        .populate("cart.product");
+      const existingusers = await usersmodel
+        .findById(id)
+        .populate('address')
+        .populate('orders')
+        .populate('cart.product');
       return existingusers;
     } catch (err) {
       throw err;
     }
   }
-  
+
   async addcartitem(usersid, productid, quantity, isRemove) {
     try {
       const profile = await usersmodel.findById(usersid);
       const product = await productmodel.findById(productid);
 
-      if (product.status !=="available" && !isRemove){
+      if (product.status !== 'available' && !isRemove) {
         return {
-          error:{
-            message: "This product is not available"
-          }
-        }
+          error: {
+            message: 'This product is not available',
+          },
+        };
       }
-      
 
       if (profile) {
         const cartItem = {
@@ -90,7 +90,7 @@ class usersrepository {
               if (isRemove) {
                 cartItems.splice(cartItems.indexOf(item), 1);
               } else {
-                item.unit = quantity;
+                item.unit += Number(quantity);
               }
               isExist = true;
             }
@@ -106,11 +106,11 @@ class usersrepository {
         profile.cart = cartItems;
 
         const cartSaveResult = await profile.save();
-       // console.log(cartSaveResult.cart)
+        // console.log(cartSaveResult.cart)
         return cartSaveResult.cart;
       }
 
-      throw new Error("unable to add to cart");
+      throw new Error('unable to add to cart');
     } catch (err) {
       throw err;
     }
@@ -133,7 +133,7 @@ class usersrepository {
         return profileResult;
       }
 
-      throw new Error("Unable to add to order!");
+      throw new Error('Unable to add to order!');
     } catch (err) {
       throw err;
     }
