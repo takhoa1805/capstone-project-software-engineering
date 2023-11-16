@@ -183,6 +183,17 @@ class productrepository {
       throw err;
     }
   }
+
+  async getavailableproduct() {
+    try {
+      console.log('this is called');
+      const products = await productsmodel.find({status:'available'});
+      return products;
+    } catch (err) {
+      throw err;
+    }
+  }
+  
 }
 
 module.exports = productrepository;

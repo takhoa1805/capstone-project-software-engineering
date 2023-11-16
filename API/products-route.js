@@ -209,4 +209,14 @@ module.exports = (app) => {
       next(err);
     }
   });
+
+  app.get('/product/available', async (req, res, next) => {
+    try {
+      console.log('data');
+      const { data } = await proservice.getavailableproducts();
+      return res.status(200).json(data);
+    } catch (err) {
+      next(err);
+    }
+  });
 };
