@@ -5,8 +5,8 @@ const morgan = require('morgan');
 module.exports = async (app) => {
   app.use(express.json()); // handle json request
   app.use(express.urlencoded({ extended: false })); // handle form data request
-  app.use(cors());
   app.use(morgan('dev'));
+  app.use(cors());
   //api
   users(app);
   products(app);

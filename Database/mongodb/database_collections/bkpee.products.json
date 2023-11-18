@@ -1,80 +1,82 @@
-[{
-  "_id": {
-    "$oid": "6551f5ae50f55c1c556aeb32"
+[
+  {
+    "_id": {
+      "$oid": "6551f5ae50f55c1c556aeb32"
+    },
+    "name": "CB 300R",
+    "price": 7000,
+    "quantity": 9,
+    "type": "Motorcycle",
+    "status": "available",
+    "specification": "very fast",
+    "reasonforsale": "up cc",
+    "createdAt": {
+      "$date": "2023-11-13T10:08:46.791Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-16T12:26:03.035Z"
+    },
+    "__v": 0
   },
-  "name": "CB 300R",
-  "price": 7000,
-  "quantity": 9,
-  "type": "Motorcycle",
-  "status": "available",
-  "specification": "very fast",
-  "reasonforsale": "up cc",
-  "createdAt": {
-    "$date": "2023-11-13T10:08:46.791Z"
+  {
+    "_id": {
+      "$oid": "6551f5b950f55c1c556aeb34"
+    },
+    "name": "MT03",
+    "price": 7000,
+    "quantity": 8,
+    "type": "Motorcycle",
+    "status": "I'm gonna keep this bike for myself, please take my selling information down",
+    "specification": "very fast",
+    "reasonforsale": "up cc",
+    "createdAt": {
+      "$date": "2023-11-13T10:08:57.714Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-13T10:15:58.090Z"
+    },
+    "__v": 0
   },
-  "updatedAt": {
-    "$date": "2023-11-16T12:26:03.035Z"
+  {
+    "_id": {
+      "$oid": "6555f4e0a7e2e3a88db70d56"
+    },
+    "uploaduserid": "6555efc582ef9839c7134efe",
+    "name": "Benelli BN 600",
+    "price": 6000,
+    "quantity": 1,
+    "type": "Motorcycle",
+    "status": "remove-reason: Rice shirt rice money",
+    "specification": "{\"production_time\":\"2020\",\"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\"topspeed\":\"190kmph\"}",
+    "reasonforsale": "Buying new bike",
+    "image": "https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg",
+    "createdAt": {
+      "$date": "2023-11-16T10:54:24.846Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-16T11:58:16.368Z"
+    },
+    "__v": 0
   },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6551f5b950f55c1c556aeb34"
-  },
-  "name": "MT03",
-  "price": 7000,
-  "quantity": 8,
-  "type": "Motorcycle",
-  "status": "I'm gonna keep this bike for myself, please take my selling information down",
-  "specification": "very fast",
-  "reasonforsale": "up cc",
-  "createdAt": {
-    "$date": "2023-11-13T10:08:57.714Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-13T10:15:58.090Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6555f4e0a7e2e3a88db70d56"
-  },
-  "uploaduserid": "6555efc582ef9839c7134efe",
-  "name": "Benelli BN 600",
-  "price": 6000,
-  "quantity": 1,
-  "type": "Motorcycle",
-  "status": "remove-reason: Rice shirt rice money",
-  "specification": "{\"production_time\":\"2020\",\"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\"topspeed\":\"190kmph\"}",
-  "reasonforsale": "Buying new bike",
-  "image": "https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg",
-  "createdAt": {
-    "$date": "2023-11-16T10:54:24.846Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-16T11:58:16.368Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "655602dde96fd4054c67f18c"
-  },
-  "uploaduserid": "6555efc582ef9839c7134efe",
-  "name": "Kawasaki Z1000",
-  "price": 10000,
-  "quantity": 1,
-  "type": "Motorcycle",
-  "status": "upload-requested",
-  "specification": "{\"model\":\"2014\",\"engine\":\"4-strokem tranverse four cylinder, DOHC, 4 vale per cylinder\",\"capacity\":\"1043cc\"}",
-  "reasonforsale": "Buying MT-10 SP",
-  "image": "https://mcn-images.bauersecure.com/wp-images/4151/_z1000-side-on-2.jpg",
-  "createdAt": {
-    "$date": "2023-11-16T11:54:05.264Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-16T11:54:05.264Z"
-  },
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "655602dde96fd4054c67f18c"
+    },
+    "uploaduserid": "6555efc582ef9839c7134efe",
+    "name": "Kawasaki Z1000",
+    "price": 10000,
+    "quantity": 1,
+    "type": "Motorcycle",
+    "status": "upload-requested",
+    "specification": "{\"model\":\"2014\",\"engine\":\"4-strokem tranverse four cylinder, DOHC, 4 vale per cylinder\",\"capacity\":\"1043cc\"}",
+    "reasonforsale": "Buying MT-10 SP",
+    "image": "https://mcn-images.bauersecure.com/wp-images/4151/_z1000-side-on-2.jpg",
+    "createdAt": {
+      "$date": "2023-11-16T11:54:05.264Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-16T11:54:05.264Z"
+    },
+    "__v": 0
+  }
+]

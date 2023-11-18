@@ -124,20 +124,19 @@ class productservice {
     }
   }
 
-  async getavailableproducts(){
+  async getavailableproducts() {
     try {
       const products = await this.repository.getavailableproduct();
       // let categories = {};
       // products.map(({ type }) => {
       //   categories[type] = type;
       // });
-      console.log(products)
+      console.log(products);
       return formatedata(products);
     } catch (err) {
       throw err;
     }
   }
-
 }
 
 module.exports = productservice;

@@ -18,11 +18,13 @@ module.exports = (app) => {
         type,
         specs,
         reasonforsale,
-        image,
+        img,
       } = req.body;
       // validation
       const status = 'available';
       const specification = JSON.stringify(specs);
+      const image = JSON.stringify(img);
+      // console.log(img);
       const { data } = await proservice.createproduct({
         uploaduserid,
         name,

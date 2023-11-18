@@ -1,47 +1,49 @@
-[{
-  "_id": {
-    "$oid": "6555efc582ef9839c7134efe"
-  },
-  "email": "example@email.com",
-  "password": "$2b$10$64ZKmyTj.YednTF6t.IsfO4pPuU.JDyBWyyHKH/28WT69lIKip3zW",
-  "name": "Nobody",
-  "salt": "$2b$10$64ZKmyTj.YednTF6t.IsfO",
-  "phone": "0123456789",
-  "address": [
-    {
-      "$oid": "6555f09682ef9839c7134f02"
+[
+  {
+    "_id": {
+      "$oid": "6555efc582ef9839c7134efe"
     },
-    {
-      "$oid": "6555f0a482ef9839c7134f07"
-    },
-    {
-      "$oid": "6555f0a882ef9839c7134f0b"
-    }
-  ],
-  "orders": [
-    {
-      "$oid": "65560a0ba9cc66dd4bba09a0"
-    },
-    {
-      "$oid": "65560a5ba9cc66dd4bba09b5"
-    }
-  ],
-  "cart": [
-    {
-      "product": {
-        "$oid": "6551f5ae50f55c1c556aeb32"
+    "email": "example@email.com",
+    "password": "$2b$10$64ZKmyTj.YednTF6t.IsfO4pPuU.JDyBWyyHKH/28WT69lIKip3zW",
+    "name": "Nobody",
+    "salt": "$2b$10$64ZKmyTj.YednTF6t.IsfO",
+    "phone": "0123456789",
+    "address": [
+      {
+        "$oid": "6555f09682ef9839c7134f02"
       },
-      "unit": 1,
-      "_id": {
-        "$oid": "65560a9ba9cc66dd4bba09c7"
+      {
+        "$oid": "6555f0a482ef9839c7134f07"
+      },
+      {
+        "$oid": "6555f0a882ef9839c7134f0b"
       }
-    }
-  ],
-  "createdAt": {
-    "$date": "2023-11-16T10:32:37.724Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-16T12:27:07.396Z"
-  },
-  "__v": 28
-}]
+    ],
+    "orders": [
+      {
+        "$oid": "65560a0ba9cc66dd4bba09a0"
+      },
+      {
+        "$oid": "65560a5ba9cc66dd4bba09b5"
+      }
+    ],
+    "cart": [
+      {
+        "product": {
+          "$oid": "6551f5ae50f55c1c556aeb32"
+        },
+        "unit": 1,
+        "_id": {
+          "$oid": "65560a9ba9cc66dd4bba09c7"
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": "2023-11-16T10:32:37.724Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-16T12:27:07.396Z"
+    },
+    "__v": 28
+  }
+]

@@ -82,33 +82,13 @@
       "response": []
     },
     {
-      "name": "Get self's profile",
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZW1haWwuY29tIiwiX2lkIjoiNjU1NWVmYzU4MmVmOTgzOWM3MTM0ZWZlIiwiaWF0IjoxNzAwMTMwNzYyLCJleHAiOjE3MDA3MzU1NjJ9.lzH9sNL2xbz-QtIuQXiJwW_4eEUXpVPBba2IN5Xfz9U",
-            "type": "text"
-          }
-        ],
-        "url": {
-          "raw": "localhost:3000/users/profile",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["users", "profile"]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "(admin only) Create product and add directly to database",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"uploaduserid\":\"6555efc582ef9839c7134efe\",\r\n    \"name\":\"Benelli BN 600\",\r\n    \"price\":\"6000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"production_time\": \"2020\",\r\n        \"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\r\n        \"topspeed\":\"190kmph\"\r\n    },\r\n    \"reasonforsale\":\"Buying new bike\",\r\n    \"image\":\"https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg\"\r\n}",
+          "raw": "{\r\n    \"uploaduserid\":\"6555efc582ef9839c7134efe\",\r\n    \"name\":\"Benelli BN 600\",\r\n    \"price\":\"6000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"production_time\": \"2020\",\r\n        \"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\r\n        \"topspeed\":\"190kmph\"\r\n    },\r\n    \"reasonforsale\":\"Buying new bike\",\r\n    \"img\":{\r\n        \"img_1\":\"https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg\",\r\n        \"img_2\":\"https://xedoisong.vn/uploads/user_4/16-11/benelli/xedoisong_benelli_tnt_600i_vietnam_5.jpg\",\r\n        \"img_3\":\"https://xedoisong.vn/uploads/20221031/xedoisong_benelli_bn600_h12_lzau_btya.jpg\",\r\n        \"img_4\":\"https://static1.cafeauto.vn/cafeautoData/upload/tintuc/thitruong/2020/06/tuan-02/1-1591906770.jpg\",\r\n        \"img_5\":\"https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_137b40898c74262f9ad4eb4e877f2e84.jpg\"\r\n    }\r\n    \r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -159,14 +139,14 @@
         "method": "PATCH",
         "header": [],
         "url": {
-          "raw": "localhost:3000/product/admin/approve-product/6551f5ae50f55c1c556aeb32",
+          "raw": "localhost:3000/product/admin/approve-product/655602dde96fd4054c67f18c",
           "host": ["localhost"],
           "port": "3000",
           "path": [
             "product",
             "admin",
             "approve-product",
-            "6551f5ae50f55c1c556aeb32"
+            "655602dde96fd4054c67f18c"
           ]
         },
         "description": "Sau khi người dùng đăng bán thì status của sản phẩm sẽ là 'upload-requested'. Đây là một flag để đánh dấu nếu sản phẩm đang trong tình trạng đang có hàng, đang được duyệt hay đang chờ gỡ xuống:\n\nstatus có 3 giá trị sau:{'upload-requested','available','lý do cần gỡ sp nếu có'}"
@@ -183,6 +163,35 @@
           "host": ["localhost"],
           "port": "3000",
           "path": ["product", "admin", "delete-requests"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "(admin only) Delete a product by id - After approving user delete's request ",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/product/admin/delete/6551f59f50f55c1c556aeb2e",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["product", "admin", "delete", "6551f59f50f55c1c556aeb2e"]
+        },
+        "description": "Gỡ sản phẩm ngay lập tức khỏi database. Sau khi admin đã duyệt yêu cầu gỡ bài đăng của người dùng. Hoặc admin phát hiện sản phẩm có vi phạm nên buộc phải gỡ xuống"
+      },
+      "response": []
+    },
+    {
+      "name": "(admin only) Get all products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/product/",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["product", ""]
         }
       },
       "response": []
@@ -239,21 +248,6 @@
       "response": []
     },
     {
-      "name": "(admin only) Delete a product by id - After approving user delete's request ",
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/product/admin/delete/6551f59f50f55c1c556aeb2e",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["product", "admin", "delete", "6551f59f50f55c1c556aeb2e"]
-        },
-        "description": "Gỡ sản phẩm ngay lập tức khỏi database. Sau khi admin đã duyệt yêu cầu gỡ bài đăng của người dùng. Hoặc admin phát hiện sản phẩm có vi phạm nên buộc phải gỡ xuống"
-      },
-      "response": []
-    },
-    {
       "name": "(seller only) Send product information for upload request",
       "request": {
         "method": "POST",
@@ -266,7 +260,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\":\"Kawasaki Z1000\",\r\n    \"price\":\"10000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"model\":\"2014\",\r\n        \"engine\":\"4-strokem tranverse four cylinder, DOHC, 4 vale per cylinder\",\r\n        \"capacity\":\"1043cc\"\r\n    },\r\n    \"reasonforsale\":\"Buying MT-10 SP\",\r\n    \"image\":\"https://mcn-images.bauersecure.com/wp-images/4151/_z1000-side-on-2.jpg\"\r\n\r\n}",
+          "raw": "{\r\n    \"uploaduserid\":\"6555efc582ef9839c7134efe\",\r\n    \"name\":\"Benelli BN 600\",\r\n    \"price\":\"6000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"production_time\": \"2020\",\r\n        \"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\r\n        \"topspeed\":\"190kmph\"\r\n    },\r\n    \"reasonforsale\":\"Buying new bike\",\r\n    \"img\":{\r\n        \"img_1\":\"https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg\",\r\n        \"img_2\":\"https://xedoisong.vn/uploads/user_4/16-11/benelli/xedoisong_benelli_tnt_600i_vietnam_5.jpg\",\r\n        \"img_3\":\"https://xedoisong.vn/uploads/20221031/xedoisong_benelli_bn600_h12_lzau_btya.jpg\",\r\n        \"img_4\":\"https://static1.cafeauto.vn/cafeautoData/upload/tintuc/thitruong/2020/06/tuan-02/1-1591906770.jpg\",\r\n        \"img_5\":\"https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_137b40898c74262f9ad4eb4e877f2e84.jpg\"\r\n    }\r\n    \r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -312,6 +306,26 @@
             "delete-request",
             "6555f4e0a7e2e3a88db70d56"
           ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get self's profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZW1haWwuY29tIiwiX2lkIjoiNjU1NWVmYzU4MmVmOTgzOWM3MTM0ZWZlIiwiaWF0IjoxNzAwMTMwNzYyLCJleHAiOjE3MDA3MzU1NjJ9.lzH9sNL2xbz-QtIuQXiJwW_4eEUXpVPBba2IN5Xfz9U",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "localhost:3000/users/profile",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["users", "profile"]
         }
       },
       "response": []
@@ -441,20 +455,6 @@
       "response": []
     },
     {
-      "name": "Get all products",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:3000/product/",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["product", ""]
-        }
-      },
-      "response": []
-    },
-    {
       "name": "Get products of a category with low to high price",
       "request": {
         "method": "GET",
@@ -532,6 +532,20 @@
           "host": ["localhost"],
           "port": "3000",
           "path": ["shopping", "cart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all available products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/available-products",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["available-products"]
         }
       },
       "response": []

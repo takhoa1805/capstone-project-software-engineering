@@ -16,12 +16,13 @@ module.exports = (app) => {
       // const {name,price,quantity,type,specification,reasonforsale} = req.body;
       // const {data} = await product_service.createproduct({uploaduserid,name,price,quantity,type,status,specification,reasonforsale});
 
-      const { name, price, quantity, type, specs, reasonforsale, image } =
+      const { name, price, quantity, type, specs, reasonforsale, img } =
         req.body;
       const status = 'upload-requested';
       const { _id } = req.user;
       const uploaduserid = _id;
       const specification = JSON.stringify(specs);
+      const image = JSON.stringify(img);
       //validation
       const { data } = await product_service.createproduct({
         uploaduserid,

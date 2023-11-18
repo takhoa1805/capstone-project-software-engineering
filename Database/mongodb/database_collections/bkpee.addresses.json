@@ -1,24 +1,26 @@
-[{
-  "_id": {
-    "$oid": "6555f09682ef9839c7134f02"
+[
+  {
+    "_id": {
+      "$oid": "6555f09682ef9839c7134f02"
+    },
+    "country": "Vietnam",
+    "city": "District 10",
+    "street": "268 Ly Thuong Kiet",
+    "__v": 0
   },
-  "country": "Vietnam",
-  "city": "District 10",
-  "street": "268 Ly Thuong Kiet",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6555f0a482ef9839c7134f07"
+  {
+    "_id": {
+      "$oid": "6555f0a482ef9839c7134f07"
+    },
+    "__v": 0
   },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6555f0a882ef9839c7134f0b"
-  },
-  "country": "Vietnam",
-  "city": "District 10",
-  "street": "268 Ly Thuong Kiet",
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "6555f0a882ef9839c7134f0b"
+    },
+    "country": "Vietnam",
+    "city": "District 10",
+    "street": "268 Ly Thuong Kiet",
+    "__v": 0
+  }
+]

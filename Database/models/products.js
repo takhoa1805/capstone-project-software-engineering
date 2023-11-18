@@ -10,7 +10,7 @@ const productschema = mongoose.Schema(
     status: { type: String, default: 'upload-requested' }, //upload-requested, <reason to remove>, available
     specification: String,
     reasonforsale: String,
-    image: { type: String },
+    image: String,
   },
   {
     toJSON: {
