@@ -212,7 +212,7 @@ module.exports = (app) => {
     }
   });
 
-  app.get('/product/available', async (req, res, next) => {
+  app.get('/product/all/available', async (req, res, next) => {
     try {
       console.log('data');
       const { data } = await proservice.getavailableproducts();
