@@ -1,0 +1,209 @@
+body, html {
+    min-width: 320px; /* Set a minimum width for small screens */
+}
+
+.Maincontainer {
+    width: 100%;
+    padding: 20px; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center content on smaller screens */
+    gap: 20px; /* Reduce the gap between elements */
+    display: flex;
+}
+
+.Left-Nav-bar {
+    justify-content: flex-start;
+    gap: 10px;
+    display: flex;
+}
+
+.Category {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* Reduce the gap between elements */
+    display: flex;
+    background-color: white;
+}
+
+.navbar a:hover, .active, .Sidebar-header, .Results {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Sidebar-selection {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    word-wrap: break-word;
+}
+
+.arrange-list {
+    align-self: stretch;
+    height: auto; /* Allow height to adjust based on content */
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* Reduce the gap between elements */
+    display: flex;
+}
+
+.Text {
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.detail-info {
+    align-self: stretch;
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.List-container {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* Center content on smaller screens */
+    gap: 15px; /* Reduce the gap between elements */
+    display: inline-flex;
+}
+
+.List-detail {
+    align-self: stretch;
+    height: auto; /* Allow height to adjust based on content */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center content on smaller screens */
+    gap: 10px; /* Reduce the gap between elements */
+    display: flex;
+    padding-top: 20px;
+}
+
+.ListingElement-container {
+    align-self: stretch;
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Center content on smaller screens */
+    gap: 10px; /* Reduce the gap between elements */
+    display: flex;
+}
+
+.ListingElement {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center; /* Center content on smaller screens */
+    gap: 15px; /* Reduce the gap between elements */
+    display: inline-flex;
+}
+
+.ListingElement-detail {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center content on smaller screens */
+    display: inline-flex;
+}
+
+.Element-detail {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content on smaller screens */
+    gap: 10px; /* Reduce the gap between elements */
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.Element-header {
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center; /* Center content on smaller screens */
+    display: inline-flex;
+}
+
+.header-price {
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+/* Mobile-first styles */
+@media (min-width: 300px) {
+    .container.mainContainer {
+      padding: 30px;
+    }
+  
+    .MainPage {
+        align-self: stretch;
+        padding-top: 20px;
+    }
+
+    .Sidebar {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center; /* Center content on smaller screens */
+        gap: 20px; /* Reduce the gap between elements */
+        display: inline-flex;
+    }
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .container.mainContainer {
+      padding: 40px;
+    }
+  
+    .MainPage {
+        align-self: stretch;
+        justify-content: flex-start;
+        gap: 15px; /* Reduce the gap between elements */
+        display: flex;
+        padding-top: 20px;
+    }
+
+    .Sidebar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; /* Center content on smaller screens */
+        gap: 20px; /* Reduce the gap between elements */
+        display: inline-flex;
+    }
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 1280px) {
+    .container.mainContainer {
+      padding: 60px;
+    }
+  
+    .MainPage {
+        align-self: stretch;
+        justify-content: flex-start;
+        gap: 15px; /* Reduce the gap between elements */
+        display: flex;
+        padding-top: 20px;
+    }
+
+    .Sidebar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; /* Center content on smaller screens */
+        gap: 20px; /* Reduce the gap between elements */
+        display: inline-flex;
+    }
+}
+
