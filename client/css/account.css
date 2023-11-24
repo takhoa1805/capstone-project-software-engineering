@@ -1,0 +1,296 @@
+body, html {
+  min-width: 1280px;
+  overflow: auto;
+}
+
+.mainContainer {
+  padding-left: 220px;
+  padding-right: 220px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.MyAccount-container {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: flex;
+}
+
+.account-label {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.account-label-name {
+  color: black;
+  font-size: 36px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  line-height: 54px;
+  word-wrap: break-word;
+}
+
+.change-button-container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.change-button {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #0F6CBD;
+  border-radius: 4px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: none;
+}
+
+.change-button-text-container {
+  padding-bottom: 2px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.change-button-text {
+  color: white;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.account-information-container {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  display: inline-flex;
+}
+
+.account-information-label {
+  width: 200px;
+  color: black;
+  font-size: 24px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.AccountInfo {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: flex;
+}
+
+.AccountInfo-container {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.AccountInfo-frame1 {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.AccountInfo-frame2 {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.Field,
+.Dropdown {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.LabelIcon {
+  align-self: stretch;
+  padding-bottom: 2px;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex;
+}
+
+.FormText {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.Label {
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 4px;
+  display: flex;
+}
+
+.Text {
+  color: #242424;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.Password-container {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  display: inline-flex;
+}
+
+.Password-info {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.Product-SellRequest {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 28px;
+  display: flex;
+}
+
+.BuyOrder-container {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 28px;
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.Order-list {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: flex;
+}
+
+.ListingElement {
+  align-self: stretch;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+
+.ListingElement-frame {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.ListingElement-detail {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.Element-detail {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 11px;
+  display: flex;
+}
+
+.Element-header {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.header-price {
+  color: black;
+  font-size: 16px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.detail-info {
+  align-self: stretch;
+  color: black;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.SellOrder-container {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 28px;
+  display: flex;
+}
+
+@media (min-width: 768px){
+/*Main Container Customize*/
+.mainContainer {
+  gap: 30px;
+}
+/*Main Container Customize*/
+
+}
+
+@media (min-width: 1280px){
+	
+}

@@ -1,0 +1,220 @@
+body, html {
+    min-width: 1280px;
+    overflow: auto;
+}
+
+.MainContainer {
+    width: 1280px;
+    padding-left: 200px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 90px;
+    display: inline-flex;
+}
+
+.MainPage {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+}
+
+.Cart-label {
+    color: black;
+    font-size: 36px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Cart-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    display: inline-flex;
+}
+
+.CartProductList {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.CartElement {
+    width: 655px;
+    padding-top: 15px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 37.73px;
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+}
+
+.Cart-item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.Cart {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.ImageCart {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.Line {
+    width: 580px;
+    height: 0px;
+    border: 1px black solid;
+}
+
+.Cart-detail {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 11px;
+    display: inline-flex;
+}
+
+.LabelName {
+    width: 482px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 98px;
+    display: inline-flex;
+}
+
+.Name {
+    width: 280px;
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Price {
+    width: 88px;
+    height: 17px;
+    text-align: right;
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.description {
+    width: 399px;
+    color: black;
+    font-size: 12px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Quantity {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 370px;
+    display: inline-flex;
+}
+
+.Quantity-text {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.CartSummary {
+    width: 405px;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.CartPayment {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 20px;
+    display: flex;
+}
+
+.CartPayment-detail {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+
+.cost-temp,
+.cost-other,
+.cost-total,
+.cost-note {
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+}
+
+.cost-text {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Text {
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+
+    /*Main Container Customize*/
+    .mainContainer {
+        gap: 30px;
+    }
+
+    /*Main Container Customize*/
+
+}
+
+@media (min-width: 1280px) {}
