@@ -1,0 +1,162 @@
+body, html {
+    min-width: 1280px;
+    overflow: auto;
+}
+
+.Maincontainer {
+    width: 1280px;
+    height: 2098px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 90px;
+    display: inline-flex;
+}
+
+.MainPage {
+    align-self: stretch;
+    height: 1998px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 28px;
+    display: flex;
+}
+
+.Element-List {
+    align-self: stretch;
+    height: 1856px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+}
+
+.Sell-Require,
+.Change-Require,
+.Cancel-Require,
+.Complain-Exchange {
+    align-self: stretch;
+    height: 436px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 28px;
+    display: flex;
+}
+
+.header-text {
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    line-height: 36px;
+    word-wrap: break-word;
+}
+
+.Product-list {
+    align-self: stretch;
+    height: 312px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+}
+
+.ListingElement-container {
+    align-self: stretch;
+    height: 146px;
+    padding-left: 5px;
+    padding-right: 5px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: flex;
+}
+
+.ListingElement {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.ListingElement-detail {
+    flex: 1 1 0;
+    height: 136px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+}
+
+.Element-detail {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 11px;
+    display: flex;
+}
+
+.Element-header {
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: inline-flex;
+}
+
+.header-price {
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.detail-info {
+    align-self: stretch;
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.SaveCancel-button {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.Text {
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+
+    /*Main Container Customize*/
+    .mainContainer {
+        gap: 30px;
+    }
+
+    /*Main Container Customize*/
+
+}
+
+@media (min-width: 1280px) {}
