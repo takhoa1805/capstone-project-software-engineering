@@ -1,0 +1,254 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  min-width: 320px; /* Set a minimum width for smaller screens */
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.container.mainContainer {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.MyAccount-container {
+  gap: 20px;
+}
+
+.account-label {
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.account-label-name {
+  color: black;
+  font-size: 36px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  line-height: 54px;
+  word-wrap: break-word;
+}
+
+.change-button {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #0F6CBD;
+  border-radius: 4px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: none;
+}
+
+.change-button-text {
+  color: white;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 500;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.account-information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account-information-label {
+  color: black;
+  font-size: 24px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.AccountInfo-container {
+  padding-bottom: 10px;
+}
+
+.AccountInfo-frame2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Text {
+  color: #242424;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 400;
+  line-height: 20px;
+  word-wrap: break-word;
+}
+
+.Password-container {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.Password-info {
+  flex-direction: column;
+  gap: 20px;
+  display: inline-flex;
+}
+
+.Product-SellRequest {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.BuyOrder-container {
+  flex-direction: column;
+  gap: 28px;
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.Order-list {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.ListingElement {
+  align-self: stretch;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+
+.ListingElement-frame {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  display: inline-flex;
+  padding-top: 10px;
+}
+
+.ListingElement-detail {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.Element-detail {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 11px;
+  display: flex;
+}
+
+.Element-header {
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.header-price {
+  color: black;
+  font-size: 16px;
+  font-family: Inconsolata;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.detail-info {
+  align-self: stretch;
+  color: black;
+  font-size: 14px;
+  font-family: Inconsolata;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.SellOrder-container {
+  flex-direction: column;
+  gap: 28px;
+  display: flex;
+}
+
+.Product-SellRequest {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 28px;
+  display: flex;
+}
+
+.Text,
+.header-price,
+.detail-info {
+  font-size: 14px;
+}
+
+/* Mobile-first styles */
+@media (min-width: 300px) {
+  .container.mainContainer {
+    padding: 30px;
+  }
+
+  .account-label-name {
+    font-size: 30px;
+  }
+
+  .change-button-container {
+    padding-left: 10px;
+  }
+
+  .Password-container {
+    gap: 0px;
+  }
+
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .container.mainContainer {
+    padding: 40px;
+  }
+
+  .change-button-container {
+    padding-left: 300px;
+  }
+
+  .Password-container {
+    gap: 200px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1280px) {
+  .container.mainContainer {
+    padding: 60px;
+  }
+
+  .change-button-container {
+    padding-left: 700px;
+  }
+
+  .Password-container {
+    gap: 200px;
+  }
+}
