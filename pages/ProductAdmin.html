@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta lang="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, , initial-scale=1, user-scalable=no">
+	<title>Product Admin</title>
+<!-- Import Framework -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
+<!-- End of importing Framework -->
+<!-- Import custom style -->
+	<link rel="stylesheet" type="text/css" href="../css/styleGlobal.css">
+	<link rel="stylesheet" type="text/css" href="../css/ProductAdmin.css">
+	<link rel="stylesheet" href="../css/header_footer.css">
+<!-- End of importing custom style -->
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+	<nav class="header-nav">
+	  <ul class="header-nav__list">
+		<a href="#" title="Đơn hàng" class="btn-small">Đơn hàng</a> 
+		<a href="#" title="User" class="btn-small">User 1234</a>
+		<a href="#" title="Đăng xuất" class="btn-small">Đăng xuất</a>   
+	  </ul>
+	</nav>
+  </div>
+<!-- End of Header -->
+<!-------------------------------------------------------------------------------->
+<!-- Navigation Bar -->
+	<div class="container-fluid navContainer" role="navigation">
+		<nav class="navbar" style="z-index: 9999 !important;">
+			<div class="container-fluid" style="padding: 0px; margin: 0px;">
+				<a class="navbar-brand py-0 d-none d-lg-block">
+					<img src="../images/logo.png" height="65px" width="190px">
+				</a>
+				<div class="d-none d-lg-block me-auto">
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a class="nav-link" href="home.html">Trang chủ</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="products.html">Sản phẩm</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="help.html">Câu hỏi thường gặp</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">Về BKPee</a>
+						</li>
+					</ul>
+				</div>
+				<div class="d-none d-lg-block ms-auto">
+					<ul class="nav p-0 m-0">
+						<li class="nav-item">
+							<a href="" class="nav-link">
+								<img src="../images/tool1.svg" height="25px" width="25px">
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="" class="nav-link">
+								<img src="../images/tool2.svg" height="25px" width="25px">
+							</a>
+						</li>
+					</ul>
+				</div>
+<!-- FOR TABLET & PHONE -->
+			<button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#naviToggler" aria-control="naviToggler" aria-expand="false" aria-label="Toggle Navigation">
+				<span><img src="../images/menu.svg" height="23px" width="34.5px"></span>
+			</button>
+			<a class="navbar-brand py-0 mx-auto d-lg-none">
+				<img src="../images/logo.png" height="65px" width="190px">
+			</a>
+			<div class="d-lg-none ms-auto">
+				<a href="" class="nav-link me-2">
+					<img src="../images/tool2.svg" height="25px" width="25px">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse d-lg-none" id="naviToggler">
+				<ul class="navbar-nav bg-light me-auto mb-2">
+					<form class="d-flex" role="search">
+						<input type="search" class="form-control my-auto" placeholder="Tìm kiếm..." aria-label="search" aria-describedby="searchBar" style="background-color: #FFFFFF;">
+						<button class="btn btn-light" type="button" id=searchBar>
+							<img src="../images/search_black.svg" height="15px" width="15px">
+						</button>
+					</form>
+					<li class="nav-item">
+						<a class="nav-link" href="home.html" style="color: black; margin-left: 10px;">Trang chủ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="products.html" style="color: black; margin-left: 10px;">Sản phẩm</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="help.html" style="color: black; margin-left: 10px;">Câu hỏi thường gặp</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html" style="color: black; margin-left: 10px;">Về BKPee</a>
+					</li>
+				</ul>
+			</div>
+<!-- FOR TABLET & PHONE -->
+		</nav>
+	</div>
+<!-- End of Navigation Bar -->
+<!-------------------------------------------------------------------------------->
+<!--Product Admin main -->
+    <div class="container Maincontainer">
+    <div class="MainPage">
+        <div class="Left-Nav-bar">
+            <div class="Sidebar">
+                <div style="align-self: stretch;">
+                    <div class="Category">
+						<div class="Sidebar-header">Phân loại</div>
+						<div class="Line5" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                        <nav class="navbar" style="display: flex; flex-direction: column; align-items: flex-start;">
+							<a class="navbar-brand Sidebar-selection" href="#">Tất cả</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Đồ điện tử</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Quần áo</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Vé sự kiện</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Giáo trình</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Thiết bị gia dụng</a>
+							<a class="navbar-brand Sidebar-selection" href="#">Khác</a>
+						</nav> 
+                    </div>
+                </div>
+                <div class="arrange-list">
+                    <div class="Sidebar-header">Sắp xếp</div>
+                    <div class="Line5" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                    <div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+						<label class="form-check-label Sidebar-selection" for="inlineRadio1">Mặc định</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+						<label class="form-check-label Sidebar-selection" for="inlineRadio2">Giá thấp đến cao</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+						<label class="form-check-label Sidebar-selection" for="inlineRadio3">Giá cao đến thấp</label>
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="List-container">
+			<a class="btn btn-danger" href="ProductAdmin(ReqList).html" role="button" style="display: flex; align-items: center; gap: 10px;">
+				<span class="Text">Yêu cầu chờ xét duyệt</span></a>
+            </a>
+            <div class="Results">20 results</div>
+            <div class="List-detail">
+                <div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+                <div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+				<div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+				<div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+				<div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+				<div class="ListingElement-container">
+                    <div class="ListingElement">
+                        <img style="width: 99px; height: 130px" src="../images/book.png" />
+                        <div class="ListingElement-detail">
+                            <div class="Element-detail">
+								<div class="Element-header">
+								  <div class="header-price">Sách giáo trình Giải tích 2</div>
+								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+								</div>
+								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
+									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
+								</div>
+							</div>
+							<button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Gỡ bỏ</button>
+                        </div>
+                    </div>
+                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--End of Product Admin main -->
+<!-------------------------------------------------------------------------------->
+<!-- Footer -->
+	<div class="footer">
+		<div class="container footerContainer">
+			<div class="row justify-content-center">
+				<div class="col-auto d-none d-lg-block">
+					<img src="../images/HCMCUT 1.svg" height="142px" width="130px">
+				</div>
+				<div class="col-auto d-none d-lg-block">
+					<span class="footerTitleText">Liên hệ</span>
+					<br>
+					<div class="footerText">
+						+84123456789
+						<br>
+						<a href="">Email</a>
+						<br>
+						<a href="">Facebook</a>
+					</div>
+				</div>
+				<div class="col-md-6 mb-3 d-none d-md-block d-lg-none">
+					<span class="footerTitleText">Liên hệ</span>
+					<br>
+					<div class="footerText">
+						+84123456789
+						<br>
+						<a href="">Email</a>
+						<br>
+						<a href="">Facebook</a>
+					</div>
+				</div>
+				<div class="col-sm-12 mb-4 d-sm-block d-md-none">
+					<span class="footerTitleText">Liên hệ</span>
+					<br>
+					<div class="footerText">
+						+84123456789
+						<br>
+						<a href="">Email</a>
+						<br>
+						<a href="">Facebook</a>
+					</div>
+				</div>
+				<div class="col-4 d-none d-lg-block">
+					<span class="footerTitleText">Địa chỉ</span>
+					<br>
+					<div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+				</div>
+				<div class="col-md-6 mb-3 d-none d-md-block d-lg-none">
+					<span class="footerTitleText">Địa chỉ</span>
+					<br>
+					<div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+				</div>
+				<div class="col-sm-12 mb-4 d-sm-block d-md-none">
+					<span class="footerTitleText">Địa chỉ</span>
+					<br>
+					<div class="footerText">268 Lý Thường Kiệt, phường 14, quận 10, thành phố Hồ Chí Minh.</div>
+				</div>
+				<div class="col-4 d-none d-lg-block">
+					<span class="footerTitleText">Đăng ký</span>
+					<br>
+					<div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới.</div>
+					<div class="footerText">Hủy bất cứ lúc nào.</div>
+					<form>
+						<input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+						<button class="btn btn-primary" type="submit">Xác nhận</button>
+					</form>
+				</div>
+				<div class="col-md-6 mx-auto d-none d-md-block d-lg-none">
+					<span class="footerTitleText">Đăng ký</span>
+					<br>
+					<div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới. Hủy bất cứ lúc nào.</div>
+					<form>
+						<input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+						<button class="btn btn-primary" type="submit">Xác nhận</button>
+					</form>
+				</div>
+				<div class="col-sm-12 d-sm-block d-md-none">
+					<span class="footerTitleText">Đăng ký</span>
+					<br>
+					<div class="footerText">Đăng ký để nhận thông tin về các mặt hàng mới. Hủy bất cứ lúc nào.</div>
+					<form>
+						<input type="email" class="form-control bg-dark my-2" id="notiEmail" placeholder="Email của bạn">
+						<button class="btn btn-primary" type="submit">Xác nhận</button>
+					</form>
+				</div>
+			</div>
+			<div class="container policyContainer">
+				<div class="row p-0">
+					<div class="col-auto">
+						<a href="" class="footerText" style="text-decoration: none; font-size: 14px">Chính sách bảo mật</a>
+					</div>|
+					<div class="col-auto">
+						<a href="" class="footerText" style="text-decoration: none; font-size: 14px">Chính sách đổi trả, khiếu nại</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- End of Footer -->
+<!-------------------------------------------------------------------------------->
+<!-- Import Framework -->
+	<script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- End of importing Framework -->
+</body>
+</html>
