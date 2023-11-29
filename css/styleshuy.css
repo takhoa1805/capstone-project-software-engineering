@@ -1,4 +1,6 @@
-
+body {
+  font-family: Inconsolata;
+}
 /* banner */
 .banner {
   width: 100%;
