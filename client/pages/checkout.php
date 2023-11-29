@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="../css/styleGlobal.css">
     <link rel="stylesheet" type="text/css" href="../css/Checkout.css">
     <!-- End of importing custom style -->
+    	<!-- Verifying authentication -->
+	<script type="text/javascript" src="../scripts/auth.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -242,6 +244,8 @@
       })()
     </script>
     <!-- End of importing Framework -->
+    <!-- Header Logic -->
+<script type="text/javascript" src="../scripts/component/header.js"></script>
 </body>
 
 </html>

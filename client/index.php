@@ -10,18 +10,19 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;900&display=swap" rel="stylesheet">
 <!-- Import Framework -->
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css"> -->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap/css/bootstrap.css">
+
 <!-- End of importing Framework -->
 <!-- Import custom style -->
-	<link rel="stylesheet" type="text/css" href="../css/styleGlobal.css">
-	<link rel="stylesheet" type="text/css" href="../css/signInUp.css">
+	<link rel="stylesheet" type="text/css" href="./css/styleGlobal.css">
+	<link rel="stylesheet" type="text/css" href="./css/signInUp.css">
 <!-- End of importing custom style -->
 </head>
 <body>
 <!-- Header -->
-<?php include './pages/components/header.php';?>
+<?php include './pages/components/header_index.php';?>
 <!-- End of Header -->
-
 
 <!-------------------------------------------------------------------------------->
 <!-- Sign in/Sign up main -->
@@ -30,15 +31,15 @@
 			<form>
 				<div class="mainTitle">Đăng nhập</div>
 				<div class="mt-1">
-					<label for="emailLogin" class="form-label labelText">Email đăng nhập</label>
-					<input type="email" class="form-control" id="emailLogin">
+					<label for="login-email" class="form-label labelText">Email đăng nhập</label>
+					<input type="email" class="form-control" id="login-email">
 				</div>
 				<div class="mt-1">
-					<label for="passLogin" class="form-label labelText">Mật khẩu đăng nhập</label>
-					<input type="password" class="form-control" id="passLogin">
+					<label for="login-password" class="form-label labelText">Mật khẩu đăng nhập</label>
+					<input type="password" class="form-control" id="login-password">
 				</div>
 				<div class="mt-2">
-					<button type="submit" class="btn btn-primary">Đăng nhập</button>
+					<button type="button" class="btn btn-primary" id="login-button">Đăng nhập</button>
 				</div>
 			</form>
 		</div>
@@ -84,11 +85,15 @@
 <!--End of Sign in/Sign up main -->
 <!-------------------------------------------------------------------------------->
 <!-- Footer -->
-<?php include './pages/components/footer.php';?>
+<?php include './pages/components/footer_index.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
 <!-- Import Framework -->
-	<script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
+	<script type="text/javascript" src="./css/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- End of importing Framework -->
+
+<!-- LOGIN LOGICS -->
+<script type="text/javascript" src="./scripts/login/login.js"></script>
+
 </body>
 </html>

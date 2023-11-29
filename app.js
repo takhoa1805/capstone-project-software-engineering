@@ -10,5 +10,6 @@ const StartServer = async () => {
   await expressApp(app);
 
   app.listen(process.env.Port);
+  console.log(process.env.Port);
 };
 StartServer();

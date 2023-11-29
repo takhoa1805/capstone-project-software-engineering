@@ -27,7 +27,8 @@ module.exports = (app) => {
   app.post('/users/login', async (req, res, next) => {
     try {
       const { email, password } = req.body;
-      const { data } = await service.login({ email, password });
+      var { data } = await service.login({ email, password });
+      data.email = email;
       return res.json(data);
     } catch (err) {
       next(err);

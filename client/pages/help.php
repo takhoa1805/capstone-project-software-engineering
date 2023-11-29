@@ -51,7 +51,8 @@
 <!-------------------------------------------------------------------------------->
   <script src="../js/bootstrap.bundle.js"></script>
 
-  
+  <!-- Header Logic -->
+<script type="text/javascript" src="../scripts/component/header.js"></script>
 </body>
 </html>
 

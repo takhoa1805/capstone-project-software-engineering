@@ -19,7 +19,12 @@
     <link rel="stylesheet" type="text/css" href="../css/styleGlobal.css">
     <link rel="stylesheet" type="text/css" href="../css/account.css">
   <!-- End of importing custom style -->
+  	<!-- Verifying authentication -->
+	<script type="text/javascript" src="../scripts/auth.js"></script>
+  <!-- Get account information -->
+  <script type ="text/javascript" src ="../scripts/account_info.js"></script>
   </head>
+
 <body>
 <!-- Header -->
   <?php include './components/header.php';?>
@@ -37,7 +42,7 @@
     <div class="account-label">
       <div class="account-label-name">Tài khoản của tôi</div>
       <div class="change-button-container">
-        <button class="change-button">
+        <button class="change-button" onclick="">
           <div class="change-button-text-container">
             <div class="change-button-text">Chỉnh sửa</div>
           </div>
@@ -364,5 +369,7 @@
 <!-- Import Framework -->
 <script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- End of importing Framework -->
+<!-- Header Logic -->
+<script type="text/javascript" src="../scripts/component/header.js"></script>
 </body>
 </html>

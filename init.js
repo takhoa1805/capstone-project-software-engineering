@@ -6,7 +6,15 @@ module.exports = async (app) => {
   app.use(express.json()); // handle json request
   app.use(express.urlencoded({ extended: false })); // handle form data request
   app.use(morgan('dev'));
-  app.use(cors());
+
+  app.use(
+    cors({
+      origin: 'http://localhost:5500',
+      methods: 'GET,POST,PUT,DELETE',
+      credentials: true,
+    }),
+  );
+
   //api
   users(app);
   products(app);

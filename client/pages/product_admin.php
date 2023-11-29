@@ -195,5 +195,7 @@
 <!-- Import Framework -->
 	<script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- End of importing Framework -->
+<!-- Header Logic -->
+<script type="text/javascript" src="../scripts/component/header.js"></script>
 </body>
 </html>
