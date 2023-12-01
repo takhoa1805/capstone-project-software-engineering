@@ -1,5 +1,50 @@
 var user_data=null;
 
+var buy_order_template =
+`
+  <div class="ListingElement">
+    <div class="ListingElement-frame">
+      <img style="width: 99px; height: 130px" src="../images/book.png"/>
+      <div class="ListingElement-detail">
+        <div class="Element-detail">
+          <div class="Element-header">
+            <div class="header-price">Sách giáo trình Giải tích 2</div>
+            <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
+          </div>
+          <ul>
+            <li class="detail-info">Tình trạng: Đã nhận hàng</li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+      </div>
+    </div>
+    <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+  </div>
+`
+
+function product_item_filler(data){
+    return `
+    <div class="ListingElement">
+      <div class="ListingElement-frame">
+        <img style="width: 99px; height: 130px" src="${data.image}"/>
+        <div class="ListingElement-detail">
+          <div class="Element-detail">
+            <div class="Element-header">
+              <div class="header-price">${data.name}</div>
+              <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
+            </div>
+            <ul>
+              <li class="detail-info">Tình trạng: ${data.status}</li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+        </div>
+      </div>
+      <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+    </div>
+  `
+}
+
 //FILL ACCOUNT INFORMATIONS
 function account_information_filler(user_data){
 
@@ -42,6 +87,29 @@ function account_information_filler(user_data){
 
 }
 
+//FILL BUYING ORDERS
+function account_order(user_data){
+    fetch("http://localhost:3000/shopping/orders", { method: "GET", 
+    headers:{
+        "Content-Type": "application/json",
+        "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+    },
+})
+    .then((response) => response.json())
+    .then((data)=>{
+        if (data.error){
+            alert(data);
+        }
+        console.log("All orders: ",data);
+        
+
+    })
+    .catch((error=>{
+        console.log("Error",error);
+        alert(error);
+    }))
+
+}
 
 //ON PAGE LOAD
 document.addEventListener('DOMContentLoaded',()=>{
@@ -59,6 +127,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         console.log("Response from backend: ",data);
         user_data = data;
         account_information_filler(user_data);
+        account_order(user_data);
     })
     .catch((error=>{
         console.log("Error",error);

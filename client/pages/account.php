@@ -216,48 +216,19 @@
     </div>
   </div>
   <div class="Line9" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+
+  <!-- BUY ORDER LIST -->
   <div class="BuyOrder-container">
     <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn mua</div>
+    <!-- ORDER LIST -->
     <div class="Order-list">
-      <div class="ListingElement">
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png"/>
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Đã nhận hàng</li>
-              </ul>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
-      <div class="ListingElement">
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png" />
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Chờ nhận hàng tại kho H6</li>
-                <li class="detail-info">Thời gian nhận hàng: 11/11/2023</li>
-              </ul>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Hủy đơn hàng</button>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
+      
     </div>
+    <!-- END OF ORDER LIST -->
   </div>
+  <!-- END OF BUY ORDER LIST -->
+
+
   <div class="Line10" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
   <div class="SellOrder-container">
     <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn bán</div>
