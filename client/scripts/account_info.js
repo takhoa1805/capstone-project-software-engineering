@@ -1,52 +1,51 @@
 var user_data=null;
 
-var buy_order_template =
-`
-  <div class="ListingElement">
-    <div class="ListingElement-frame">
-      <img style="width: 99px; height: 130px" src="../images/book.png"/>
-      <div class="ListingElement-detail">
-        <div class="Element-detail">
-          <div class="Element-header">
-            <div class="header-price">Sách giáo trình Giải tích 2</div>
-            <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-          </div>
-          <ul>
-            <li class="detail-info">Tình trạng: Đã nhận hàng</li>
-          </ul>
-        </div>
-        <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
-      </div>
-    </div>
-    <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-  </div>
-`
 
-function product_item_filler(data){
-    return `
-    <div class="ListingElement">
-      <div class="ListingElement-frame">
-        <img style="width: 99px; height: 130px" src="${data.image}"/>
-        <div class="ListingElement-detail">
-          <div class="Element-detail">
-            <div class="Element-header">
-              <div class="header-price">${data.name}</div>
-              <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
-            </div>
-            <ul>
-              <li class="detail-info">Tình trạng: ${data.status}</li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+async function product_item_generator(input_data){
+
+    const result = await fetch(`localhost:3000/product/${input_data.product}`, { method: "GET", 
+    headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+            },
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const new_product = document.createElement("div");
+    new_product.classList.add("ListingElement");
+    new_product.innerHTML =
+    `
+    <div class="ListingElement-frame">
+    <img style="width: 99px; height: 130px" src="${data.image[0]}"/>
+    <div class="ListingElement-detail">
+    <div class="Element-detail">
+        <div class="Element-header">
+        <div class="header-price">${data.name}</div>
+        <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
         </div>
-      </div>
-      <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+        <ul>
+        <li class="detail-info">Tình trạng: ${data.status}</li>
+        <li class="detail-info">Số lượng: ${input_data.unit}</li>
+        </ul>
     </div>
-  `
+    <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+    </div>
+</div>
+<div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+`
+    return new_product;
+
+  
 }
 
+
+
 //FILL ACCOUNT INFORMATIONS
-function account_information_filler(user_data){
+async function account_information_filler(user_data){
 
     //email field
     var user_email = document.getElementById("user-email");
@@ -87,28 +86,60 @@ function account_information_filler(user_data){
 
 }
 
+async function product_item_filler(data){
+    try{
+        const title =`<div style="color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn hàng ${data._id}</div>`
+        const order_list = document.createElement("div");
+        order_list.classList.add("Order-list");
+        order_list.innerHTML = title;
+
+        var tmp='';
+
+        for (item in data.items){
+            tmp = await product_item_generator(item);
+            order_list.appendChild(tmp);
+        }
+
+    } catch(error){
+        console.log("Error ",error);
+        alert(error);
+    }
+}
+
 //FILL BUYING ORDERS
-function account_order(user_data){
-    fetch("http://localhost:3000/shopping/orders", { method: "GET", 
-    headers:{
-        "Content-Type": "application/json",
-        "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
-    },
-})
-    .then((response) => response.json())
-    .then((data)=>{
+async function account_order(user_data){
+    try{
+        const result = await fetch("http://localhost:3000/shopping/orders", { method: "GET", 
+        headers:{
+                "Content-Type": "application/json",
+                "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+                },
+        });
+        const data = await result.json();
         if (data.error){
             alert(data);
+            return;
         }
+
         console.log("All orders: ",data);
-        
 
-    })
-    .catch((error=>{
-        console.log("Error",error);
+        const buy_order_container = document.getElementById('buy-order-container');
+
+        var tmp='';
+        var tmp_container='';
+        for (order in data){
+            tmp_container= document.createElement("div");
+            tmp = await product_item_filler(order);
+            tmp_container.innerHTML=tmp;
+            buy_order_container.appendChild(tmp_container);
+        }   
+
+
+    }   catch (error){
+        console.log("Error ",error);
         alert(error);
-    }))
-
+    }
+        
 }
 
 //ON PAGE LOAD

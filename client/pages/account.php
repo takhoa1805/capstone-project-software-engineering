@@ -218,13 +218,9 @@
   <div class="Line9" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
 
   <!-- BUY ORDER LIST -->
-  <div class="BuyOrder-container">
+  <div class="BuyOrder-container" id='buy-order-container'>
     <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn mua</div>
-    <!-- ORDER LIST -->
-    <div class="Order-list">
-      
-    </div>
-    <!-- END OF ORDER LIST -->
+
   </div>
   <!-- END OF BUY ORDER LIST -->
 
