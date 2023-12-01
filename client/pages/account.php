@@ -21,8 +21,7 @@
   <!-- End of importing custom style -->
   	<!-- Verifying authentication -->
 	<script type="text/javascript" src="../scripts/auth.js"></script>
-  <!-- Get account information -->
-  <script type ="text/javascript" src ="../scripts/account_info.js"></script>
+
   </head>
 
 <body>
@@ -42,7 +41,7 @@
     <div class="account-label">
       <div class="account-label-name">Tài khoản của tôi</div>
       <div class="change-button-container">
-        <button class="change-button" onclick="">
+        <button class="change-button" id='change-button'>
           <div class="change-button-text-container">
             <div class="change-button-text">Chỉnh sửa</div>
           </div>
@@ -60,8 +59,8 @@
                   <div class="Text">Email</div>
                 </div>
               </div>
-              <div class="FormText">
-                <input type="text" class="form-control" id="nameSignUp" placeholder="lorem.ipsum@gmail.com">
+              <div class="FormText" id = "">
+                <input type="text" class="form-control" id="user-email" placeholder="">
               </div>
             </div>
             <div class="Field">
@@ -71,7 +70,7 @@
                 </div>
               </div>
               <div class="FormText">
-                <input type="text" class="form-control" id="nameSignUp" placeholder="Lorem Ipsum">
+                <input type="text" class="form-control" id="user-name" placeholder="">
               </div>
             </div>
             <div class="Dropdown">
@@ -81,7 +80,7 @@
                 </div>
               </div>
               <div class="Dropdown">
-                <select class="form-select" aria-label="choose-country">
+                <select class="form-select" aria-label="choose-country" id='country-choices'>
                   <option selected>Choose a country</option>
                   <option value="1">Viet Nam</option>
                   <option value="2">Canada</option>
@@ -89,54 +88,24 @@
                 </select>
               </div>
             </div>
-            <div class="Dropdown">
-              <div class="LabelIcon">
-                <div class="Label">
-                  <div class="Text">State/Province</div>
-                </div>
-              </div>
-              <div class="Dropdown">
-                <select class="form-select" aria-label="choose-State/Province">
-                  <option selected>Choose State/Province</option>
-                  <option value="1">Ottawa</option>
-                  <option value="2">Ottawa</option>
-                  <option value="3">Ottawa</option>
-                </select>
-              </div>
-            </div>
-            <div class="Dropdown">
+            <div class="Field">
               <div class="LabelIcon">
                 <div class="Label">
                   <div class="Text">City</div>
                 </div>
               </div>
-              <div class="Dropdown">
-                <select class="form-select" aria-label="choose-city">
-                  <option selected>Choose City</option>
-                  <option value="1">Tokyo</option>
-                  <option value="2">Tokyo</option>
-                  <option value="3">Tokyo</option>
-                </select>
+              <div class="FormText">
+                <input type="text" class="form-control" id="user-city" placeholder="">
               </div>
             </div>
             <div class="Field">
               <div class="LabelIcon">
                 <div class="Label">
-                  <div class="Text">Zip code</div>
+                  <div class="Text">Street</div>
                 </div>
               </div>
               <div class="FormText">
-                <input type="text" class="form-control" id="nameSignUp" placeholder="00100100">
-              </div>
-            </div>
-            <div class="Field">
-              <div class="LabelIcon">
-                <div class="Label">
-                  <div class="Text">Address</div>
-                </div>
-              </div>
-              <div class="FormText">
-                <input type="text" class="form-control" id="nameSignUp" placeholder="10 Hello World, Ottawa">
+                <input type="text" class="form-control" id="user-street" placeholder="">
               </div>
             </div>
             <div class="Field">
@@ -146,7 +115,7 @@
                 </div>
               </div>
               <div class="FormText">
-                <input type="text" class="form-control" id="nameSignUp" placeholder="+555-2323-2333">
+                <input type="text" class="form-control" id="user-phone" placeholder="+555-2323-2333">
               </div>
             </div>
           </div>
@@ -157,7 +126,7 @@
     <div class="Password-container">
       <div style="width: 200px; color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; word-wrap: break-word">Password</div>
       <div class="Password-info">
-        <button type="button" class="btn btn-secondary">Lưu thay đổi mật khẩu</button>
+        <button type="button" class="btn btn-secondary" id='password-change-button'>Lưu thay đổi mật khẩu</button>
         <div class="Field">
           <div class="LabelIcon">
             <div class="Label">
@@ -181,8 +150,8 @@
       </div>
     </div>
     <div style="justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
-      <button type="button" class="btn btn-primary">Lưu thay đổi</button>
-      <button type="button" class="btn btn-secondary">Hủy</button>
+      <button type="button" class="btn btn-primary" id='save-changes-button'>Lưu thay đổi</button>
+      <button type="button" class="btn btn-secondary" id='cancel-button'>Hủy</button>
     </div>
   </div>
   <div class="Line8" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
@@ -194,41 +163,54 @@
           <form>
             <div class="form-group">
               <label for="exampleFormControlInput1">Tên sản phẩm</label>
-              <input type="text" class="form-control" placeholder="Name">
+              <input type="text" class="form-control" placeholder="" id= 'product-name'>
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Giá đề xuất </label>
-              <input type="text" class="form-control" placeholder="Price">
+              <input type="text" class="form-control" placeholder="" id= 'product-price'>
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Số lượng</label>
-              <input type="number" class="form-control" placeholder="Quantity">
+              <input type="number" class="form-control" placeholder="" id ='product-quantity'>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Giới thiệu sản phẩm</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <label for="exampleFormControlTextarea1">Giới thiệu tổng quan về sản phẩm</label>
+              <textarea class="form-control" rows="3" id='product-introduction'></textarea>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Mô tả chi tiết sản phẩm</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" id='product-specification'></textarea>
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Mô tả tình trạng sản phẩm</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" id='product-status'></textarea>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">HÌnh ảnh thực tế, URL cách nhau bởi dấu phẩy. Ít nhất 3 ảnh</label>
-              <input type="text" class="form-control" placeholder="Link">
+              <label for="exampleFormControlTextarea1">Lý do bán</label>
+              <textarea class="form-control" rows="3" id='product-reason-for-sale'></textarea>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Phân loại</label>
-              <select class="form-control">
-                <option>Vip</option>
-                <option>Siêu cấp pro Vip</option>
+              <label for="exampleFormControlTextarea1">Lưu ý khác</label>
+              <textarea class="form-control" rows="3" id='product-note'></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Hình ảnh thực tế, URL cách nhau bởi dấu phẩy.</label>
+              <input type="text" class="form-control" placeholder="" id='product-images'>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Phân loại sản phẩm</label>
+              <select class="form-control" id='product-type'>
+                <option value='else'>Khác</option>
+                <option value='electronics'>Đồ điện tử</option>
+                <option value='clothes'>Quần áo</option>
+                <option value='tickets'>Vé sự kiện</option>
+                <option value ='books'>Giáo trình</option>
+                <option value='households'>Thiết bị gia dụng</option>
+
               </select>
             </div>
           </form>
-          <button type="button" class="btn btn-primary">Gửi yêu cầu</button>
+          <button type="button" class="btn btn-primary" id='send-selling-request'>Gửi yêu cầu</button>
         </div>
       </div>
     </div>
@@ -369,6 +351,8 @@
 <!-- Import Framework -->
 <script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- End of importing Framework -->
+  <!-- Get account information -->
+  <script type ="text/javascript" src ="../scripts/account_info.js"></script>
 <!-- Header Logic -->
 <script type="text/javascript" src="../scripts/component/header.js"></script>
 </body>

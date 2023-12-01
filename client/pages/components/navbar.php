@@ -19,16 +19,10 @@
       <div class="d-none d-lg-block me-auto">
 					<ul class="nav nav-pills">
 						<li class="nav-item">
-							<a class="nav-link" href="">Trang chủ</a>
+							<a class="nav-link" href="./help.php">Câu hỏi thường gặp</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="">Sản phẩm</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="">Câu hỏi thường gặp</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="">Về BKPee</a>
+							<a class="nav-link" href="./about.php">Về BKPee</a>
 						</li>
 					</ul>
 				</div>
@@ -39,13 +33,13 @@
           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
           <span class="input-group-text border-0" style="background-color: #0795DF;" id="search-addon">
           <i class=" fas fa-search">
-              <a href="#search">
+              <a href="./productsearch.php">
                 <img src="../images/searchIcon.svg" alt="search">
               </a>
           </i>
           </span>
         </div>
         
-        <a href="#cart"><img src="../images/cartIcon.svg" alt="search">       </a>
+        <a href="./cart.php"><img src="../images/cartIcon.svg" alt="cart">       </a>
       </nav>
     </div>
