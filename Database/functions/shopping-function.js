@@ -89,7 +89,7 @@ class shoppingrepository {
               };
             } else if (productLeft === 0) {
               productsmodel
-                .deleteOne({ _id: item.product._id })
+                .updateOne({ _id: item.product._id }, {$set:{status:'sold'}})
                 .exec()
                 .then((result) => {
                   return result;

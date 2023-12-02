@@ -3,7 +3,7 @@ var user_data=null;
 
 async function product_item_generator(input_data){
 
-    const result = await fetch(`localhost:3000/product/${input_data.product}`, { method: "GET", 
+    const result = await fetch(`http://localhost:3000/product/${input_data.product}`, { method: "GET", 
     headers:{
             "Content-Type": "application/json",
             "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
@@ -20,7 +20,7 @@ async function product_item_generator(input_data){
     new_product.innerHTML =
     `
     <div class="ListingElement-frame">
-    <img style="width: 99px; height: 130px" src="${data.image[0]}"/>
+    <img style="width: 99px; height: 130px" src=""/>
     <div class="ListingElement-detail">
     <div class="Element-detail">
         <div class="Element-header">
@@ -44,48 +44,6 @@ async function product_item_generator(input_data){
 
 
 
-//FILL ACCOUNT INFORMATIONS
-async function account_information_filler(user_data){
-
-    //email field
-    var user_email = document.getElementById("user-email");
-    user_email.value = user_data.email;
-
-    //name field
-    var user_name = document.getElementById('user-name');
-    user_name.value = user_data.name;
-
-    //country
-    var user_country = document.getElementById('country-choices');
-    switch(user_data.address[0].country.toLowerCase()){
-        case 'vietnam':
-            user_country.value=1;
-            break;
-        case 'canada':
-            user_country.value=2;
-            break;
-        case 'korea':
-            user_country.value=3;
-            break;
-        default:
-            user_country.value = 1;
-            break;
-    };
-
-    //city
-    var user_city = document.getElementById('user-city');
-    user_city.value = user_data.address[0].city;
-
-    //street
-    var user_street = document.getElementById('user-street');
-    user_street.value=user_data.address[0].street;
-
-    //phone
-    var user_phone = document.getElementById('user-phone');
-    user_phone.value = user_data.phone;
-
-}
-
 async function product_item_filler(data){
     try{
         const title =`<div style="color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn hàng ${data._id}</div>`
@@ -94,10 +52,14 @@ async function product_item_filler(data){
         order_list.innerHTML = title;
 
         var tmp='';
+        var tmp_container='';
 
         for (item in data.items){
-            tmp = await product_item_generator(item);
-            order_list.appendChild(tmp);
+            tmp_container = document.createElement('div');
+            console.log(data.items[item]);
+            tmp = await product_item_generator(data.items[item]);
+            tmp_container.innerHTML=tmp;
+            order_list.appendChild(tmp_container);
         }
 
     } catch(error){
@@ -129,7 +91,7 @@ async function account_order(user_data){
         var tmp_container='';
         for (order in data){
             tmp_container= document.createElement("div");
-            tmp = await product_item_filler(order);
+            tmp = await product_item_filler(data[order]);
             tmp_container.innerHTML=tmp;
             buy_order_container.appendChild(tmp_container);
         }   
@@ -143,29 +105,79 @@ async function account_order(user_data){
 }
 
 //ON PAGE LOAD
-document.addEventListener('DOMContentLoaded',()=>{
-    fetch("http://localhost:3000/users/profile", { method: "GET", 
-    headers:{
-        "Content-Type": "application/json",
-        "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
-    },
-})
-    .then((response) => response.json())
-    .then((data)=>{
+document.addEventListener('DOMContentLoaded',async ()=>{
+    try{
+        const result = await fetch("http://localhost:3000/users/profile", { method: "GET", 
+        headers:{
+                "Content-Type": "application/json",
+                "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+                },
+        });
+        const data = await result.json();
         if (data.error){
             alert(data);
+            return;
         }
         console.log("Response from backend: ",data);
         user_data = data;
-        account_information_filler(user_data);
-        account_order(user_data);
-    })
-    .catch((error=>{
-        console.log("Error",error);
-        alert(error);
-    }))
-});
+        await account_information_filler(user_data);
+        await account_order(user_data);
 
+
+
+    }   catch(error){
+        console.log("Error ",error);
+        alert(error);
+    }
+})
+
+
+//FILL ACCOUNT INFORMATIONS
+async function account_information_filler(user_data){
+
+    //email field
+    var user_email = document.getElementById("user-email");
+    user_email.value = user_data.email;
+
+    //name field
+    var user_name = document.getElementById('user-name');
+    user_name.value = user_data.name;
+
+    //country
+    //city
+    //street
+    var user_country = document.getElementById('country-choices');
+    var user_city = document.getElementById('user-city');
+    var user_street = document.getElementById('user-street');
+
+    if (user_data.address[0]){
+        switch(user_data.address[0].country.toLowerCase()){
+            case 'vietnam':
+                user_country.value=1;
+                break;
+            case 'canada':
+                user_country.value=2;
+                break;
+            case 'korea':
+                user_country.value=3;
+                break;
+            default:
+                user_country.value = 1;
+                break;
+        };
+        user_city.value = user_data.address[0].city;
+        user_street.value=user_data.address[0].street;
+    }   else{
+        user_city.value="Unknown";
+        user_street.value="Unknown";
+    }
+
+
+    //phone
+    var user_phone = document.getElementById('user-phone');
+    user_phone.value = user_data.phone;
+
+}
 
 //SEND SELLING REQUEST
 document.querySelector('#send-selling-request').addEventListener('click',(event)=>{
@@ -234,11 +246,6 @@ document.querySelector('#send-selling-request').addEventListener('click',(event)
         alert(error);
     }))
 });
-
-
-
-
-
 
 
 // -------------------------------------------------------------- //
