@@ -14,21 +14,25 @@ async function product_item_generator(input_data){
         alert(data);
         return;
     }
+    // console.log("return data",data);
+
+    const image_list = JSON.parse(data[0].image).split(',');
+    // console.log("image",(image_list));
 
     const new_product = document.createElement("div");
     new_product.classList.add("ListingElement");
     new_product.innerHTML =
     `
     <div class="ListingElement-frame">
-    <img style="width: 99px; height: 130px" src=""/>
+    <img style="width: 100px" src="${image_list[0]}"/>
     <div class="ListingElement-detail">
     <div class="Element-detail">
         <div class="Element-header">
-        <div class="header-price">${data.name}</div>
-        <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
+        <div class="header-price">${data[0].name}</div>
+        <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
         </div>
         <ul>
-        <li class="detail-info">Tình trạng: ${data.status}</li>
+        <li class="detail-info">Tình trạng: ${data[0].status}</li>
         <li class="detail-info">Số lượng: ${input_data.unit}</li>
         </ul>
     </div>
@@ -37,6 +41,7 @@ async function product_item_generator(input_data){
 </div>
 <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
 `
+    // console.log(new_product);
     return new_product;
 
   
@@ -58,9 +63,11 @@ async function product_item_filler(data){
             tmp_container = document.createElement('div');
             console.log(data.items[item]);
             tmp = await product_item_generator(data.items[item]);
-            tmp_container.innerHTML=tmp;
-            order_list.appendChild(tmp_container);
+            // tmp_container.innerHTML=tmp;
+            order_list.appendChild(tmp);
         }
+
+        return order_list;
 
     } catch(error){
         console.log("Error ",error);
@@ -92,8 +99,8 @@ async function account_order(user_data){
         for (order in data){
             tmp_container= document.createElement("div");
             tmp = await product_item_filler(data[order]);
-            tmp_container.innerHTML=tmp;
-            buy_order_container.appendChild(tmp_container);
+            // tmp_container.innerHTML=tmp;
+            buy_order_container.appendChild(tmp);
         }   
 
 
