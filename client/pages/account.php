@@ -226,90 +226,16 @@
 
 
   <div class="Line10" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-  <div class="SellOrder-container">
+
+  <!-- SELL ORDER LIST -->
+  <div class="SellOrder-container" id='sell-order-container'>
     <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn bán</div>
-    <div class="AccountInfo">
-      <div class="ListingElement">
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png" />
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Đang chờ bàn giao, xác nhận</li>
-                <li class="detail-info">Vui lòng bàn giao tại kho trước ngày 11/11/2023</li>
-                <li class="detail-info">Sau ngày 11/11/2023 đơn hàng sẽ bị hủy</li>
-              </ul>
-            </div>
-            <button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Hủy đơn hàng</button>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
-      <div class="ListingElement">
-        <button type="button" class="btn btn-danger btn-sm" style="place-self: start;">Hủy đơn hàng</button>
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png" />
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Đã xác nhận</li>
-              </ul>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Gửi yêu cầu chỉnh sửa thông tin sản phẩm</button>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
-      <div class="ListingElement">
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png" />
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Đã hủy</li>
-                <li class="detail-info">Vui lòng đến nhận sẩn phẩm tại kho trước ngày 11/11/2023</li>
-                <li class="detail-info">Sau ngày 11/11/2023 sản phẩm sẽ được đăng tải cho tặng trên website</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
-      <div class="ListingElement">
-        <div class="ListingElement-frame">
-          <img style="width: 99px; height: 130px" src="../images/book.png" />
-          <div class="ListingElement-detail">
-            <div class="Element-detail">
-              <div class="Element-header">
-                <div class="header-price">Sách giáo trình Giải tích 2</div>
-                <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-              </div>
-              <ul>
-                <li class="detail-info">Tình trạng: Đã bán</li>
-                <li class="detail-info">Đơn hàng sẽ được thanh toán cho bạn sau ngày 11/11/2023 
-                  nếu người mua không có phản hồi khiểu nại/đổi trả
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-      </div>
-    </div>
+    
+
   </div>
   </div>
+  <!-- END OF SELL ORDER LIST -->
+
 <!--End of Account main-->      
 <!-- Footer -->
 <?php include './components/footer.php';?>

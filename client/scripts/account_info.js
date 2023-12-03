@@ -1,12 +1,176 @@
 var user_data=null;
 
+//ON PAGE LOAD
+document.addEventListener('DOMContentLoaded',async ()=>{
+    try{
+        const result = await fetch("http://localhost:3000/users/profile", { method: "GET", 
+        headers:{
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+                },
+        });
+        const data = await result.json();
+        if (data.error){
+            alert(data);
+            return;
+        }
+        console.log("Response from backend: ",data);
+        user_data = data;
+        await account_information_filler(user_data);
+        await account_buy_order(user_data);
+        await account_sell_order(user_data);
 
+
+
+    }   catch(error){
+        console.log("Error ",error);
+        alert(error);
+    }
+})
+
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------DISPLAY SELL ORDERS-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+async function account_sell_order(user_data){
+    try{
+        const result = await fetch(`http://localhost:3000/sales/products/${user_data._id}`, { method: "GET", 
+        headers:{
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+                },
+        });
+        const data = await result.json();
+        if (data.error){
+            alert(data);
+            return;
+        }
+
+        const sell_order_container = document.getElementById('sell-order-container');
+
+        var tmp='';
+
+        if (data.length ==0 ){
+            tmp = document.createElement("div");
+            tmp.innerHTML='Bạn không có đơn bán nào';
+            sell_order_container.appendChild(tmp);
+            return;
+        }
+        for (order in data){
+            tmp = await sell_product_item_filler(data[order]);
+            // console.log(tmp);
+            sell_order_container.appendChild(tmp);
+        }   
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);
+    }
+        
+}
+
+async function sell_product_item_filler (data){
+    try{
+        const title =`<div style="color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Mã sản phẩm ${data._id}</div>`
+        const order_list = document.createElement("div");
+        order_list.classList.add("Order-list");
+        order_list.innerHTML = title;
+
+        var tmp='';
+
+        tmp = await sell_product_item_generator(data);
+        // console.log(order_list);
+        order_list.appendChild(tmp);
+        return order_list;
+
+
+    } catch(error){
+        console.log("Error ",error);
+        alert(error);
+    }
+}
+
+async function sell_product_item_generator(input_data){
+
+    const result = await fetch(`http://localhost:3000/product/${input_data._id}`, { method: "GET", 
+    headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+            },
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+    // console.log("return data",data);
+
+    const image_list = JSON.parse(data[0].image).split(',');
+    // console.log("image",(image_list));
+
+    const new_product = document.createElement("div");
+    new_product.classList.add("ListingElement");
+    new_product.innerHTML =
+    `
+    <div class="ListingElement">
+    <div class="ListingElement-frame">
+      <img style="width: 100px" src="${image_list[0]}" />
+      <div class="ListingElement-detail">
+    <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+
+        <div class="Element-detail">
+          <div class="Element-header">
+            <div class="header-price">${data[0].name}</div>
+            <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
+          </div>
+          <ul>
+            <li class="detail-info">Tình trạng: ${data[0].status}</li>
+            <li class="detail-info">Số lượng: ${input_data.quantity}</li>
+          </ul>
+          </a>
+        </div>
+        <button type="button" class="btn btn-danger btn-sm mb-1" style="place-self: end;" onclick="remove_request('${input_data._id}')">Gửi yêu cầu hủy đơn hàng</button>
+        <button type="button" class="btn btn-primary btn-sm" style="place-self: end;" onclick="obsolete_alert()">Gửi yêu cầu chỉnh sửa thông tin sản phẩm</button>
+      </div>
+    </div>
+    <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
+  </div>
+
+
+`
+    return new_product;
+
+  
+}
+
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------DISPLAY SELL ORDERS-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------DISPLAY BUY ORDERS--------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 async function product_item_generator(input_data){
 
     const result = await fetch(`http://localhost:3000/product/${input_data.product}`, { method: "GET", 
     headers:{
             "Content-Type": "application/json",
-            "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
             },
     });
     const data = await result.json();
@@ -25,18 +189,20 @@ async function product_item_generator(input_data){
     `
     <div class="ListingElement-frame">
     <img style="width: 100px" src="${image_list[0]}"/>
-    <div class="ListingElement-detail">
-    <div class="Element-detail">
+    <div class="ListingElement-detail" >
+    <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+    <div class="Element-detail"  >
         <div class="Element-header">
-        <div class="header-price">${data[0].name}</div>
-        <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
+            <div class="header-price">${data[0].name}</div>
+            <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
+
         </div>
         <ul>
-        <li class="detail-info">Tình trạng: ${data[0].status}</li>
         <li class="detail-info">Số lượng: ${input_data.unit}</li>
         </ul>
+        </a>
     </div>
-    <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">Yêu cầu đổi/trả</button>
+    <button type="button" class="btn btn-primary btn-sm " style="place-self: end;" onclick="obsolete_alert()">Yêu cầu đổi/trả</button>
     </div>
 </div>
 <div class="Line4" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
@@ -48,7 +214,6 @@ async function product_item_generator(input_data){
 }
 
 
-
 async function product_item_filler(data){
     try{
         const title =`<div style="color: black; font-size: 24px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Đơn hàng ${data._id}</div>`
@@ -57,11 +222,8 @@ async function product_item_filler(data){
         order_list.innerHTML = title;
 
         var tmp='';
-        var tmp_container='';
 
         for (item in data.items){
-            tmp_container = document.createElement('div');
-            console.log(data.items[item]);
             tmp = await product_item_generator(data.items[item]);
             // tmp_container.innerHTML=tmp;
             order_list.appendChild(tmp);
@@ -76,12 +238,12 @@ async function product_item_filler(data){
 }
 
 //FILL BUYING ORDERS
-async function account_order(user_data){
+async function account_buy_order(user_data){
     try{
         const result = await fetch("http://localhost:3000/shopping/orders", { method: "GET", 
         headers:{
                 "Content-Type": "application/json",
-                "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+                "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
                 },
         });
         const data = await result.json();
@@ -90,14 +252,19 @@ async function account_order(user_data){
             return;
         }
 
-        console.log("All orders: ",data);
 
         const buy_order_container = document.getElementById('buy-order-container');
 
         var tmp='';
-        var tmp_container='';
+        if (data.length ==0 ){
+            tmp = document.createElement("div");
+            tmp.innerHTML='Bạn không có đơn mua nào';
+            buy_order_container.appendChild(tmp);
+            return;
+        }
+        
+
         for (order in data){
-            tmp_container= document.createElement("div");
             tmp = await product_item_filler(data[order]);
             // tmp_container.innerHTML=tmp;
             buy_order_container.appendChild(tmp);
@@ -111,35 +278,23 @@ async function account_order(user_data){
         
 }
 
-//ON PAGE LOAD
-document.addEventListener('DOMContentLoaded',async ()=>{
-    try{
-        const result = await fetch("http://localhost:3000/users/profile", { method: "GET", 
-        headers:{
-                "Content-Type": "application/json",
-                "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
-                },
-        });
-        const data = await result.json();
-        if (data.error){
-            alert(data);
-            return;
-        }
-        console.log("Response from backend: ",data);
-        user_data = data;
-        await account_information_filler(user_data);
-        await account_order(user_data);
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------DISPLAY BUY ORDERS--------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 
 
 
-    }   catch(error){
-        console.log("Error ",error);
-        alert(error);
-    }
-})
-
-
-//FILL ACCOUNT INFORMATIONS
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------FILL ACCOUNT INFORMATIONS-------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 async function account_information_filler(user_data){
 
     //email field
@@ -185,8 +340,22 @@ async function account_information_filler(user_data){
     user_phone.value = user_data.phone;
 
 }
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------FILL ACCOUNT INFORMATIONS-------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 
-//SEND SELLING REQUEST
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------SEND SELLING REQUEST------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 document.querySelector('#send-selling-request').addEventListener('click',(event)=>{
     const uploaduserid = user_data.id;
     const name = document.getElementById('product-name').value;
@@ -232,7 +401,7 @@ document.querySelector('#send-selling-request').addEventListener('click',(event)
     fetch("http://localhost:3000/sales/product/upload", { method: "POST", 
     headers:{
         "Content-Type": "application/json",
-        "Authorization":`Beaer ${JSON.parse(localStorage.getItem('user')).token}`
+        "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
     },
     body:upload_info,
 })
@@ -253,6 +422,98 @@ document.querySelector('#send-selling-request').addEventListener('click',(event)
         alert(error);
     }))
 });
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------SEND SELLING REQUEST------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------SEND REMOVE REQUEST-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+async function remove_request(product_id){
+    try{
+        var remove_reason = window.prompt("Vui lòng cho biết lý do gỡ bài đăng sản phẩm (bắt buộc)");
+        if (remove_reason =='' ){
+            // alert('your reason is shit')
+            return;
+        }
+
+        const remove_info = `
+        {
+            "remove_reason":"${remove_reason}"
+        }
+        `
+        // // console.log(product_id);
+
+        // const result = await fetch(`http://localhost:3000/sales/product/delete-request/656b43dd95c04d3e58cde1c0`, { method: "POST", 
+        // headers:{
+        //         "Content-Type": "application/json",
+        //         "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        //         },
+        // body: {
+        //     reasonforsale:reasonforsale
+        // }
+        // });
+        // const data = await result.json();
+        // if (data.error){
+        //     alert(data);
+        //     return;
+        // }
+
+        // window.alert('Yêu cầu gỡ bỏ sản phẩm đã được gửi đi');
+        // window.location.reload();
+        // return;
+
+        fetch(`http://localhost:3000/sales/product/delete-request/${product_id}`, { method: "POST", 
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        },
+        body:remove_info,
+    })
+        .then((response) => response.json())
+        .then((data)=>{
+            if (data.error){
+                alert(data.error.message);
+                console.log("Response from backend: ",data.error.message);
+                throw data.error;
+            }  else{
+                window.alert('Yêu cầu gỡ bỏ sản phẩm đã được gửi đi');
+                window.location.reload();
+                return;
+            }
+    
+        })
+        .catch((error=>{
+            console.log("Error",error);
+            alert(error);
+        }))
+
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);
+    }
+        
+}
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------SEND REMOVE REQUEST-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
 
 
 // -------------------------------------------------------------- //
@@ -277,6 +538,16 @@ document.querySelector('#save-changes-button').addEventListener('click',()=>{
 document.querySelector('#cancel-button').addEventListener('click',()=>{
     window.location.reload();
 });
+
+function obsolete_alert(){
+    window.alert('Tính năng đang được hoàn thiện');
+}
+function obsolete_alert_reload(){
+    window.alert('Tính năng đang được hoàn thiện');
+    window.location.reload();
+    return;
+}
+
 // -------------------------------------------------------------- //
 // -------------------------------------------------------------- //
 // -------------------------------------------------------------- //

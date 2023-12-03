@@ -89,7 +89,7 @@ class shoppingrepository {
               };
             } else if (productLeft === 0) {
               productsmodel
-                .updateOne({ _id: item.product._id }, {$set:{status:'out of stock'}})
+                .updateOne({ _id: item.product._id }, {$set:{status:'out of stock',quantity:productLeft}})
                 .exec()
                 .then((result) => {
                   return result;

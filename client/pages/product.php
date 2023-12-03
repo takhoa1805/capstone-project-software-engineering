@@ -74,7 +74,7 @@
         </div>
         <div class="List-container">
 
-            <div class="Results">20 results</div>
+            <div class="Results" id='result'></div>
             <div class="List-detail">
                 <div class="ListingElement-container">
                     <div class="ListingElement">
@@ -193,5 +193,7 @@
 <!-- End of importing Framework -->
 <!-- Header Logic -->
 <script type="text/javascript" src="../scripts/component/header.js"></script>
+  <!-- Get account information -->
+  <script type ="text/javascript" src ="../scripts/product_display.js"></script>
 </body>
 </html>

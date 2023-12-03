@@ -2,7 +2,7 @@
       <div style="display: flex; gap: 15px; align-items: center;"> 
         <div class="dropdown burgerdrop">
         
-          <img style="cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false" src="../images/burger.svg" alt="">
+          <img style="cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false" src="" alt="">
   
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
