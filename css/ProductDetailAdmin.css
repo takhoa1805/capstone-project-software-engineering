@@ -1,0 +1,261 @@
+.Maincontainer {
+    padding: 20px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+}
+
+.Product-header-container {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.ApproveCancel,
+.Return {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+}
+
+.Product-header {
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+
+.Text {
+    color: white;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.Product-Name {
+    align-self: stretch;
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Product-Price {
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Product-Name {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.Product-Price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Slide show */
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+/* End slide show */
+
+/*Nav bar*/
+.NavigationBar {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Shared styles for all screen sizes */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand {
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none;
+    color: black;
+}
+/*End nav bar */
+
+
+.Overview-container,
+.Specs-container,
+.TheBox-container,
+.Reviews-container,
+.Support-container {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.Overview-label,
+.Specs-label,
+.TheBox-label,
+.Reviews-label,
+.Support-label {
+    width: 200px;
+    color: black;
+    font-size: 24px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Overview-detail,
+.Specs-detail,
+.TheBox-detail,
+.Reviews-detail,
+.Support-detail {
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+}
+
+.detail-label {
+    color: black;
+    font-size: 16px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.detail-text {
+    color: black;
+    font-size: 14px;
+    font-family: Inconsolata;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.detail-1,
+.detail-2 {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    display: inline-flex;
+}
+
+.detail-3 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+}
+
+/* Mobile-first styles */
+@media (min-width: 300px) {
+    .container.Maincontainer {
+      padding: 30px;
+    }
+
+    .detail-1,
+    .detail-2,
+    .detail-3 {
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+    }
+  }
+  
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    .container.Maincontainer {
+        padding: 40px;
+    }
+
+
+    .detail-1,
+    .detail-2,
+    .detail-3 {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    img {
+        max-width: 100%;
+    }
+    
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 1280px) {
+    .container.Maincontainer {
+        padding-left: 60px;
+      }
+
+    .detail-1,
+    .detail-2,
+    .detail-3 {
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .detail-1,
+    .detail-2 {
+        flex-direction: row;
+    }
+    .detail-3 {
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+    }
+  }

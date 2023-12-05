@@ -1,0 +1,191 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    overflow: auto;
+}
+
+.container.Maincontainer {
+    flex-direction: column;
+    gap: 90px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.MainPage {
+    align-self: stretch;
+    flex-direction: column;
+    gap: 40px;
+    display: flex;
+}
+
+.Page-lable {
+    color: black;
+    font-size: 36px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Text {
+    color: black;
+    font-size: 36px;
+    font-family: Inconsolata;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.Payment-form {
+    flex: auto;
+    display: flex;
+}
+
+.Payment-form-input {
+    flex: auto;
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+}
+
+.information,
+.Payment-method {
+    align-self: stretch;
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+}
+
+.Orderform {
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+}
+
+.OrderSummary {
+    padding: 25px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+
+.OrderDetail {
+    align-self: stretch;
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+}
+
+.Product,
+.cost-list,
+.cost-total {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    display: flex;
+}
+
+.Product-detail {
+    padding-top: 10px;
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    display: inline-flex;
+}
+
+.detail-frame {
+    width: 75%;
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: inline-flex;
+}
+
+.element {
+    align-self: stretch;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+}
+
+.Line {
+    width: auto; 
+    height: 0px; 
+    border: 1px black solid;
+}
+
+/* Mobile-first styles */
+@media (min-width: 300px) {
+    .Maincontainer {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .Page-lable {
+        font-size: 26px;
+    }
+
+    .Payment-form {
+        width: 300px;
+        flex-direction: column;
+    }
+
+    .Payment-form-input {
+        align-self: stretch;
+        padding-bottom: 20px;
+    }
+
+    .Orderform {
+        width: 400px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .Maincontainer {
+        padding: 50px;
+        margin: 0;
+    }
+
+    .Page-lable {
+        font-size: 36px;
+    }
+
+    .Payment-form {
+        width: 700px;
+        flex-direction: column;
+    }
+
+    .Payment-form-input {
+        align-self: stretch;
+    }
+    .Orderform {
+        width: 400px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1280px) {
+    .Maincontainer {
+        padding: 70px;
+        margin-left: 60px;
+    }
+
+    .Page-lable {
+        font-size: 36px;
+    }
+
+    .Payment-form {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .Orderform {
+        width: 400px;
+    }
+}
+
