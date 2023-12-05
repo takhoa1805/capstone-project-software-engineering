@@ -45,7 +45,7 @@
     <div class="Return">
         <nav class="navbar navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="product_admin-request.php">
                     <i class="bi bi-box-arrow-in-left" style="color: black; text-decoration: underline;">Quay lại</i>
                 </a>
             </div>
