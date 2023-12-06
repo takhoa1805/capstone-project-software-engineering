@@ -4,7 +4,7 @@
 	<meta lang="en">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, , initial-scale=1, user-scalable=no">
-	<title>Product Admin</title>
+	<title>Products</title>
       <!-- Google Font API -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
 <!-- End of Navigation Bar -->
 <!-------------------------------------------------------------------------------->
 <!--Product Admin main -->
-    <div class="container Maincontainer">
+    <div class="container Maincontainer " id="inner">
     <div class="MainPage">
         <div class="Left-Nav-bar">
             <div class="Sidebar">
@@ -44,13 +44,13 @@
 						<div class="Sidebar-header">Phân loại</div>
 						<div class="Line5" style="align-self: stretch; height: 0px; border: 1px black solid"></div>
                         <nav class="navbar" style="display: flex; flex-direction: column; align-items: flex-start;">
-							<a class="navbar-brand Sidebar-selection" href="#">Tất cả</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Đồ điện tử</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Quần áo</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Vé sự kiện</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Giáo trình</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Thiết bị gia dụng</a>
-							<a class="navbar-brand Sidebar-selection" href="#">Khác</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-all" style="cursor:pointer">Tất cả</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-electronics"style="cursor:pointer">Đồ điện tử</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-clothes"style="cursor:pointer">Quần áo</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-tickets"style="cursor:pointer">Vé sự kiện</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-books"style="cursor:pointer">Giáo trình</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-households"style="cursor:pointer">Thiết bị gia dụng</a>
+							<a class="navbar-brand Sidebar-selection" id="filter-else"style="cursor:pointer">Khác</a>
 						</nav> 
                     </div>
                 </div>
@@ -74,53 +74,21 @@
         </div>
         <div class="List-container">
             <div class="Results" id='result'></div>
+            <!-- PRODUCT LIST -->
             <div class="List-detail" id='product-container'>
-                <div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
-                <div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
-
-
 
             </div>
+            <!-- END OF PRODUCT LIST -->
         </div>
     </div>
     </div>
 <!--End of Product Admin main -->
 <!-------------------------------------------------------------------------------->
+<div id="myfooter">
 <!-- Footer -->
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
+</div>
 <!-------------------------------------------------------------------------------->
 <!-- Import Framework -->
 	<script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
@@ -130,4 +98,5 @@
   <!-- Get account information -->
   <script type ="text/javascript" src ="../scripts/product_display.js"></script>
 </body>
+
 </html>

@@ -27,7 +27,13 @@ document.addEventListener('DOMContentLoaded',async()=>{
     }
 });
 
-
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------PRODUCT LIST LOADER-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
 async function product_loader(product_data){
     try{
 
@@ -36,19 +42,25 @@ async function product_loader(product_data){
         var tmp='';
 
         var result = document.getElementById('result');
-        result.innerHTML = product_data.length +" result(s) found";
+        var total_product = 0;
 
-        if (product_data.length ==0 ){
+
+        for (product in product_data){
+            if (product_data[product].status !== 'available'){
+                continue;
+            }
+            tmp = await product_item_generator(product_data[product]);
+            product_container.appendChild(tmp);
+            total_product++;
+        }   
+
+        if (total_product ==0 ){
             tmp = document.createElement("div");
             tmp.innerHTML='Không có sản phẩm nào để hiển thị';
-            product_container_container.appendChild(tmp);
-            return;
+            product_container.prepend(tmp);
         }
-        for (product in product_data){
-            tmp = await product_item_generator(product_data[product]);
-            console.log(product_data[product]);
-            product_container.appendChild(tmp);
-        }   
+        result.innerHTML = total_product +" result(s) found";
+        // alert(total_product);
 
 
     }   catch (error){
@@ -74,25 +86,244 @@ async function product_item_generator(product_data){
 
     new_product.innerHTML=
     `
-        <img style="width: 99px; height: 130px" src="${image_list[0]}" />
+        <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+        <img style="width: 100px" src="${image_list[0]}" />
+        </a>
         <div class="ListingElement-detail">
-            <div class="Element-detail">
-                <div class="Element-header">
-                <div class="header-price">${product_data.name}</div>
-                <div class="header-price" style="width: 100px; text-align: right;">${product_data.price}đ</div>
+        <div class="Element-detail">
+        <div class="Element-header">
+                    <div class="header-price">${product_data.name}</div>
+                    <div class="header-price" style="width: 100px; text-align: right;">${product_data.price}đ</div>
                 </div>
                 <div class="detail-info">
                     <ul>
                         <li class="detail-info">${specification_list.introduction}</li>
+                        <li class="detail-info">Danh mục: ${category_generator(product_data.type)}</li>
                         <li class="detail-info">Số lượng: ${product_data.quantity}</li>
                     </ul>
                 </div>
             </div>
-        </div>
+            </div>
     `
     new_product_container.appendChild(new_product);
     new_product_container.appendChild(new_line);
     return new_product_container;
 
 
+}
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------PRODUCT LIST LOADER-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------PRODUCT LIST FILTER-------------------------//
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+// -------------------------------------------------------------- //
+document.querySelector("#filter-all").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/all/available", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-electronics").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/electronics", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-clothes").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/clothes", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-tickets").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/tickets", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-books").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/books", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-households").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/households", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+document.querySelector("#filter-else").addEventListener('click',async (event)=>{
+    try{
+        const result = await fetch ("http://localhost:3000/product/category/else", {method:"GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        }
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data);
+        return;
+    }
+
+    const container = document.getElementById('product-container');
+    container.innerHTML='';
+    await product_loader(data);
+
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+});
+
+
+function category_generator (type){
+    switch (type){
+        case 'electronics':
+            return 'Đồ điện tử';
+        case 'clothes':
+            return 'Quần áo';
+        case 'tickets':
+            return 'Vé sự kiện';
+        case 'books':
+            return 'Giáo trình';
+        case 'householder':
+            return 'Thiết bị gia dụng';
+        case 'else':
+            return 'Khác';
+    }
+    return null;
 }

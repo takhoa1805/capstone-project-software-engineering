@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" ">
   <div class="container footerContainer">
     <div class="row justify-content-center">
       <div class="col-auto d-none d-lg-block">

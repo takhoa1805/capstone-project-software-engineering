@@ -241,12 +241,11 @@
 .footer{
   padding: 50px 53px 34px 53px;
   background-color: #0795DF;
+
   position: relative;
-  height: fit-content;
   background-image: url(../img/logo\ 2.svg) ;
   background-repeat: no-repeat;
   background-position: 30px 45px;
-  
 
 }
 
@@ -973,4 +972,12 @@ li h4{
   color: #000;
   font-size: 16px;
   font-weight: 500px;
+}
+
+#inner{
+  margin-bottom: 20%;
+}
+
+#myfooter{
+  margin-top: 20%;
 }
