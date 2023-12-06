@@ -73,9 +73,8 @@
             </div>
         </div>
         <div class="List-container">
-
             <div class="Results" id='result'></div>
-            <div class="List-detail">
+            <div class="List-detail" id='product-container'>
                 <div class="ListingElement-container">
                     <div class="ListingElement">
                         <img style="width: 99px; height: 130px" src="../images/book.png" />
@@ -110,74 +109,9 @@
                     </div>
                     <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
                 </div>
-				<div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
-				<div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
-				<div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
-				<div class="ListingElement-container">
-                    <div class="ListingElement">
-                        <img style="width: 99px; height: 130px" src="../images/book.png" />
-                        <div class="ListingElement-detail">
-                            <div class="Element-detail">
-								<div class="Element-header">
-								  <div class="header-price">Sách giáo trình Giải tích 2</div>
-								  <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-								</div>
-								<div class="detail-info">Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2,
-									mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!
-								</div>
-							</div>
-                        </div>
-                    </div>
-                    <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-                </div>
+
+
+
             </div>
         </div>
     </div>
