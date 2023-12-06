@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded',async()=>{
     // product_data = data;
     await product_loader(data);
 
-
     }   catch (error){
         console.log("Error ",error);
         alert(error);   
@@ -77,34 +76,46 @@ async function product_item_generator(product_data){
 
     const new_product_container = document.createElement('div');
     new_product_container.classList.add('ListingElement-container');
+    new_product_container.style.margin='10px';
+    new_product_container.style.padding='10px';
 
     const new_product = document.createElement('div');
     new_product.classList.add('ListingElement');
+
 
     const new_line = document.createElement('div');
     new_line.style=('align-self: stretch; height: 0px; border: 1px black solid');
 
     new_product.innerHTML=
     `
-        <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+        <a onclick="navigator('${product_data._id}')" style="cursor:pointer" >
         <img style="width: 100px" src="${image_list[0]}" />
         </a>
         <div class="ListingElement-detail">
-        <div class="Element-detail">
-        <div class="Element-header">
+            <div class="Element-detail">
+                <div class="Element-header">
                     <div class="header-price">${product_data.name}</div>
                     <div class="header-price" style="width: 100px; text-align: right;">${product_data.price}đ</div>
                 </div>
-                <div class="detail-info">
+                <div class="detail-info col-10">
                     <ul>
                         <li class="detail-info">${specification_list.introduction}</li>
                         <li class="detail-info">Danh mục: ${category_generator(product_data.type)}</li>
                         <li class="detail-info">Số lượng: ${product_data.quantity}</li>
-                    </ul>
+                        </ul>
                 </div>
-            </div>
-            </div>
+                </div>
+                </div>
+                <div class="float-end p-0 m-0">
+                    <button type="button" class="btn btn-primary m-0 align-content-end align-self-end" id="product-${product_data._id}-btn">Thêm vào giỏ</button>
+                </div>
     `
+
+
+
+    
+
+
     new_product_container.appendChild(new_product);
     new_product_container.appendChild(new_line);
     return new_product_container;

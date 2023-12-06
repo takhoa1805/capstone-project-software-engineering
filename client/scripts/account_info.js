@@ -110,7 +110,7 @@ async function sell_product_item_generator(input_data){
     }
     // console.log("return data",data);
 
-    const image_list = JSON.parse(data[0].image).split(',');
+    const image_list = JSON.parse(data.image).split(',');
     // console.log("image",(image_list));
 
     const new_product = document.createElement("div");
@@ -121,15 +121,15 @@ async function sell_product_item_generator(input_data){
     <div class="ListingElement-frame">
       <img style="width: 100px" src="${image_list[0]}" />
       <div class="ListingElement-detail">
-    <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+    <a onclick="navigator('${data._id}')" style="cursor:pointer" >
 
         <div class="Element-detail">
           <div class="Element-header">
-            <div class="header-price">${data[0].name}</div>
-            <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
+            <div class="header-price">${data.name}</div>
+            <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
           </div>
           <ul>
-            <li class="detail-info">Tình trạng: ${data[0].status}</li>
+            <li class="detail-info">Tình trạng: ${data.status}</li>
             <li class="detail-info">Số lượng: ${input_data.quantity}</li>
           </ul>
           </a>
@@ -180,7 +180,7 @@ async function product_item_generator(input_data){
     }
     // console.log("return data",data);
 
-    const image_list = JSON.parse(data[0].image).split(',');
+    const image_list = JSON.parse(data.image).split(',');
     // console.log("image",(image_list));
 
     const new_product = document.createElement("div");
@@ -190,11 +190,11 @@ async function product_item_generator(input_data){
     <div class="ListingElement-frame">
     <img style="width: 100px" src="${image_list[0]}"/>
     <div class="ListingElement-detail" >
-    <a href="/client/pages/product_detail.php" style="cursor:pointer" >
+    <a onclick="navigator('${data._id}')" style="cursor:pointer" >
     <div class="Element-detail"  >
         <div class="Element-header">
-            <div class="header-price">${data[0].name}</div>
-            <div class="header-price" style="width: 70px; text-align: right;">${data[0].price}đ</div>
+            <div class="header-price">${data.name}</div>
+            <div class="header-price" style="width: 70px; text-align: right;">${data.price}đ</div>
 
         </div>
         <ul>

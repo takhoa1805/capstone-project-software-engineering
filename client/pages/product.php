@@ -82,6 +82,7 @@
         </div>
     </div>
     </div>
+    <br>
 <!--End of Product Admin main -->
 <!-------------------------------------------------------------------------------->
 <div id="myfooter">
@@ -97,6 +98,8 @@
 <script type="text/javascript" src="../scripts/component/header.js"></script>
   <!-- Get account information -->
   <script type ="text/javascript" src ="../scripts/product_display.js"></script>
+  <!-- Navigate to product detail -->
+  <script type="text/javascript" src="../scripts/product_navigator.js"></script>
 </body>
 
 </html>

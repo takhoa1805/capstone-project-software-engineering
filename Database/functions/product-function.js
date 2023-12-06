@@ -43,7 +43,7 @@ class productrepository {
 
   async findbyid(productid) {
     try {
-      const result = await productsmodel.find({ _id: productid });
+      const result = await productsmodel.findById({ _id: productid });
       return result;
     } catch (err) {
       throw err;
