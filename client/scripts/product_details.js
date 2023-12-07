@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
     // window.location.href=('/client/pages/product_detail.php');
@@ -168,3 +168,42 @@ function note_section(product_data){
     `
     return result;
 }
+
+
+// CUSTOMER ADD PRODUCT TO CART
+document.querySelector("#add-to-cart").addEventListener('click',async()=>{
+    try{
+        const product_id = localStorage.getItem('product_id');
+        if (!product_id){
+            window.alert("Product not found");
+            window.location.href = "/client/pages/product.php";
+            return;
+        }
+        const result = await fetch ("http://localhost:3000/product/cart/add", {method:"PUT",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        },
+        body:`
+            {
+                "_id":"${product_id}",
+                "quantity":"1"
+            }
+        `
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data.error.message);
+        return;
+    }
+
+    window.alert("Sản phẩm đã được thêm vào giỏ");
+    window.location.reload();   
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+
+}) 

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
         });
         const data = await result.json();
         if (data.error){
-            alert(data);
+            alert(data.error.message);
             return;
         }
         console.log("Response from backend: ",data);
@@ -46,7 +46,7 @@ async function account_sell_order(user_data){
         });
         const data = await result.json();
         if (data.error){
-            alert(data);
+            alert(data.error.message);
             return;
         }
 
@@ -105,7 +105,7 @@ async function sell_product_item_generator(input_data){
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
     // console.log("return data",data);
@@ -175,7 +175,7 @@ async function product_item_generator(input_data){
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
     // console.log("return data",data);
@@ -248,7 +248,7 @@ async function account_buy_order(user_data){
         });
         const data = await result.json();
         if (data.error){
-            alert(data);
+            alert(data.error.message);
             return;
         }
 

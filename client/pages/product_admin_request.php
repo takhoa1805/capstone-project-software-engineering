@@ -34,99 +34,16 @@
     <div class="MainPage">
       <div style="color: black; font-size: 36px; font-family: Inconsolata; font-weight: 700; line-height: 54px; word-wrap: break-word">Yêu cầu chờ xét duyệt</div>
       <div class="Element-List">
-        <div class="Sell-Require">
+        <div class="Sell-Require" style="margin:20px">
           <div class="header-text">Yêu cầu đăng bán</div>
-          <div class="Product-list">
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">
-                    <div class="Text">Xem chi tiết</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">
-                    <div class="Text">Xem chi tiết</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
+          <div class="Product-list" id="upload-requests-container">
+
+
           </div>
         </div>
-        <div class="Change-Require">
-          <div class="header-text">Yêu cầu sửa thông tin sản phẩm</div>
-          <div class="Product-list">
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                      <li class="detail-info">Nội dung chỉnh sửa: Mô tả chi tiết, Hình ảnh sản phẩm</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">
-                    <div class="Text">Xem chi tiết</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                      <li class="detail-info">Nội dung chỉnh sửa: Mô tả chi tiết, Hình ảnh sản phẩm</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-primary btn-sm" style="place-self: end;">
-                    <div class="Text">Xem chi tiết</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
-          </div>
-        </div>
-        <div class="Cancel-Require">
+
+
+        <div class="Cancel-Require" style="margin: 20px">
           <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
           <div class="Product-list">
             <div class="ListingElement-container">
@@ -173,6 +90,8 @@
             </div>
           </div>
         </div>
+
+
         <div class="Complain-Exchange">
           <div class="header-text">Khiếu nại sản phẩm, yêu cầu đổi/trả</div>
           <div class="Product-list">
@@ -221,14 +140,9 @@
           </div>
         </div>
       </div>
-      <div class="SaveCancel-button">
-        <button type="button" class="btn btn-primary">
-          <div class="Text">Save</div>
-        </button>
-        <button type="button" class="btn btn-secondary">
-          <div class="Text">Cancel</div>
-        </button>
-      </div>
+
+
+
     </div>
   </div>
 <!--End of Product Admin Required List main -->
@@ -242,5 +156,7 @@
 <!-- End of importing Framework -->
 <!-- Header Logic -->
 <script type="text/javascript" src="../scripts/component/header.js"></script>
+<!-- Requests Logic -->
+<script type="text/javascript" src="../scripts/admin_requests.js"></script>
 </body>
 </html>

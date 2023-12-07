@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -107,7 +107,7 @@ async function product_item_generator(product_data){
                 </div>
                 </div>
                 <div class="float-end p-0 m-0">
-                    <button type="button" class="btn btn-primary m-0 align-content-end align-self-end" id="product-${product_data._id}-btn">Thêm vào giỏ</button>
+                    <button type="button" class="btn btn-primary m-0 align-content-end align-self-end" id="add-to-cart" onclick=add_to_cart('${product_data._id}')>Thêm vào giỏ</button>
                 </div>
     `
 
@@ -148,7 +148,7 @@ document.querySelector("#filter-all").addEventListener('click',async (event)=>{
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -174,7 +174,7 @@ document.querySelector("#filter-electronics").addEventListener('click',async (ev
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -200,7 +200,7 @@ document.querySelector("#filter-clothes").addEventListener('click',async (event)
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -226,7 +226,7 @@ document.querySelector("#filter-tickets").addEventListener('click',async (event)
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -252,7 +252,7 @@ document.querySelector("#filter-books").addEventListener('click',async (event)=>
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -278,7 +278,7 @@ document.querySelector("#filter-households").addEventListener('click',async (eve
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -304,7 +304,7 @@ document.querySelector("#filter-else").addEventListener('click',async (event)=>{
     });
     const data = await result.json();
     if (data.error){
-        alert(data);
+        alert(data.error.message);
         return;
     }
 
@@ -337,4 +337,37 @@ function category_generator (type){
             return 'Khác';
     }
     return null;
+}
+
+
+// CUSTOMER ADD PRODUCT TO CART
+async function add_to_cart(product_id){
+    try{
+        const result = await fetch ("http://localhost:3000/product/cart/add", {method:"PUT",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+        },
+        body:`
+            {
+                "_id":"${product_id}",
+                "quantity":"1"
+            }
+        `
+    });
+    const data = await result.json();
+    if (data.error){
+        alert(data.error.message);
+        return;
+    }
+
+    window.alert("Sản phẩm đã được thêm vào giỏ");
+    window.location.reload();   
+
+    }   catch (error){
+        console.log("Error ",error);
+        alert(error);   
+    }
+
+
 }

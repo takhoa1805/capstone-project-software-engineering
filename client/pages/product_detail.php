@@ -43,7 +43,7 @@
 					</a>
 				</div>
 			</nav>
-			<button id='product-btn' class="btn btn-primary btn btn-primary m-0 align-content-end align-self-end " type="button" onclick="" style="float:right;">Thêm vào giỏ</button>
+			<button class="btn btn-primary btn btn-primary m-0 align-content-end align-self-end " type="button" id="add-to-cart" style="float:right;">Thêm vào giỏ</button>
 		</div>
 		<div class="Product-header-container">
 			<div class="Product-header">
