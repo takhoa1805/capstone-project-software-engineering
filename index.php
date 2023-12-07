@@ -113,13 +113,13 @@
 			rules: [
 				Validator.isEmail('emailLogin'),
 				Validator.isPassword('passLogin'),
-			]
+			],
 		})
 		Validator({
 			form: 'forget-form',
 			rules: [
 				Validator.isEmail('forgetEmail'),
-			]
+			],
 		})
 	</script>
 <!-- End of importing Framework -->
