@@ -28,21 +28,60 @@
   <!-- end of navbar -->
 
   <div class="newspaper">
-    <a href="#" ><h2 style="color: black;text-decoration: underline black;font-size: 24px;line-height: 150%;font-weight: 900;margin: 0; justify-items: center;" >Latest new ></h2></a>
+    <!-- <a href="newspapes.php" ><h2 style="color: black;text-decoration: underline black;font-size: 24px;line-height: 150%;font-weight: 900;margin: 0; justify-items: center;" >Latest new ></h2></a> -->
     <div class="newspaper-list">
       <div class="newspaper_item intro">
         <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
         <h2 style="height: 30px;">Phone news</h2>
         <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
       </div>
-     
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
+      <div class="newspaper_item intro">
+        <a href="newdetail.php"><img src="../images/news/new 1.svg" alt=""></a>
+        <h2 style="height: 30px;">Phone news</h2>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id rhoncus augue, id bibendum magna. Nulla urna nibh, ornare sit amet lacinia vel, accumsan non diam.</h1>
+      </div>
     </div>
   </div>
 <!-- Footer -->
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
-  <script src="../scripts/bootstrap.bundle.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
 
   
 </body>

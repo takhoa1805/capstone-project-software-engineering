@@ -27,7 +27,7 @@
   <?php include './components/navbar.php';?>
   <!-- end of navbar -->
 
-  <div class="product-field" style="margin-top: 20px;">
+  <div class="product-field">
       <ul class="products-items">
         <li data-category="" data-price="">
           <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
@@ -122,7 +122,7 @@
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
-  <script src="../scripts/bootstrap.bundle.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
 
   
 </body>

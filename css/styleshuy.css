@@ -1,57 +1,71 @@
 body {
   font-family: Inconsolata;
 }
-/* banner */
-.banner {
-  width: 100%;
-  height: 436px;
 
- 
-}
-.banner-list {
-  width: 100%;
-  max-height: 400px;
-  display: flex;
-}
-.banner-list_item {
+
+/* banner */
+.banner{
   display: flex;
   width: 100%;
-  gap: 0;
-  background: rgba(42, 40, 40, 0.67);
-  
-}
-.banner-item_img {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 60%;
   height: 400px;
+  align-items: flex-end;
+  background: rgba(42, 40, 40, 0.67);
+}
+
+
+.banner-carousel {
+  height: 400px;
+  margin: 0 auto;
   overflow: hidden;
 }
+.banner-1{
+  width: 60%;
 
-.banner-item_img img {
+}
+
+.banner-2{
+  width: 40%;
+  min-width: 400px;
+
+}
+
+
+.banner-carousel-container {
   width: 100%;
-  height: 400px;
-  margin: 0;
-  object-fit: cover;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 
+}
+
+.banner-carousel-item {
+  flex: 0 0 100%;
+}
+
+.banner-carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 .banner-intro{
-  right: 50px;
-  left: 36px;
-  top: 60px;
-  position: absolute;
-}
+  width:70% ;
+  min-width: 350px;
+  margin-bottom: 40px;
 
-.banner-rec {
-  position: relative;
-  width: 40%;
-  min-width: 300px;
-  gap: 30px;
 }
 
 
-.banner-bar {
+#prevBtn, #nextBtn {
+  height: 20px;
+  width: 15px;
+  cursor: pointer;
+  background-color: white;
+  color: #fff;
+  border: none;
+  padding: 0;
+}
+
+.banner-btn{
   display: flex;
   width: 100%;
   background-color: #ffffff;
@@ -59,10 +73,9 @@ body {
   margin-bottom: 7px;
   height: 20px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 72px;
-  align-self: flex-end;
-  position: absolute;
+
 }
 
 .banner-dot {
@@ -79,7 +92,36 @@ body {
   height: 15px;
   width: 15px;
   border: 1px solid #000;
+  cursor: pointer;
 }
+
+.banner-dot .active{
+  background: black;
+}
+
+
+
+.banner-carousel-item-1{
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+@media screen and (max-width: 767.98px){
+  .banner {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+  }
+  .banner-1{
+    width: 100%;
+  }
+  .banner-2{
+    width: 100%;
+  }
+}
+/* enbanner */
 .buttons {
   border: none;
   background: none;
@@ -87,17 +129,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.button-prev {
-  border: 0;
-}
-
-.button-next {
-  border: 0;
-}
-
-/* enbanner */
-
 /* home */
 
 .section{
@@ -280,11 +311,13 @@ body {
 .filter-condition{
   width: 200px;
   padding: 0;
-  height: 20px;
+  height: 160px;
   font-size: 20px;
   font-weight: bold;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+
 }
 .filter-condition select{
   width: 120px;
@@ -463,44 +496,54 @@ li h4{
   word-wrap: break-word;
 }
 
-/*  Slide show  */
+/* ------------------------- Slide show  */
 
-@media (max-width: 767px) {
-  .carousel-inner .carousel-item>div {
-      display: none;
-  }
-
-  .carousel-inner .carousel-item>div:first-child {
-      display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
+.banner-p{
   display: flex;
+  width: 100%;
+  height: min-content;
+  padding: 0 100px;
+  align-items: flex-end;
+  background: white;
+  justify-content: center;
+  overflow: hidden;
+}
+.banner-carousel-p {
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-/* medium and up screens */
-@media (min-width: 768px) {
-
-  .carousel-inner .carousel-item-end.active,
-  .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
-  }
-
-  .carousel-inner .carousel-item-start.active,
-  .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
-  }
+.banner-carousel-container-p{
+  width: 60%;  
+  max-width: 550px;
+  min-width: 450px;
+  height: 100%;
+  display: flex;
+  justify-self: center;
 }
 
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start {
-  transform: translateX(0);
+.banner-carousel-item-p {
+  flex: 0 0 100%;
+  margin-right: 10px;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* End slide show */
+.banner-carousel-item-p img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 10px;
+  
+}
+
+
+
+/*--------------------------- End slide show */
 
 .productdetail-container {
 
@@ -534,13 +577,20 @@ li h4{
 }
 
 .detail-1 {
-  align-self: stretch;
+  width: fit-content;
   justify-content: flex-start;
   align-items: center;
   gap: 50px;
-  display: inline-flex;
+  display: flex;
 }
-
+.detail-1 img{
+  width: min-content;
+  max-width: 70%;
+  object-fit: cover;
+}
+.detail-1 div{
+  min-width: 170px;
+}
 .detail-label {
   color: black;
   font-size: 16px;
@@ -557,27 +607,10 @@ li h4{
   word-wrap: break-word;
 }
 
-.detail-2 {
-  align-self: stretch;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 50px;
-  display: inline-flex;
-}
-
-.detail-3 {
-  align-self: stretch;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  display: flex;
-}
-
 
 .productdetail-body{
   width: 100%;  
-  padding: 50px 100px ;
+  padding: 10px 100px 50px 100px ;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -585,6 +618,20 @@ li h4{
   display: inline-flex;
 }
 
+@media screen and (max-width: 991.98px){
+  .banner-carousel-container-p{
+    max-width: 460px;
+  }
+  .banner-carousel-item-p img {
+    max-height: 480px;    
+  }
+  .detail-1{
+    flex-direction: column;
+  }
+  .detail-1 img{
+    max-width: 100%;
+  }
+}
 @media screen and (max-width: 767.98px){
   .productdetail-head{
     padding: 50px 30px;
@@ -596,6 +643,21 @@ li h4{
 
   .productdetail-container {
     flex-direction: column;
+  }
+  .banner-p{
+    padding: 0 30px;
+  }
+  .banner-carousel-container-p{
+    max-width: 400px;
+  }
+  .banner-carousel-item-p img {
+    
+    max-height: 430px;    
+  }
+}
+@media screen and (max-width: 575.98px){
+  .banner-carousel-item-p img {
+  max-height: 360px;  
   }
 }
 

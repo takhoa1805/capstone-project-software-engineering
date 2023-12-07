@@ -27,20 +27,49 @@
   <?php include './components/navbar.php';?>
   <!-- end of navbar -->
   <div class="help">
-    <h3>Câu hỏi thường gặp:</h3>
-    <ul style="margin-left:100px;">
-      <li>
-        <a href="">Câu hỏi 1:</a>
-      </li>
-      <li>
-        <a href="">Câu hỏi 2:</a>
-      </li>
-      <li>
-        <a href="">Câu hỏi 3:</a>
-      </li>
-      <li>
-        <a href="">Câu hỏi 4:</a>
-      </li>
+    <ul>Câu hỏi thường gặp:
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="font-size: 24px;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Tôi có thể làm gì ở đây
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              BKPEE là một sàn thương mại điện tử được tạo dựng với mục đích giúp các sinh viên Trường Đại học Bách Khoa tự do mua bán, trao đổi đồ dùng và vật dụng, bạn có thể đăng bán và mua các sản phẩm tại đây.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="font-size: 24px;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+              Tôi có thể làm như thế nào
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Bạn có thể mua đồ tại mục sản phẩm, bạn có thể lọc, tìm kiếm sản phẩm và sắp xếp chúng theo mức giá. Hoặc là bạn có thể về lại trang chủ để xem các bài báo và những tin tức nóng hổi.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" style="font-size: 24px;" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+              Thầy sẽ cho nhóm em mấy điểm
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Tất nhiên là 10 rồi!
+
+            </div>
+          </div>
+        </div>
+
+      </div>
     </ul>
   </div>
 <!-- Footer -->

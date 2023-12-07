@@ -28,7 +28,7 @@
   <!-- end of navbar -->
 
   <div class="newspaper intro" style="gap: 12px;">
-    <a class="nolined" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5px;" href="./newspapes.html">
+    <a class="nolined" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 5px;" href="./newspapes.php">
       <img src="../images/icon/prevbutton.svg" alt="">
       <i class="fcb fs14 nolined">Quay lại</i>
     </a> 
@@ -48,7 +48,7 @@
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
-  <script src="../scripts/bootstrap.bundle.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
 
   
 </body>

@@ -11,7 +11,7 @@
 
   
 <!-- Import Framework -->
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <!-- End of importing Framework -->
    <!-- style -->
@@ -117,7 +117,7 @@ hollows.org
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
 
-  <script src="../scripts/bootstrap.bundle.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
 
   
 </body>
