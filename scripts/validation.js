@@ -14,14 +14,43 @@ function validate(input, rule){
     }
 }
 
-function Validator(formCheck){
-    formCheck.rules.forEach(rule => {
-        var inp = document.getElementById(rule.selector);       
+function validOrNot(input, rule){
+    var err=rule.test(input.value);
+    return !err;
+}
 
+function Validator(formCheck){
+
+    formCheck.rules.forEach(rule => { 
+        var inp = document.getElementById(rule.selector);      
         inp.onblur = function() {
             validate(inp, rule);
         };
     });
+
+    var formEle = document.getElementById(formCheck.form);
+    if (formEle){
+        formEle.onsubmit = function (e) {
+            e.preventDefault();
+            formCheck.rules.forEach(rule => { 
+                var inp = document.getElementById(rule.selector);      
+                    validate(inp, rule);
+            });
+            var flag=true;
+            formCheck.rules.forEach(rule =>{
+                var inp = document.getElementById(rule.selector);
+                if (!validOrNot(inp, rule))
+                    flag=false;
+            })
+            if (flag == true)
+                formEle.submit();
+            else
+                flag=true;
+        }
+    }
+    else {
+        formEle.submit();
+    };
 }
 
 
