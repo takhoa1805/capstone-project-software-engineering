@@ -19,11 +19,13 @@
                 </div>
                 <div class="d-none d-lg-block ms-auto">
                     <ul class="nav p-0 m-0">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
+                        <form class="d-flex" role="search">
+                            <input type="search" class="form-control my-auto" placeholder="Tìm kiếm..."
+                                aria-label="search" aria-describedby="searchBar" style="background-color: #FFFFFF;">
+                            <button class="btn " type="button" id=searchBar>
                                 <img src="../images/tool1.svg" height="25px" width="25px">
-                            </a>
-                        </li>
+                            </button>
+                        </form>
                         <li class="nav-item">
                             <a href="" class="nav-link">
                                 <img src="../images/tool2.svg" height="25px" width="25px">
