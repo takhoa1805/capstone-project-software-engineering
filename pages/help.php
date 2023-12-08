@@ -52,7 +52,9 @@
           </h2>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
             <div class="accordion-body">
-              Bạn có thể mua đồ tại mục sản phẩm, bạn có thể lọc, tìm kiếm sản phẩm và sắp xếp chúng theo mức giá. Hoặc là bạn có thể về lại trang chủ để xem các bài báo và những tin tức nóng hổi.
+              Bạn có thể mua đồ tại mục sản phẩm, bạn có thể lọc, tìm kiếm sản phẩm và sắp xếp chúng theo mức giá. Hoặc là bạn có thể về lại <a href="product_detail.php" style="text-decoration: none;">
+                  <h1 class="fs24" style="display: inline; margin: 0;">trang chủ</h1>
+              </a> để xem các bài báo và những tin tức nóng hổi.
 
             </div>
           </div>

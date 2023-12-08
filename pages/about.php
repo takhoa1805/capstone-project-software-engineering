@@ -38,69 +38,65 @@
   <div class="about-body">
     <div class="about-1">
       <div class="intro">
-        <div style="font-size: 36px; font-weight: 700; color: white;">About us</div>
-          <h1 class="" style="text-align: justify; line-height: 150%; color: #fff;">Established in 2006, our goal is to deliver a specialist range of microcontrollers and boards for enthusiasts. Since then, we have expanded into computers and personal devices that are open to repair and upgrade, unlike most products on the market.</h1>
+        <div style="font-size: 36px; font-weight: 700; color: white;">BKpee</div>
+          <h1 class="" style="text-align: justify; line-height: 150%; color: #fff;">Được thành lập vào năm 2023, Chúng tôi là đội ngũ đam mê về việc đưa đến cho mọi người một nền tảng trao đổi vật dụng độc đáo và tiện lợi. Với sứ mệnh tạo ra một không gian mở, nơi mọi người có thể chia sẻ, mua bán, và trao đổi các sản phẩm một cách thuận lợi, chúng tôi đã xây dựng nền tảng của mình với sự chú ý đặc biệt đến trải nghiệm người dùng và tính an toàn.</h1>
       </div>
-      <img src="../images/logo/about 1.svg" alt="">
+      <img  style = "margin-top: 20px" src="../images/logo/about 1.png" alt="">
     </div>
    
 
     <div class="about-2 intro">
-      <h1 style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit sed erat eget tempus. Phasellus ac nibh vitae nunc rutrum porttitor. Fusce ultrices tellus nec tortor eleifend, in suscipit lacus iaculis. Mauris elit nibh, tincidunt ac est ut, sollicitudin tincidunt leo. Donec volutpat vitae augue id vestibulum. Cras id lorem fermentum, scelerisque enim quis, malesuada mi. Nam enim lorem, varius mollis eros et, placerat mollis nibh. Cras varius, ante ac rutrum cursus, justo nibh sagittis massa, eu mollis risus erat vel enim. Integer malesuada tincidunt volutpat.</h1>
+      <h1 style="text-align: justify;">Sau mỗi kỳ học hoặc dự án, nhu cầu mua bán và trao đổi vật phẩm đã qua sử dụng trong cộng đồng sinh viên ngày càng tăng. Cùng với số lượng sinh viên gia tăng, việc tạo ra một nền tảng tập trung cho việc mua bán và chia sẻ thông tin về sự kiện là cần thiết. Hiện nay, việc sử dụng diễn đàn mạng xã hội để thực hiện các giao dịch mua bán và cho tặng đưa ra những thách thức như thiếu bảo đảm chất lượng, khó khăn trong việc tìm kiếm người mua/cho tặng, và rủi ro lừa đảo. Do đó chúng tôi tạo ra trang web này để thỏa mãn các bạn.</h1>
     </div>
 
     <div class="about-3">
       
-      <h3 class="fs24 fcw fw700">DEDSEC Helping Hands</h3>
+      <h3 class="fs24 fcw fw700">HCMUT</h3>
       <div>
-      <h1 class="fs14 fcw fw400" style="text-align: justify; line-height: 150%;">Started in November 2008, Helping Hands allows employees to donate to 10 charity partners through regular payroll deductions. All donations are matched by us. We recognise the responsibility to give back to the community and believe workplace giving is an efficient and effective way to do so. With DEDSEC matching staff contributions dollar-for-dollar we effectively double the positive impact to our charities and community.</h1>
-      <img style="width: 177px; height: 106px;" src="../images/logo/about 2.png" alt="">
+      <h1 class="fs14 fcw fw400" style="text-align: justify; line-height: 150%;">Đại học Bách Khoa Thành phố Hồ Chí Minh, với hơn 60 năm lịch sử phát triển, là ngôi trường uy tín và hàng đầu tại Việt Nam trong lĩnh vực đào tạo các chuyên gia chất lượng cao trong các ngành khoa học công nghệ và kỹ thuật. Nằm trong hệ thống Đại học Quốc gia Thành phố Hồ Chí Minh, Bách Khoa TP.HCM là điểm đến lựa chọn của hàng ngàn sinh viên trẻ tài năng.</h1>
+      <img style="width: 177px; height: 106px; background-color: white;" src="../images/logo/logo 2.svg" alt="">
       </div>
     </div>
 
     <div class="about-4">
-      <div class="fs14 fw400 fcw">Charities we support</div>
+      <div class="fs14 fw400 fcw">công nghệ</div>
       <div class="about-4_l">
         <div class="about-4_item">
           <img src="../images/logo/about 3.png" alt="">
           <h2>
-            The Fred Hollows Foundation
+            Bootstrap 5
           </h2>
           <h1>
-            The Fred Hollows Foundation is a lean and independent, non-profit, secular organisation. The Foundation has worked in over 40 countries around the world and with Indigenous communities in remote parts of Australia, and continues to be inspired by Fred’s lifelong endeavour to end avoidable blindness and improve Indigenous health.
-hollows.org
+            Bootstrap là một framework phổ biến được sử dụng rộng rãi trong phát triển web, mang lại một cơ sở hạ tầng linh hoạt và mạnh mẽ cho việc xây dựng giao diện người dùng đẹp và responsive. Bootstrap dần trở thành công cụ quan trọng đối với các nhà phát triển web, giúp họ tiết kiệm thời gian và công sức trong quá trình phát triển.
           </h1>
         </div>
         <div class="about-4_item">
-          <img src="../images/logo/about 4.png" alt="">
+          <img src="../images/logo/about 4.jpg" alt="">
           <h2>
-            Earth Squad
+            Nodejs
           </h2>
           <h1>
-            Earth Squad is a partnership with 2040 & Carbon8. We are helping support farmers to transition to regenerative practices. sequester carbon from the atmosphere and draw it down into the soil where it can create healthier farms, animals, food, waterways and humans.
-            <br> <a class="wlined fcw" href="">whatsyour2040.comcarbon8.org.auu</a> 
+          Node.js là một nền tảng phát triển ứng dụng server-side được xây dựng trên JavaScript runtime của Chrome V8 Engine. Được phát triển bởi Joyent, Node.js đã nhanh chóng trở thành một công cụ quan trọng trong cộng đồng phát triển web, đặc biệt là trong xây dựng ứng dụng real-time và scalable.
             
           </h1>
         </div>
         <div class="about-4_item">
           <img src="../images/logo/about 5.png" alt="">
           <h2>
-            Support Act
+            MongoDB
           </h2>
           <h1>
-            Support Act is Australia’s only charity delivering crisis relief and mental health & wellbeing services to artists, artist managers, crew and music workers doing it tough.
-            <br> <a class="wlined fcw" href="">www.supportact.org.au</a> 
+            MongoDB là một hệ quản trị cơ sở dữ liệu NoSQL phổ biến, được thiết kế để đáp ứng những yêu cầu của ứng dụng hiện đại. Nó sử dụng mô hình lưu trữ document-oriented, trong đó dữ liệu được biểu diễn dưới dạng BSON (Binary JSON). Điều này mang lại tính linh hoạt lớn, cho phép lưu trữ dữ liệu với cấu trúc không đồng nhất và có thể mở rộng theo chiều ngang, giúp xử lý dữ liệu lớn và đáp ứng nhanh chóng với nhu cầu thay đổi. 
             
           </h1>
         </div>
         <div class="about-4_item">
           <img src="../images/logo/about 6.png" alt="">
           <h2>
-            Companion Animal Network Australia
+            Github
           </h2>
           <h1>
-            A compassionate community dedicated to providing safe and caring homes for companion animals. Promoting the human-animal bond.
-            <br> <a class="wlined fcw" href="">australiacan.org.au</a> 
+            GitHub là một nền tảng quản lý mã nguồn phổ biến, mang lại một loạt các công cụ và tính năng để hỗ trợ quá trình phát triển phần mềm. GitHub sử dụng hệ thống kiểm soát phiên bản Git, cho phép nhóm phát triển theo dõi lịch sử thay đổi của mã nguồn một cách chi tiết. Điều này giúp quản lý phiên bản, tích hợp liên tục, và tạo ra môi trường làm việc cộng tác.
           </h1>
         </div>
    
