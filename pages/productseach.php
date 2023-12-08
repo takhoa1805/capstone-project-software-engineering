@@ -27,10 +27,11 @@
   <?php include './components/navbar.php';?>
   <!-- end of navbar -->
 
-  <div class="product-field">
-      <ul class="products-items">
+  <div class="product-field" style="padding: 30px 0;display: grid;">
+      <ul class="products-items" style="width: 93%; justify-self: center;" >
         <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
           <div class="detail">
             <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
 
@@ -38,13 +39,14 @@
             <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
             <div>
               <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
+              <a href="" class="buyitem nolined">Buy now</a>
             </div>                 
           </div>        
           <h4>48000 đ</h4>
         </li>
         <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
           <div class="detail">
             <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
 
@@ -52,13 +54,29 @@
             <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
             <div>
               <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
+              <a href="" class="buyitem nolined">Buy now</a>
             </div>                 
           </div>        
           <h4>48000 đ</h4>
         </li>
         <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
+          <div class="detail">
+            <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
+
+            <tag>sách</tag>
+            <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
+            <div>
+              <div class="line-1-b"></div>
+              <a href="" class="buyitem nolined">Buy now</a>
+            </div>                 
+          </div>        
+          <h4>48000 đ</h4>
+        </li>
+        <li data-category="" data-price="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
           <div class="detail">
             <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
 
@@ -66,13 +84,14 @@
             <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
             <div>
               <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
+              <a href="" class="buyitem nolined">Buy now</a>
             </div>                 
           </div>        
           <h4>48000 đ</h4>
         </li>
         <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
           <div class="detail">
             <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
 
@@ -80,27 +99,14 @@
             <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
             <div>
               <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
+              <a href="" class="buyitem nolined">Buy now</a>
             </div>                 
           </div>        
           <h4>48000 đ</h4>
         </li>
         <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
-          <div class="detail">
-            <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
-
-            <tag>quần áo</tag>
-            <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
-            <div>
-              <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
-            </div>                 
-          </div>        
-          <h4>48000 đ</h4>
-        </li>
-        <li data-category="" data-price="">
-          <img src="../images/products/prdlist 1.svg" style="height: fit-content;" alt="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
           <div class="detail">
             <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
 
@@ -108,7 +114,37 @@
             <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
             <div>
               <div class="line-1-b"></div>
-            <a href="productdetail.php" class="buyitem nolined fcb">Buy now</a>
+              <a href="" class="buyitem nolined">Buy now</a>
+            </div>                 
+          </div>        
+          <h4>48000 đ</h4>
+        </li>
+        <li data-category="" data-price="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
+          <div class="detail">
+            <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
+
+            <tag>sách</tag>
+            <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
+            <div>
+              <div class="line-1-b"></div>
+              <a href="" class="buyitem nolined">Buy now</a>
+            </div>                 
+          </div>        
+          <h4>48000 đ</h4>
+        </li>
+        <li data-category="" data-price="">
+          <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
+          
+          <div class="detail">
+            <h1 class="fs16 fw700" style="margin-right: 70px;">Sách giáo trình Giải tích 2</h1>
+
+            <tag>vé</tag>
+            <span>Trong niềm vui hoan hỉ sau khi đã qua môn Giải tích 2, mình xin gửi tặng cuốn giáo trình này cho các bạn có nhu cầu. Chúc các bạn học tốt!</span>
+            <div>
+              <div class="line-1-b"></div>
+              <a href="" class="buyitem nolined">Buy now</a>
             </div>                 
           </div>        
           <h4>48000 đ</h4>
@@ -122,7 +158,7 @@
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
-  <script src="../js/bootstrap.bundle.js"></script>
+<script src="../scripts/bootstrap.bundle.js"></script>
 
   
 </body>

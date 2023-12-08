@@ -48,7 +48,7 @@
 <?php include './components/footer.php';?>
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
-  <script src="../js/bootstrap.bundle.js"></script>
+<script src="../scripts/bootstrap.bundle.js"></script>
 
   
 </body>

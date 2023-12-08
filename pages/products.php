@@ -209,7 +209,7 @@
 <!-- End of Footer -->
 <!-------------------------------------------------------------------------------->
 <!-- Import Framework -->
-	<script type="text/javascript" src="../css/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="../scripts/bootstrap.bundle.js"></script>
   <script src="../scripts/prdss.js"></script>
 <!-- End of importing Framework -->
 </body>
