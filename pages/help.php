@@ -37,7 +37,9 @@
           </h2>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
             <div class="accordion-body">
-              BKPEE là một sàn thương mại điện tử được tạo dựng với mục đích giúp các sinh viên Trường Đại học Bách Khoa tự do mua bán, trao đổi đồ dùng và vật dụng, bạn có thể đăng bán và mua các sản phẩm tại đây.
+              BKPEE là một sàn thương mại điện tử được tạo dựng với mục đích giúp các sinh viên Trường Đại học Bách Khoa tự do mua bán, trao đổi đồ dùng và vật dụng, bạn có thể đăng bán sản phẩm hoặc mua các sản phẩm <a href="product_detail.php" style="text-decoration: none;">
+                  <h1 class="fs24" style="display: inline; margin: 0;">tại đây.</h1>
+              </a>
 
             </div>
           </div>

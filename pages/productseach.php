@@ -27,7 +27,7 @@
   <?php include './components/navbar.php';?>
   <!-- end of navbar -->
 
-  <div class="product-field" style="padding: 30px 0;display: grid;">
+  <div class="product-field" style="padding: 30px 0;display: grid; max-width: 1000px;">
       <ul class="products-items" style="width: 93%; justify-self: center;" >
         <li data-category="" data-price="">
           <a href="product_detail.php"><img src="../images/products/prdlist 1.svg" style="height: 130px; width: 100px; object-fit: cover;" alt=""></a>
