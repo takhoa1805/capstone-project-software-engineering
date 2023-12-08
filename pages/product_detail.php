@@ -15,7 +15,6 @@
    <!-- style -->
   <!-- Import custom style -->
   <link rel="stylesheet" href="../css/styleshuy.css">
-  <link rel="stylesheet" href="../css/ProductDetailAdmin.css">
   <link rel="stylesheet" href="../css/header_footer.css">
   <link rel="stylesheet" type="text/css" href="../css/styleGlobal.css">
 <!-- End of importing custom style -->
