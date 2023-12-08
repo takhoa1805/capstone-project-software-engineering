@@ -42,7 +42,7 @@
           </div>
         </div>
 
-
+<!-- 
         <div class="Cancel-Require" style="margin: 20px">
           <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
           <div class="Product-list">
@@ -138,7 +138,7 @@
               <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
 
@@ -158,5 +158,7 @@
 <script type="text/javascript" src="../scripts/component/header.js"></script>
 <!-- Requests Logic -->
 <script type="text/javascript" src="../scripts/admin_requests.js"></script>
+<!-- Navigate to product detail Logic -->
+<script type="text/javascript" src="../scripts/product_navigator_admin.js"></script>
 </body>
 </html>

@@ -51,20 +51,20 @@ module.exports = (app) => {
         const { _id } = req.user;
         const status = req.body.remove_reason;
         // console.log(_id);
-        // console.log(data);
+        console.log(data);
 
-        if (data[0].uploaduserid === _id) {
+        if (data.uploaduserid === _id) {
           //remove request is from uploader
           const newinfo = {
             _id: productid,
-            uploaduserid: data[0].uploaduserid,
-            name: data[0].name,
-            price: data[0].price,
-            quantity: data[0].quantity,
-            type: data[0].type,
+            uploaduserid: data.uploaduserid,
+            name: data.name,
+            price: data.price,
+            quantity: data.quantity,
+            type: data.type,
             status: 'remove-reason: ' + status,
-            specification: data[0].specification,
-            reasonforsale: data[0].reasonforsale,
+            specification: data.specification,
+            reasonforsale: data.reasonforsale,
           };
           const result = await product_service.updateproduct(newinfo);
           return res.json({

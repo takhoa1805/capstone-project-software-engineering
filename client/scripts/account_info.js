@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
         }
         console.log("Response from backend: ",data);
         user_data = data;
+        // console.log(user_data);
         await account_information_filler(user_data);
         await account_buy_order(user_data);
         await account_sell_order(user_data);
@@ -357,7 +358,7 @@ async function account_information_filler(user_data){
 // -------------------------------------------------------------- //
 // -------------------------------------------------------------- //
 document.querySelector('#send-selling-request').addEventListener('click',(event)=>{
-    const uploaduserid = user_data.id;
+    const uploaduserid = localStorage.getItem('user').id;
     const name = document.getElementById('product-name').value;
     const price = document.getElementById('product-price').value;
     const quantity = document.getElementById('product-quantity').value;
@@ -482,6 +483,9 @@ async function remove_request(product_id){
     })
         .then((response) => response.json())
         .then((data)=>{
+
+            console.log(remove_reason);
+
             if (data.error){
                 alert(data.error.message);
                 console.log("Response from backend: ",data.error.message);

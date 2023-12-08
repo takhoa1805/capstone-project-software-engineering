@@ -67,35 +67,38 @@ async function product_item_generator(product_data){
     const specification_list = JSON.parse(product_data.specification);
 
     const container = document.createElement('div');
-    container.className='ListingElement-container';
+    container.className='ListingElement';
+
 
     const new_product=
     `
-    <div class="ListingElement">
-      <img style="width: 99px" src="${image_list[0]}" />
-        <div class="ListingElement-detail">
-            <div class="Element-detail">
-                <div class="Element-header">
-                    <div class="header-price">${product_data.name}</div>
-                    <div class="header-price" style="width: 70px; text-align: right;">${product_data.price}đ</div>
-                </div>
-                <ul>
-                    <li class="detail-info">Số lượng: ${product_data.quantity}</li>
-                    <li class="detail-info">Lý do bán: ${product_data.reasonforsale}</li>
-                    <li class="detail-info">Giới thiệu: ${specification_list.introduction}</li>
-                    <li class="detail-info">Phân loại: ${product_data.type}</li>
-                    <li class="detail-info">Ngày gửi yêu cầu: ${Date(product_data.createdAt).toString()}</li>
+    <img style="width: 100px; margin:10px" src="${image_list[0]}" />
+    <div class="ListingElement-detail">
+    <a onclick="navigator('${product_data._id}')" style="cursor:pointer" >
 
+        <div class="Element-detail">
+            <div class="Element-header">
+                <div class="header-price">${product_data.name}</div>
+                <div class="header-price" style="width: 100px; text-align: right;">${product_data.price}đ</div>
+            </div>
+            <div class="detail-info col-10">
+                <ul>
+                <li class="detail-info">Số lượng: ${product_data.quantity}</li>
+                <li class="detail-info">Lý do bán: ${product_data.reasonforsale}</li>
+                <li class="detail-info">Giới thiệu: ${specification_list.introduction}</li>
+                <li class="detail-info">Phân loại: ${product_data.type}</li>
+                <li class="detail-info">Ngày gửi yêu cầu: ${Date(product_data.createdAt).toString()}</li>
                 </ul>
+    </a>
+
+                <div style="align-self: stretch; height: 0px; border: 1px black solid" ></div>
             </div>
         </div>
-        </div>
-        <div style="align-self: stretch; height: 0px; border: 1px black solid; margin:10px" ></div>
-
+    </div>
     `
-    container.innerHTML = new_product;
+    container.innerHTML=(new_product);
 
-    console.log(container);
+    // console.log(container);
 
     return container;
 
