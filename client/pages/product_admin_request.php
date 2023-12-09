@@ -42,57 +42,15 @@
           </div>
         </div>
 
-<!-- 
+
         <div class="Cancel-Require" style="margin: 20px">
           <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
-          <div class="Product-list">
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                      <li class="detail-info">Lý do: sách bị vẽ bậy, rách nát, sai với tình trạng mô tả</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-danger btn-sm" style="place-self: end;">
-                    <div class="Text">Duyệt và gỡ bỏ</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
-            <div class="ListingElement-container">
-              <div class="ListingElement">
-                <img style="width: 99px; height: 130px" src="../images/book.png" />
-                <div class="ListingElement-detail">
-                  <div class="Element-detail">
-                    <div class="Element-header">
-                      <div class="header-price">Sách giáo trình Giải tích 2</div>
-                      <div class="header-price" style="width: 70px; text-align: right;">0đ</div>
-                    </div>
-                    <ul>
-                      <li class="detail-info">Ngày gửi yêu cầu: 11/11/2023</li>
-                      <li class="detail-info">Lý do: sách bị vẽ bậy, rách nát, sai với tình trạng mô tả</li>
-                    </ul>
-                  </div>
-                  <button type="button" class="btn btn-danger btn-sm" style="place-self: end;">
-                    <div class="Text">Duyệt và gỡ bỏ</div>
-                  </button>
-                </div>
-              </div>
-              <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
-            </div>
-          </div>
+          <div class="Product-list" id="remove-requests-container">
+
         </div>
 
 
-        <div class="Complain-Exchange">
+        <!-- <div class="Complain-Exchange">
           <div class="header-text">Khiếu nại sản phẩm, yêu cầu đổi/trả</div>
           <div class="Product-list">
             <div class="ListingElement-container">
@@ -138,8 +96,8 @@
               <div style="align-self: stretch; height: 0px; border: 1px black solid"></div>
             </div>
           </div>
-        </div> -->
-      </div>
+        </div>
+      </div> -->
 
 
 
