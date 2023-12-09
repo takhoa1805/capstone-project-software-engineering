@@ -212,7 +212,11 @@ async function remove_product_item_generator(product_data){
                 <li class="detail-info">Phân loại: ${product_data.type}</li>
                 </ul>
                 </a>
+<<<<<<< HEAD
                 <button type="button" class="btn btn-danger btn-sm" style="place-self: end;" onclick="takedown('${product_data._id}')">Duyệt và gỡ bỏ</button>
+=======
+                <button type="button" class="btn btn-danger btn-sm" style="place-self: end;">Duyệt và gỡ bỏ</button>
+>>>>>>> f0bd8e0da3ca7965f4e4499afa423aa9ce1c4bbe
 
                 <div style="align-self: stretch; height: 0px; border: 1px black solid;margin:10px" ></div>
             </div>
@@ -225,6 +229,7 @@ async function remove_product_item_generator(product_data){
 
     return container;
 
+<<<<<<< HEAD
 }
 
 async function takedown(product_id){
@@ -248,6 +253,9 @@ async function takedown(product_id){
         console.log("Error ",error);
         alert(error);   
     }
+=======
+
+>>>>>>> f0bd8e0da3ca7965f4e4499afa423aa9ce1c4bbe
 }
 
 
