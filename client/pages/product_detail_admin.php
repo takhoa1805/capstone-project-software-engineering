@@ -37,7 +37,7 @@
     <div class="container Maincontainer">
 	<div class="ApproveCancel">
         <button type="button" class="btn btn-primary btn-sm" id="approve-button">
-            <div class="Text">Duyệt</div>
+            <div class="Text">Đăng bán</div>
         </button>
         <button type="button" class="btn btn-danger btn-sm" id="remove-button">
             <div class="Text">Gỡ bỏ</div>

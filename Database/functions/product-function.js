@@ -138,6 +138,9 @@ class productrepository {
         $and: [
           { status: { $ne: 'upload-requested' } },
           { status: { $ne: 'available' } },
+          { status: { $ne: 'out of stock' } },
+          { status: { $ne: 'removed' } },
+
         ],
       });
       return result;
@@ -159,10 +162,10 @@ class productrepository {
     try {
       const myproduct = await productsmodel.find({ _id: productid });
       if (myproduct) {
-        if (myproduct[0].status !== 'upload-requested') {
+        if (myproduct[0].quantity <=0) {
           return {
             error: {
-              message: 'This product is not on upload request queue',
+              message: 'Sản phẩm không đủ số lượng',
             },
           };
         }
@@ -183,7 +186,36 @@ class productrepository {
       throw err;
     }
   }
+  
+  async approveremovalbyid(productid) {
+    try {
+      const myproduct = await productsmodel.find({ _id: productid });
+      const remove_check = myproduct[0].status;
+      if (myproduct) {
+        if (remove_check[0] == 'out of stock') {
+          return {
+            error: {
+              message: 'Sản phẩm đã được bán hết',
+            },
+          };
+        }
+        const result = await productsmodel.findOneAndUpdate(
+          { _id: productid },
+          { $set: { status: 'removed' } },
+        );
 
+        return result;
+      }
+
+      return {
+        error: {
+          message: 'Product not found',
+        },
+      };
+    } catch (err) {
+      throw err;
+    }
+  }
   async getavailableproduct() {
     try {
       console.log('this is called');

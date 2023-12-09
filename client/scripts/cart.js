@@ -139,3 +139,13 @@ function summary(){
     document.getElementById('total-cost').innerHTML=total_cost+'đ';
     document.getElementById('final-cost').innerHTML=total_cost+'đ';
 }
+
+document.querySelector('#cart-continue').addEventListener('click',()=>{
+    const cost = document.getElementById('final-cost').innerText;
+    if (cost=='0đ'){
+        window.alert("Thêm sản phẩm vào giỏ hàng để tiếp tục");
+        window.location.href=('/client/pages/product.php');
+    }   else{
+        window.location.href=('/client/pages/checkout.php');
+    }
+})

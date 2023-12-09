@@ -72,6 +72,18 @@ module.exports = (app) => {
       }
     },
   );
+  app.patch(
+    '/product/admin/approve-removal/:productid',
+    async (req, res, next) => {
+      const productid = req.params.productid;
+      try {
+        const data = await proservice.approveremoval(productid);
+        return res.status(200).json(data);
+      } catch (err) {
+        next(err);
+      }
+    },
+  );
 
   // get stuff by type (books,ticket,...)
   app.get('/product/category/:type', async (req, res, next) => {

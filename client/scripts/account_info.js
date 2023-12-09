@@ -53,7 +53,7 @@ async function account_sell_order(user_data){
 
         const sell_order_container = document.getElementById('sell-order-container');
 
-        var tmp='';
+        var tmp=document.createElement('div');
 
         if (data.length ==0 ){
             tmp = document.createElement("div");
@@ -82,7 +82,7 @@ async function sell_product_item_filler (data){
         order_list.classList.add("Order-list");
         order_list.innerHTML = title;
 
-        var tmp='';
+        var tmp=document.createElement('div');
 
         tmp = await sell_product_item_generator(data);
         // console.log(order_list);
@@ -135,7 +135,7 @@ async function sell_product_item_generator(input_data){
           </ul>
           </a>
         </div>
-        <button type="button" class="btn btn-danger btn-sm mb-1" style="place-self: end;" onclick="remove_request('${input_data._id}')">Gửi yêu cầu hủy đơn hàng</button>
+        <button type="button" class="btn btn-danger btn-sm mb-1" style="place-self: end;" onclick="remove_request('${input_data._id}','${data.status}')">Gửi yêu cầu hủy đơn hàng</button>
         <button type="button" class="btn btn-primary btn-sm" style="place-self: end;" onclick="obsolete_alert()">Gửi yêu cầu chỉnh sửa thông tin sản phẩm</button>
       </div>
     </div>
@@ -222,7 +222,7 @@ async function product_item_filler(data){
         order_list.classList.add("Order-list");
         order_list.innerHTML = title;
 
-        var tmp='';
+        var tmp=document.createElement('div');
 
         for (item in data.items){
             tmp = await product_item_generator(data.items[item]);
@@ -256,7 +256,7 @@ async function account_buy_order(user_data){
 
         const buy_order_container = document.getElementById('buy-order-container');
 
-        var tmp='';
+        var tmp=document.createElement('div');
         if (data.length ==0 ){
             tmp = document.createElement("div");
             tmp.innerHTML='Bạn không có đơn mua nào';
@@ -264,6 +264,7 @@ async function account_buy_order(user_data){
             return;
         }
         
+        tmp=document.createElement('div');
 
         for (order in data){
             tmp = await product_item_filler(data[order]);
@@ -440,8 +441,12 @@ document.querySelector('#send-selling-request').addEventListener('click',(event)
 // -------------------------------------------------------------- //
 // -------------------------------------------------------------- //
 
-async function remove_request(product_id){
+async function remove_request(product_id,status){
     try{
+        if(status =="removed"){
+            window.alert("Sản phẩm đã được gỡ bỏ khỏi sàn");
+            return;
+        }
         var remove_reason = window.prompt("Vui lòng cho biết lý do gỡ bài đăng sản phẩm (bắt buộc)");
         if (remove_reason =='' ){
             // alert('your reason is shit')

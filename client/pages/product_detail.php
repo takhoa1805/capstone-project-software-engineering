@@ -59,8 +59,8 @@
 				<div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-inner" role="listbox" id="carousel-container">
 						<div class="carousel-item active">
-							<div class="col-5 align-content-center">
-								<img src="" class="img-fluid" style="height: 350px;" id="first-image">
+							<div class="col-12 align-content-center">
+								<img src="" class="img-fluid"  id="first-image">
 							</div>
 						</div>
 						<a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">

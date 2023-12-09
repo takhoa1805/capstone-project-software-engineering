@@ -64,7 +64,7 @@ async function product_detail_loader(product_data){
     document.getElementById('specification').innerHTML=specification_section(product_data,image_list[1]);
 
     //STATUS SECTION
-    document.getElementById('status').innerHTML=status_section(product_data,image[2]);
+    document.getElementById('status').innerHTML=status_section(product_data,image_list[2]);
 
     //REASON FOR SALE SECTION
     document.getElementById('reasonforsale').innerHTML=reasonforsale_section(product_data);
@@ -79,8 +79,8 @@ function carousel_generator(image){
     new_item.className='carousel-item';
     new_item.innerHTML=
     `
-    <div class="col-5">
-        <img src="${image}" class="img-fluid" style="height: 350px;">
+    <div class="col-12">
+        <img src="${image}" class="img-fluid" >
     </div>
     `
     return new_item;
@@ -100,7 +100,7 @@ function introduction_section(product_data,image){
                     <li>${specification_list.introduction}</li>
                 </ul>
                 </div>
-                <img style="width: 250px; height: auto" src="${image}" />
+                <img style="width: 500px; height: auto" src="${image}" />
                 </div>
     `
     return result;
@@ -117,7 +117,7 @@ function specification_section(product_data,image){
         <ul class="detail-text">
             <li>${specification_list.specification}</li>
         </ul>
-        <img style="width: 250px; height: auto" src="${image}" />
+        <img style="width: 500px; height: auto" src="${image}" />
     </div>
 
     `
@@ -134,7 +134,7 @@ function status_section(product_data,image){
         <ul class="detail-text">
             <li>${specification_list.status}</li>
         </ul>
-        <img style="width: 250px; height: auto" src="${image}" />
+        <img style="width: 500px; height: auto" src="${image}" />
     </div>
 
     `

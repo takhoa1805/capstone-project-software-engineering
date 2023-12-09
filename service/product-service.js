@@ -34,6 +34,15 @@ class productservice {
       throw err;
     }
   }
+  async approveremoval(productid) {
+    try {
+      const result = await this.repository.approveremovalbyid(productid);
+      // console.log(result);
+      return result;
+    } catch (err) {
+      throw err;
+    }
+  }
 
   async getproducts() {
     try {

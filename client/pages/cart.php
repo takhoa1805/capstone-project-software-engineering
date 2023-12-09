@@ -62,7 +62,7 @@
                 <div class="cost-text" style="font-size: 16px;font-weight: 700;" >Tổng</div>
                 <div class="cost-text" style="font-size: 16px;font-weight: 700;"id="final-cost"></div>
               </div>
-              <a class="btn btn-primary" href="/client/pages/checkout.php" role="button" style="display: flex; align-items: center; gap: 10px;">
+              <a class="btn btn-primary" id='cart-continue' role="button" style="display: flex; align-items: center; gap: 10px;">
                 <div class="Text">Tiếp tục</div>
                 <i class="bi bi-arrow-right-short"></i>
               </a>

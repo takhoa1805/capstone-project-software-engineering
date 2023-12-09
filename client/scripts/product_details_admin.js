@@ -25,7 +25,7 @@ document.querySelector('#approve-button').addEventListener('click',async ()=>{
 document.querySelector('#remove-button').addEventListener('click',async ()=>{
     const product_id = localStorage.getItem('product_id');
     try{
-        const result = await fetch (`http://localhost:3000/product/admin/delete/${product_id}`, {method:"DELETE",
+        const result = await fetch (`http://localhost:3000/product/admin/approve-removal/${product_id}`, {method:"PATCH",
         headers:{
             "Content-Type": "application/json",
             "Authorization":`Bearer ${JSON.parse(localStorage.getItem('user')).token}`
