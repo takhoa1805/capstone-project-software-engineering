@@ -80,7 +80,7 @@ function carousel_generator(image){
     new_item.innerHTML=
     `
     <div class="col-12">
-        <img src="${image}" class="img-fluid" >
+        <img src="${image}" class="img-fluid" style="height:500px">
     </div>
     `
     return new_item;

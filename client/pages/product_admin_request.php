@@ -45,8 +45,6 @@
           <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
           <div class="Product-list" id="remove-requests-container">
           </div>
-
-
         </div>
 
 
