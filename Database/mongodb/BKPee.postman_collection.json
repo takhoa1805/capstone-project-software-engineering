@@ -1,0 +1,727 @@
+{
+	"info": {
+		"_postman_id": "c9e67ea7-25ec-4b97-8242-127f51b75398",
+		"name": "BKPee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26858711"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"example\",\r\n    \"name\":\"User\",\r\n    \"phone\":\"0123456789\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"example\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User's Address Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwiX2lkIjoiNjU3NDgxMmNkYjhiNTZmMGFlZGQwOTc5IiwiaWF0IjoxNzAyMTM0MDc2LCJleHAiOjE3MDI3Mzg4NzZ9.Myb_BzmCggOZ7MpiJecVMc8l1-9UIWjYCabswvvzMaE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\":\"Vietnam\",\r\n    \"provine\":\"Ho Chi Minh\",\r\n    \"city\":\"District 10\",\r\n    \"street\":\"268 Ly Thuong Kiet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/address",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Create product and add directly to database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uploaduserid\":\"6555efc582ef9839c7134efe\",\r\n    \"name\":\"Benelli BN 600\",\r\n    \"price\":\"6000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"production_time\": \"2020\",\r\n        \"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\r\n        \"topspeed\":\"190kmph\"\r\n    },\r\n    \"reasonforsale\":\"Buying new bike\",\r\n    \"img\":{\r\n        \"img_1\":\"https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg\",\r\n        \"img_2\":\"https://xedoisong.vn/uploads/user_4/16-11/benelli/xedoisong_benelli_tnt_600i_vietnam_5.jpg\",\r\n        \"img_3\":\"https://xedoisong.vn/uploads/20221031/xedoisong_benelli_bn600_h12_lzau_btya.jpg\",\r\n        \"img_4\":\"https://static1.cafeauto.vn/cafeautoData/upload/tintuc/thitruong/2020/06/tuan-02/1-1591906770.jpg\",\r\n        \"img_5\":\"https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_137b40898c74262f9ad4eb4e877f2e84.jpg\"\r\n    }\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/product/admin/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"create"
+					]
+				},
+				"description": "Khi sản phẩm được tạo bởi admin, status mặc định sẽ luôn là available. Tức là có mặt trên sàn thương mại luôn chứ không phải chờ admin duyệt qua như người dùng muốn đăng bán nữa.\n\nstatus có 3 giá trị sau:{'upload-requested','available','lý do cần gỡ sp nếu có'}"
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Get upload requested product list ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/admin/upload-requests",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"upload-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Get order detail by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/shopping/orders/detail/65560a0ba9cc66dd4bba09a0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"orders",
+						"detail",
+						"65560a0ba9cc66dd4bba09a0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Approve user's product upload request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/admin/approve-product/656b1277b23150698feb3918",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"approve-product",
+						"656b1277b23150698feb3918"
+					]
+				},
+				"description": "Sau khi người dùng đăng bán thì status của sản phẩm sẽ là 'upload-requested'. Đây là một flag để đánh dấu nếu sản phẩm đang trong tình trạng đang có hàng, đang được duyệt hay đang chờ gỡ xuống:\n\nstatus có 3 giá trị sau:{'upload-requested','available','lý do cần gỡ sp nếu có'}"
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Approve user's remove product request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/admin/approve-removal/656b1277b23150698feb3918",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"approve-removal",
+						"656b1277b23150698feb3918"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Get remove requested product list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/admin/delete-requests",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"delete-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Delete a product by id - After approving user delete's request ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/admin/delete/6551f59f50f55c1c556aeb2e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"admin",
+						"delete",
+						"6551f59f50f55c1c556aeb2e"
+					]
+				},
+				"description": "Gỡ sản phẩm ngay lập tức khỏi database. Sau khi admin đã duyệt yêu cầu gỡ bài đăng của người dùng. Hoặc admin phát hiện sản phẩm có vi phạm nên buộc phải gỡ xuống"
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) get every order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/shopping/all/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"all",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) get one user's all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/shopping/orders/6555efc582ef9839c7134efe",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"orders",
+						"6555efc582ef9839c7134efe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(admin only) Delete one user's order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"6555efc582ef9839c7134efe\",\r\n    \"orderid\":\"6556093f283ff7484f951b72\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/shopping/admin/delete/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"admin",
+						"delete",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(seller only) Send product information for upload request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZxd2VyIiwiX2lkIjoiNjU2YWY1MmJlZDFmMDRhNmQyNzJkOTg0IiwiaWF0IjoxNzAxNTA4NDExLCJleHAiOjE3MDIxMTMyMTF9.8oc77BQg_YyFgruk5AYdueGJTpVsA9WK1gryJIwxtCw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uploaduserid\":\"6555efc582ef9839c7134efe\",\r\n    \"name\":\"Benelli BN 600\",\r\n    \"price\":\"6000\",\r\n    \"quantity\":\"1\",\r\n    \"type\":\"Motorcycle\",\r\n    \"specs\":{\r\n        \"production_time\": \"2020\",\r\n        \"engine\":\"600cc Liquid Cool, 4-stroke, DOHC\",\r\n        \"topspeed\":\"190kmph\"\r\n    },\r\n    \"reasonforsale\":\"Buying new bike\",\r\n    \"img\":{\r\n        \"img_1\":\"https://images.autofun.vn/file1/6d00a50bee82463788f79ed6f7c00cf4_1125x630.jpg\",\r\n        \"img_2\":\"https://xedoisong.vn/uploads/user_4/16-11/benelli/xedoisong_benelli_tnt_600i_vietnam_5.jpg\",\r\n        \"img_3\":\"https://xedoisong.vn/uploads/20221031/xedoisong_benelli_bn600_h12_lzau_btya.jpg\",\r\n        \"img_4\":\"https://static1.cafeauto.vn/cafeautoData/upload/tintuc/thitruong/2020/06/tuan-02/1-1591906770.jpg\",\r\n        \"img_5\":\"https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_137b40898c74262f9ad4eb4e877f2e84.jpg\"\r\n    }\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/sales/product/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"product",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(seller only) Send product remove request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZxd2VyIiwiX2lkIjoiNjU2YWY1MmJlZDFmMDRhNmQyNzJkOTg0IiwiaWF0IjoxNzAxNTI2NDgzLCJleHAiOjE3MDIxMzEyODN9.xoq25rN7Nd1SCLIv6dhzlBDBUOl-vvPQz1d7aKm4EoI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"remove_reason\":\"Rice shirt rice money\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/sales/product/delete-request/6572f5de88f8310c7b33183b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"product",
+						"delete-request",
+						"6572f5de88f8310c7b33183b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get self's profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZxd2VyIiwiX2lkIjoiNjU2YWY1MmJlZDFmMDRhNmQyNzJkOTg0IiwiaWF0IjoxNzAxNTA4NDExLCJleHAiOjE3MDIxMTMyMTF9.8oc77BQg_YyFgruk5AYdueGJTpVsA9WK1gryJIwxtCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/users/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product list by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/category/electronics",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"category",
+						"electronics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/product/656b11feb23150698feb390b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"656b11feb23150698feb390b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add product to user's current cart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZxd2VyIiwiX2lkIjoiNjU2YmZmMTc3NzVjYTU0ODNiZWQ3YWIwIiwiaWF0IjoxNzAxNTc2NDc1LCJleHAiOjE3MDIxODEyNzV9.qEC7Ftt_8_Y-j0npdjo8vNTOMq92e0gzu3RI8jNcoYc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"656bfed6775ca5483bed7a8e\",\r\n    \"quantity\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/product/cart/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place self's order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZGZxd2VyIiwiX2lkIjoiNjU2YmZmMTc3NzVjYTU0ODNiZWQ3YWIwIiwiaWF0IjoxNzAxNTc2NDc1LCJleHAiOjE3MDIxODEyNzV9.qEC7Ftt_8_Y-j0npdjo8vNTOMq92e0gzu3RI8jNcoYc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/shopping/place/order",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"place",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product from user's current cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYSIsIl9pZCI6IjY1NzEzODA5ZTMwYTYzOGJkZjU1ZGY2NiIsImlhdCI6MTcwMTkxODc5MiwiZXhwIjoxNzAyNTIzNTkyfQ.or0_ccNoJvLG07J5FFjc2rtohwElwaIPfcdXnk78Ta8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\":\"65700b73a841a5ed83782a87\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/product/cart/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"cart",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products of a category with low to high price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/ascending/category/else",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"ascending",
+						"category",
+						"else"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products of a category with high to low price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/descending/category/Motorcycle",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"descending",
+						"category",
+						"Motorcycle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get selling product of a user by userid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/products/656af52bed1f04a6d272d984",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"products",
+						"656af52bed1f04a6d272d984"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get self's all orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZW1haWwuY29tIiwiX2lkIjoiNjU1NWVmYzU4MmVmOTgzOWM3MTM0ZWZlIiwiaWF0IjoxNzAxNDE0MzkyLCJleHAiOjE3MDIwMTkxOTJ9.cTJ2Mn6b0L2NLXQ5MzwvUT6anFuhKF1SQ0HAVvaayKw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/shopping/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get self's current cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRha2hvYSIsIl9pZCI6IjY1NzEzODA5ZTMwYTYzOGJkZjU1ZGY2NiIsImlhdCI6MTcwMTkxODc5MiwiZXhwIjoxNzAyNTIzNTkyfQ.or0_ccNoJvLG07J5FFjc2rtohwElwaIPfcdXnk78Ta8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/shopping/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"shopping",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all available products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/product/all/available",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"all",
+						"available"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

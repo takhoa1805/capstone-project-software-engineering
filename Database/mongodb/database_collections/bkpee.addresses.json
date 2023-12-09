@@ -1,0 +1,9 @@
+[{
+  "_id": {
+    "$oid": "65748148db8b56f0aedd097d"
+  },
+  "country": "Vietnam",
+  "city": "District 10",
+  "street": "268 Ly Thuong Kiet",
+  "__v": 0
+}]

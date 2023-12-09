@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6574812cdb8b56f0aedd0979"
+  },
+  "email": "user@email.com",
+  "password": "$2b$10$EfluvshW.kfi2td3dVv4rOCL5iecqEQWmapCwMQIIDhIjXgYrZ6Di",
+  "name": "User",
+  "salt": "$2b$10$EfluvshW.kfi2td3dVv4rO",
+  "phone": "0123456789",
+  "address": [
+    {
+      "$oid": "65748148db8b56f0aedd097d"
+    }
+  ],
+  "orders": [],
+  "cart": [],
+  "createdAt": {
+    "$date": "2023-12-09T15:01:00.781Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T15:01:28.910Z"
+  },
+  "__v": 1
+}]
