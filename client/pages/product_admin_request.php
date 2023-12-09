@@ -41,25 +41,17 @@
         </div>
 
 
-<<<<<<< HEAD
         <div class="Cancel-Require" style="margin: 5px">
           <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
           <div class="Product-list" id="remove-requests-container">
           </div>
-=======
-        <div class="Cancel-Require" style="margin: 20px">
-          <div class="header-text">Yêu cầu gỡ bỏ sản phẩm</div>
-          <div class="Product-list" id="remove-requests-container">
->>>>>>> f0bd8e0da3ca7965f4e4499afa423aa9ce1c4bbe
+
 
         </div>
 
 
-<<<<<<< HEAD
         <div class="Complain-Exchange" style="margin:5px">
-=======
-        <!-- <div class="Complain-Exchange">
->>>>>>> f0bd8e0da3ca7965f4e4499afa423aa9ce1c4bbe
+        <div class="Complain-Exchange">
           <div class="header-text">Khiếu nại sản phẩm, yêu cầu đổi/trả</div>
           <div class="Product-list">
             <div class="ListingElement-container">
@@ -106,11 +98,8 @@
             </div>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
-=======
-      </div> -->
->>>>>>> f0bd8e0da3ca7965f4e4499afa423aa9ce1c4bbe
+      </div>
 
 
 
